@@ -1,0 +1,1457 @@
+[
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "cross_system_disagreement",
+        "customer_confusion"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "CRM shows a Committed-100 plan while the billing system is configured for Committed-150, creating a pricing configuration mismatch without an operational incident.",
+      "generator_family": "pricing_config_mismatch",
+      "latent_facts": [
+        "CRM is the source of truth for the signed commercial commitment.",
+        "Billing configuration drift happened during a manual plan update.",
+        "Usage is above the CRM commitment but below the billing commitment."
+      ],
+      "likely_failure_modes": [
+        "The model trusts billing over CRM and misses the discrepancy.",
+        "The model treats this as a metering issue instead of a pricing config issue."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_001",
+      "title": "CRM commitment and billing configuration disagree",
+      "crm_record": {
+        "account_id": "acct_001",
+        "account_name": "Northstar Labs",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-100",
+        "contracted_commitment_gpu_hours": 100,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-07-15",
+        "notes": [
+          "Executed order form lists Committed-100.",
+          "No pending amendment recorded in CRM."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_001",
+        "configured_plan_name": "Committed-150",
+        "configured_commitment_gpu_hours": 150,
+        "invoice_preview_usd": 8200,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "Active billing plan is Committed-150.",
+          "No overage line item generated at 118 GPU-hours."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 118,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Usage telemetry is complete and healthy for the period.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": null,
+      "customer_note": "Our invoice preview looks lower than expected. We thought we'd cross our committed amount this month.",
+      "policy_snippet": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing.",
+      "calculator_output": "Projected invoice uses current billing config: Committed-150 with no overage.",
+      "visible_case_summary": "Commercial dispute with no service incident and a plan mismatch between systems."
+    },
+    "ground_truth": {
+      "issue_type": "pricing_config_mismatch",
+      "root_cause": "billing_config_out_of_sync_with_crm",
+      "customer_impact": "invoice_confusion",
+      "contractual_applicability": "not_an_sla_case",
+      "discrepancy_detected": true,
+      "recommended_owner": "shared_revops_finance",
+      "recommended_action": "hold_for_revops_review",
+      "needs_human_review": true,
+      "confidence": "high",
+      "adjudication_notes": [
+        "The mismatch is between signed commercial terms and billing configuration, not telemetry.",
+        "This should be routed for commercial review rather than treated as an SLA matter."
+      ],
+      "reference_customer_note": "We found a mismatch between your contracted plan and the current billing configuration, so we are holding the invoice for RevOps review before confirming the final amount.",
+      "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review due to CRM Committed-100 versus billing Committed-150 with healthy usage telemetry."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "covered_outage",
+        "flat_credit_policy"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "A covered service had a customer-visible outage lasting 50 minutes, which exceeds the flat-credit threshold in the contract.",
+      "generator_family": "clean_covered_outage",
+      "latent_facts": [
+        "The outage occurred on a covered managed service.",
+        "The contract explicitly grants a credit for outages over 30 minutes.",
+        "Usage records remain otherwise normal."
+      ],
+      "likely_failure_modes": [
+        "The model ignores the policy snippet and returns no credit.",
+        "The model over-rotates on engineering routing instead of the combined commercial response."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": 1
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_002",
+      "title": "Covered outage exceeds service-credit threshold",
+      "crm_record": {
+        "account_id": "acct_002",
+        "account_name": "Aurora AI",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-300",
+        "contracted_commitment_gpu_hours": 300,
+        "billing_owner": "finance@prime.example",
+        "sla_tier": "premium-covered-service",
+        "renewal_date": "2026-09-01",
+        "notes": [
+          "Premium SLA addendum signed.",
+          "Flat service credit applies to covered outages over 30 minutes."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_002",
+        "configured_plan_name": "Committed-300",
+        "configured_commitment_gpu_hours": 300,
+        "invoice_preview_usd": 24200,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No pricing anomalies detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 287,
+        "covered_service_minutes_unavailable": 50,
+        "telemetry_summary": "Usage levels were normal outside the outage window.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0312",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 50,
+        "customer_visible": true,
+        "customer_impact_summary": "Managed training jobs were unavailable for 50 minutes.",
+        "engineering_summary": "Regional capacity shortfall caused a 50-minute outage before workload was rebalanced.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "We had a complete outage on the covered training endpoint for almost an hour. Please confirm what applies commercially.",
+      "policy_snippet": "Covered outages longer than 30 minutes on the managed training service receive a flat service credit.",
+      "calculator_output": "Covered outage duration: 50 minutes. Flat credit policy threshold met.",
+      "visible_case_summary": "Clean covered outage where the contractual remedy is explicit."
+    },
+    "ground_truth": {
+      "issue_type": "incident_impact_review",
+      "root_cause": "capacity_shortfall",
+      "customer_impact": "outage",
+      "contractual_applicability": "credit_due",
+      "discrepancy_detected": false,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "This is a clean incident review with a covered outage above the policy threshold.",
+        "The case is not ambiguous and does not require extra human triage in v1."
+      ],
+      "reference_customer_note": "We confirmed a covered 50-minute outage on the managed training service, which qualifies for the contract’s flat service credit. We will communicate the credit application and incident summary.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because incident evidence is clean, root cause is capacity_shortfall, and contractual outcome is credit_due."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "maintenance_exclusion"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Customer experienced unavailability during a planned maintenance window that is excluded from service credits.",
+      "generator_family": "maintenance_exclusion",
+      "latent_facts": [
+        "The maintenance was announced ahead of time.",
+        "The service interruption was real but contractually excluded.",
+        "The incident should not be treated as a breach."
+      ],
+      "likely_failure_modes": [
+        "The model sees outage language and incorrectly grants credit.",
+        "The model misses the maintenance exclusion in the policy."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_003",
+      "title": "Planned maintenance causes temporary unavailability",
+      "crm_record": {
+        "account_id": "acct_003",
+        "account_name": "Vector Harbor",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-80",
+        "contracted_commitment_gpu_hours": 80,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "standard-covered-service",
+        "renewal_date": "2026-10-20",
+        "notes": [
+          "Maintenance notices are delivered by email and status page."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_003",
+        "configured_plan_name": "Committed-80",
+        "configured_commitment_gpu_hours": 80,
+        "invoice_preview_usd": 6400,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No commercial billing variance."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 74,
+        "covered_service_minutes_unavailable": 42,
+        "telemetry_summary": "Usage stopped during the planned maintenance window and resumed immediately after.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": {
+        "incident_id": "maint_2026_0320",
+        "status": "planned_maintenance",
+        "service": "managed-training-api",
+        "duration_minutes": 42,
+        "customer_visible": true,
+        "customer_impact_summary": "Training API unavailable during a planned maintenance window.",
+        "engineering_summary": "Planned control-plane maintenance temporarily paused new job submissions.",
+        "covered_by_sla": false,
+        "scheduled_maintenance": true
+      },
+      "customer_note": "Our run queue was unavailable during the maintenance window and we want to know whether credits apply.",
+      "policy_snippet": "Scheduled maintenance windows announced in advance are excluded from SLA service credits.",
+      "calculator_output": null,
+      "visible_case_summary": "Real customer impact, but the contract excludes scheduled maintenance from credits."
+    },
+    "ground_truth": {
+      "issue_type": "policy_applicability_review",
+      "root_cause": "scheduled_maintenance",
+      "customer_impact": "outage",
+      "contractual_applicability": "sla_excluded_scheduled_maintenance",
+      "discrepancy_detected": false,
+      "recommended_owner": "engineering_owner",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "The impact is real, but maintenance exclusion controls the commercial outcome."
+      ],
+      "reference_customer_note": "The interruption occurred during a planned maintenance window that was excluded from SLA credits under your contract, so no service credit applies. We can still share the maintenance summary and timing.",
+      "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because this is scheduled_maintenance with contractual exclusion and no system discrepancy."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "meter_lag",
+        "dashboard_invoice_mismatch"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Usage dashboard and invoice preview disagree because meter ingestion is lagging even though compute service health is normal.",
+      "generator_family": "metering_discrepancy",
+      "latent_facts": [
+        "There is no underlying service incident.",
+        "The discrepancy is caused by an internal meter ingestion lag.",
+        "Commercial handling requires finance review because invoicing may need adjustment."
+      ],
+      "likely_failure_modes": [
+        "The model mistakes this for a pricing configuration issue.",
+        "The model ignores the engineering note that compute was healthy."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_004",
+      "title": "Usage dashboard lags invoice preview",
+      "crm_record": {
+        "account_id": "acct_004",
+        "account_name": "Lattice Foundry",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-200",
+        "contracted_commitment_gpu_hours": 200,
+        "billing_owner": "finance@prime.example",
+        "sla_tier": "standard-covered-service",
+        "renewal_date": "2026-08-08",
+        "notes": [
+          "Customer often watches the self-serve usage dashboard closely."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_004",
+        "configured_plan_name": "Committed-200",
+        "configured_commitment_gpu_hours": 200,
+        "invoice_preview_usd": 14750,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 12,
+        "pricing_notes": [
+          "Invoice preview includes 212 GPU-hours of billable usage.",
+          "No pricing config drift detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 186,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Compute path is healthy, but the meter ingestion pipeline is delayed by several hours.",
+        "meter_ingestion_status": "lagging",
+        "anomalies": [
+          "Usage dashboard currently trails internal billable meter by approximately 26 GPU-hours."
+        ]
+      },
+      "incident_record": {
+        "incident_id": null,
+        "status": "no_known_incident",
+        "service": "billing-meter-pipeline",
+        "duration_minutes": null,
+        "customer_visible": false,
+        "customer_impact_summary": null,
+        "engineering_summary": "Compute services are healthy; only the meter ingestion pipeline is lagging.",
+        "covered_by_sla": false,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "The usage dashboard does not match our invoice preview and we cannot reconcile the difference.",
+      "policy_snippet": "If usage evidence is incomplete or delayed, hold invoicing changes for finance review and correct the final invoice if needed.",
+      "calculator_output": "Invoice preview reflects 212 GPU-hours. Dashboard currently shows 186 GPU-hours because ingestion is lagging.",
+      "visible_case_summary": "Operationally healthy service with a metering visibility gap."
+    },
+    "ground_truth": {
+      "issue_type": "metering_discrepancy",
+      "root_cause": "usage_metering_error",
+      "customer_impact": "usage_visibility_gap",
+      "contractual_applicability": "invoice_adjustment_due",
+      "discrepancy_detected": true,
+      "recommended_owner": "shared_revops_finance",
+      "recommended_action": "hold_for_finance_review",
+      "needs_human_review": true,
+      "confidence": "medium",
+      "adjudication_notes": [
+        "The customer-facing problem is visibility and invoice reconciliation, not service downtime.",
+        "Finance review is needed because the invoice may need adjustment after meter catch-up."
+      ],
+      "reference_customer_note": "We found a lag in the usage meter pipeline, which is why the dashboard and invoice preview do not line up right now. We are holding this for finance review and will correct the final invoice if the adjustment is confirmed.",
+      "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because metering is lagging, compute path is healthy, discrepancy_detected is true, and invoice adjustment may be due."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "customer_claims_platform_failure"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Customer attributes a job failure to the platform, but engineering evidence shows an invalid checkpoint format provided by the customer.",
+      "generator_family": "customer_caused_failure",
+      "latent_facts": [
+        "The failure occurred during model load, not cluster scheduling.",
+        "The contract excludes customer-caused failures from SLA remedies."
+      ],
+      "likely_failure_modes": [
+        "The model over-indexes on the customer complaint and marks it as platform outage.",
+        "The model misses the customer-caused exclusion."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_005",
+      "title": "Job failure traced to invalid checkpoint format",
+      "crm_record": {
+        "account_id": "acct_005",
+        "account_name": "Helix Models",
+        "account_tier": "standard",
+        "plan_name": "OnDemand",
+        "contracted_commitment_gpu_hours": null,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "standard-covered-service",
+        "renewal_date": null,
+        "notes": [
+          "Self-serve customer on standard terms."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_005",
+        "configured_plan_name": "OnDemand",
+        "configured_commitment_gpu_hours": null,
+        "invoice_preview_usd": 980,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": null,
+        "pricing_notes": [
+          "No billing anomalies present."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 14,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Cluster availability remained healthy while the job failed during checkpoint validation.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": {
+        "incident_id": null,
+        "status": "no_known_incident",
+        "service": "job-runtime",
+        "duration_minutes": null,
+        "customer_visible": false,
+        "customer_impact_summary": null,
+        "engineering_summary": "Job failed because the uploaded checkpoint format was invalid and could not be parsed by the runtime.",
+        "covered_by_sla": false,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "The platform failed our training run again and we think this should be treated as a service issue.",
+      "policy_snippet": "Failures caused by invalid customer inputs, artifacts, or configuration are excluded from SLA service credits.",
+      "calculator_output": null,
+      "visible_case_summary": "Customer claims platform failure, but engineering note points to invalid customer artifacts."
+    },
+    "ground_truth": {
+      "issue_type": "customer_caused_issue",
+      "root_cause": "customer_misconfiguration",
+      "customer_impact": "job_failure",
+      "contractual_applicability": "sla_excluded_customer_caused",
+      "discrepancy_detected": false,
+      "recommended_owner": "engineering_owner",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "The operational evidence clearly attributes the issue to customer input quality, not a platform incident."
+      ],
+      "reference_customer_note": "We reviewed the runtime logs and found the failure was caused by an invalid checkpoint format rather than a platform outage. Because the issue was customer-caused, it does not qualify for SLA credits, but we can share the validation details to help you rerun successfully.",
+      "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because root cause is customer_misconfiguration and the contract excludes customer-caused failures."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "commercial_sensitivity",
+        "subthreshold_incident"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "The customer experienced degraded performance for only 18 minutes, which is below the SLA threshold, but the account is enterprise, renewal is close, and there have been prior incidents.",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "latent_facts": [
+        "This is not a clean SLA breach.",
+        "Commercial sensitivity should push the case into goodwill review.",
+        "Human review is appropriate because renewal is imminent."
+      ],
+      "likely_failure_modes": [
+        "The model returns no action required and ignores account context.",
+        "The model incorrectly marks this as an SLA breach due to customer frustration."
+      ],
+      "commercial_context": {
+        "strategic_account": true,
+        "renewal_days": 8,
+        "prior_incidents_30d": 3
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_006",
+      "title": "Sub-threshold degradation on a renewal-sensitive account",
+      "crm_record": {
+        "account_id": "acct_006",
+        "account_name": "Pioneer Robotics",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-500",
+        "contracted_commitment_gpu_hours": 500,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "premium-covered-service",
+        "renewal_date": "2026-04-13",
+        "notes": [
+          "Renewal call scheduled within 8 days.",
+          "Prior reliability concerns were raised twice this month."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_006",
+        "configured_plan_name": "Committed-500",
+        "configured_commitment_gpu_hours": 500,
+        "invoice_preview_usd": 42100,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "Account is in active renewal cycle."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 472,
+        "covered_service_minutes_unavailable": 18,
+        "telemetry_summary": "Training jobs started slowly for 18 minutes during regional saturation, then performance normalized.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Queue latency spiked above normal during the impacted window."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0324",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 18,
+        "customer_visible": true,
+        "customer_impact_summary": "Jobs started slowly and some retries were needed for 18 minutes.",
+        "engineering_summary": "Regional capacity shortfall caused temporary degraded performance but not a sustained outage.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "We saw slow starts and instability again. This is especially hard given we are finalizing renewal next week.",
+      "policy_snippet": "Service credits apply only to covered outages longer than 30 minutes. Account teams may consider goodwill for strategic renewals or repeated minor incidents.",
+      "calculator_output": "Incident duration 18 minutes. SLA threshold for credit not met.",
+      "visible_case_summary": "Commercially sensitive but contractually sub-threshold degradation."
+    },
+    "ground_truth": {
+      "issue_type": "incident_impact_review",
+      "root_cause": "capacity_shortfall",
+      "customer_impact": "degraded_performance",
+      "contractual_applicability": "goodwill_credit_optional",
+      "discrepancy_detected": false,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "consider_goodwill_credit",
+      "needs_human_review": true,
+      "confidence": "medium",
+      "adjudication_notes": [
+        "There is no SLA breach, but the account context makes commercial review appropriate."
+      ],
+      "reference_customer_note": "We confirmed a short period of degraded performance that does not meet the SLA credit threshold. Because your account is in an active renewal window, we are reviewing the case internally to determine whether a goodwill gesture is appropriate.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: consider_goodwill_credit due to capacity_shortfall, degraded_performance, renewal in 8 days, and repeated prior incidents."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "mixed_evidence",
+        "ambiguous_policy",
+        "billing_signal_noise"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Status evidence points to degraded performance, engineering suspects capacity pressure, billing preview shows unexpected overage, and the policy snippet is not decisive.",
+      "generator_family": "ambiguous_case",
+      "latent_facts": [
+        "There may be both operational and commercial issues, but the available evidence is incomplete.",
+        "The case should stay bounded and route to human review."
+      ],
+      "likely_failure_modes": [
+        "The model overcommits to a single root cause with high confidence.",
+        "The model mentions a service credit even though the policy is ambiguous."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": 1
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_007",
+      "title": "Mixed operational and billing signals with ambiguous policy",
+      "crm_record": {
+        "account_id": "acct_007",
+        "account_name": "Atlas Reasoning",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-100",
+        "contracted_commitment_gpu_hours": 100,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-11-30",
+        "notes": [
+          "Customer reports occasional stalls but also asks about overage."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_007",
+        "configured_plan_name": "Committed-100",
+        "configured_commitment_gpu_hours": 100,
+        "invoice_preview_usd": 10120,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 19,
+        "pricing_notes": [
+          "Invoice preview includes overage above commitment.",
+          "No billing config mismatch detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 119,
+        "covered_service_minutes_unavailable": 12,
+        "telemetry_summary": "Status page reported degraded performance while customer jobs appeared stalled intermittently.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Queue depth elevated during the same period as customer complaints."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0318",
+        "status": "identified",
+        "service": "managed-training-api",
+        "duration_minutes": 12,
+        "customer_visible": true,
+        "customer_impact_summary": "Some runs stalled and throughput dropped.",
+        "engineering_summary": "Possible capacity pressure observed, but scheduler logs were inconclusive.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "The run stalled during the service degradation and now the preview also shows overage we did not expect. Please explain what happened.",
+      "policy_snippet": "Commercial review should consider final incident classification, covered duration, and any confirmed billing discrepancies before applying remedies.",
+      "calculator_output": "Invoice preview reflects 19 burst GPU-hours. No explicit credit rule triggered from calculator output.",
+      "visible_case_summary": "Customer complaint spans degraded service symptoms and unexpected overage."
+    },
+    "ground_truth": {
+      "issue_type": "ambiguous_case",
+      "root_cause": "unknown_root_cause",
+      "customer_impact": "degraded_performance",
+      "contractual_applicability": "no_sla_breach",
+      "discrepancy_detected": true,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "hold_for_engineering_review",
+      "needs_human_review": true,
+      "confidence": "low",
+      "adjudication_notes": [
+        "The evidence is mixed enough that the model should stay conservative.",
+        "A discrepancy exists because billing surprise and operational symptoms co-occur without a resolved explanation."
+      ],
+      "reference_customer_note": "We found mixed evidence across the incident and billing records, so we are routing this for engineering review before giving you a final commercial answer. We will follow up once the incident classification and overage context are confirmed.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: hold_for_engineering_review because root cause is still unknown, confidence is low, degraded service symptoms are present, and the customer also flagged unexpected overage."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "burst_usage",
+        "cost_spike"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Customer exceeded their commitment and was billed burst pricing without any operational incident.",
+      "generator_family": "policy_applicability_review",
+      "latent_facts": [
+        "This is ordinary contract behavior, not a service problem.",
+        "The right resolution is explanatory rather than corrective."
+      ],
+      "likely_failure_modes": [
+        "The model hallucinates a pricing mistake because the customer reports a spike.",
+        "The model incorrectly escalates to finance review."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_008",
+      "title": "Burst pricing surprises the customer after normal overage",
+      "crm_record": {
+        "account_id": "acct_008",
+        "account_name": "Signal Forge",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-100",
+        "contracted_commitment_gpu_hours": 100,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-12-18",
+        "notes": [
+          "Commitment includes burst pricing for usage above 100 GPU-hours."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_008",
+        "configured_plan_name": "Committed-100",
+        "configured_commitment_gpu_hours": 100,
+        "invoice_preview_usd": 9380,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 45,
+        "pricing_notes": [
+          "Burst rate applied to 45 GPU-hours above commitment."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 145,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Usage is consistent with the overage billed; service health was normal.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": null,
+      "customer_note": "We had a cost spike this month and want to understand why the invoice jumped so much.",
+      "policy_snippet": "Usage above commitment is billed at the burst rate defined in the order form. Burst usage is not an SLA matter.",
+      "calculator_output": "Committed usage: 100 GPU-hours. Burst usage: 45 GPU-hours at burst rate.",
+      "visible_case_summary": "Normal overage billed at burst rate with no incident."
+    },
+    "ground_truth": {
+      "issue_type": "policy_applicability_review",
+      "root_cause": "unknown_root_cause",
+      "customer_impact": "invoice_confusion",
+      "contractual_applicability": "not_an_sla_case",
+      "discrepancy_detected": false,
+      "recommended_owner": "revops_owner",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "Burst pricing is behaving as contracted, so the response is explanatory."
+      ],
+      "reference_customer_note": "Your invoice increased because usage exceeded the 100 GPU-hour commitment and the additional 45 GPU-hours were billed at the burst rate defined in your plan. There is no service incident or billing discrepancy in this case.",
+      "reference_internal_note": "Owner: revops_owner. Action: send_explanation_only because the overage is normal burst pricing, discrepancy_detected is false, and this is not an SLA case."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "prepaid_credits",
+        "lower_invoice_than_expected"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Customer expected a higher invoice, but prepaid rollover credits reduced the billed amount.",
+      "generator_family": "policy_applicability_review",
+      "latent_facts": [
+        "Invoice is lower because stored credits were consumed automatically.",
+        "No incident or billing error occurred."
+      ],
+      "likely_failure_modes": [
+        "The model interprets the lower invoice as a pricing or metering bug.",
+        "The model misses that this is a simple contract explanation case."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_009",
+      "title": "Lower invoice explained by rollover credits",
+      "crm_record": {
+        "account_id": "acct_009",
+        "account_name": "Mariner Research",
+        "account_tier": "enterprise",
+        "plan_name": "Prepaid-Quarterly",
+        "contracted_commitment_gpu_hours": 120,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-06-30",
+        "notes": [
+          "Unused prepaid credits roll forward within the active term."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_009",
+        "configured_plan_name": "Prepaid-Quarterly",
+        "configured_commitment_gpu_hours": 120,
+        "invoice_preview_usd": 2100,
+        "credits_applied_usd": 1650,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "Rollover credit balance applied before new charges."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 73,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Usage is lower than the committed quarterly average and there were no service anomalies.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": null,
+      "customer_note": "Our invoice came in lower than we expected and we want to understand what offset the charges.",
+      "policy_snippet": "Unused prepaid credits may roll forward within the active term and are automatically consumed before new invoice charges are applied.",
+      "calculator_output": "Available rollover credits applied: 1650 USD.",
+      "visible_case_summary": "Low invoice caused by prepaid credit rollover, not an operational or pricing defect."
+    },
+    "ground_truth": {
+      "issue_type": "policy_applicability_review",
+      "root_cause": "unknown_root_cause",
+      "customer_impact": "invoice_confusion",
+      "contractual_applicability": "not_an_sla_case",
+      "discrepancy_detected": false,
+      "recommended_owner": "revops_owner",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "The invoice is lower for an expected commercial reason and does not need correction."
+      ],
+      "reference_customer_note": "Your invoice was reduced because rollover prepaid credits from the current term were automatically applied before new charges. We do not see a billing discrepancy or service issue in this case.",
+      "reference_internal_note": "Owner: revops_owner. Action: send_explanation_only because rollover credits explain the low invoice and there is no discrepancy."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "repeat_minor_incidents",
+        "renewal_risk"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "No single incident breached SLA thresholds, but several short degradations hit a strategic account shortly before renewal.",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "latent_facts": [
+        "This should not be treated as a formal SLA breach.",
+        "Repeated reliability pain plus renewal timing makes goodwill review reasonable."
+      ],
+      "likely_failure_modes": [
+        "The model collapses repeated degradations into no_action_required.",
+        "The model incorrectly promises service credit."
+      ],
+      "commercial_context": {
+        "strategic_account": true,
+        "renewal_days": 5,
+        "prior_incidents_30d": 4
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_010",
+      "title": "Strategic account sees repeated short degradations",
+      "crm_record": {
+        "account_id": "acct_010",
+        "account_name": "Nimbus Health AI",
+        "account_tier": "strategic",
+        "plan_name": "Committed-900",
+        "contracted_commitment_gpu_hours": 900,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "premium-covered-service",
+        "renewal_date": "2026-04-10",
+        "notes": [
+          "Strategic renewal closes this week.",
+          "Customer has raised reliability concerns multiple times this month."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_010",
+        "configured_plan_name": "Committed-900",
+        "configured_commitment_gpu_hours": 900,
+        "invoice_preview_usd": 76500,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No invoice anomaly; commercial sensitivity is relationship-driven."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 886,
+        "covered_service_minutes_unavailable": 24,
+        "telemetry_summary": "Three short degradations caused slower job start times and retries across the month, but no single event exceeded 10 minutes.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Job queue latency spiked during three separate windows."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_bundle_03",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 9,
+        "customer_visible": true,
+        "customer_impact_summary": "Jobs started slowly during multiple short windows.",
+        "engineering_summary": "Repeated regional capacity shortfalls caused minor degradations but no single breach event.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "None of the incidents were huge on their own, but the repeated instability is hurting trust as we finalize renewal.",
+      "policy_snippet": "Repeated short degradations that do not trigger a formal SLA breach may still be escalated for account-level goodwill review.",
+      "calculator_output": "No individual outage crossed the SLA threshold for an automatic credit.",
+      "visible_case_summary": "Relationship-sensitive incident review driven by repeated low-grade reliability issues."
+    },
+    "ground_truth": {
+      "issue_type": "incident_impact_review",
+      "root_cause": "capacity_shortfall",
+      "customer_impact": "degraded_performance",
+      "contractual_applicability": "goodwill_credit_optional",
+      "discrepancy_detected": false,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "hold_for_engineering_review",
+      "needs_human_review": true,
+      "confidence": "medium",
+      "adjudication_notes": [
+        "This is a review-needed case because repeated pain and renewal timing matter even without a formal breach."
+      ],
+      "reference_customer_note": "We confirmed repeated short periods of degraded performance this month. While no single incident triggered an automatic SLA credit, we are reviewing the pattern internally with the account team before we respond with next steps.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: hold_for_engineering_review due to repeated capacity_shortfall-driven degradations, strategic account context, and renewal in 5 days."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "mixed_evidence",
+        "billing_led_ambiguity",
+        "finance_review"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Invoice confusion is the clearest customer-facing problem, while a brief operational note adds noise without resolving whether a commercial adjustment is due.",
+      "generator_family": "ambiguous_case",
+      "latent_facts": [
+        "The customer is primarily asking about an unexpected invoice preview.",
+        "A short degradation note exists, but it is too weak to support an SLA remedy.",
+        "The case should route to finance review without overcommitting to a root cause."
+      ],
+      "likely_failure_modes": [
+        "The model over-indexes on the incident note and treats this as an outage review.",
+        "The model assumes an invoice adjustment is definitely due instead of preserving uncertainty."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": 41,
+        "prior_incidents_30d": 1
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_011",
+      "title": "Invoice preview mismatch with weak operational noise",
+      "crm_record": {
+        "account_id": "acct_011",
+        "account_name": "Signal Harbor",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-180",
+        "contracted_commitment_gpu_hours": 180,
+        "billing_owner": "finance@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-05-16",
+        "notes": [
+          "Customer is focused on an invoice preview that looks materially higher than expected.",
+          "No prior pricing-config mismatch on record."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_011",
+        "configured_plan_name": "Committed-180",
+        "configured_commitment_gpu_hours": 180,
+        "invoice_preview_usd": 15480,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 18,
+        "pricing_notes": [
+          "Invoice preview shows burst usage above commitment.",
+          "Dashboard explanation for the burst line items is incomplete."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 198,
+        "covered_service_minutes_unavailable": 8,
+        "telemetry_summary": "A short degraded-performance notice overlapped with the billing complaint, but usage stayed largely stable.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Customer-facing invoice explanation did not reconcile to burst line items."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0325",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 8,
+        "customer_visible": true,
+        "customer_impact_summary": "Brief slowdown reported, but customer mainly complained about billing.",
+        "engineering_summary": "Minor capacity pressure was observed but resolved quickly and did not cross breach thresholds.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "The invoice preview is much higher than we expected, and we also noticed a brief slowdown earlier that day. Please explain whether either of these changed what we owe.",
+      "policy_snippet": "Commercial review should confirm whether pricing explanation gaps reflect a true discrepancy before applying invoice adjustments. Short degradations below SLA thresholds do not automatically trigger credits.",
+      "calculator_output": "Burst usage detected, but current calculator output does not determine whether the preview discrepancy reflects billable overage or explanation gap.",
+      "visible_case_summary": "Billing confusion is primary, but a short incident note introduces irrelevant operational noise."
+    },
+    "ground_truth": {
+      "issue_type": "ambiguous_case",
+      "root_cause": "unknown_root_cause",
+      "customer_impact": "invoice_confusion",
+      "contractual_applicability": "not_an_sla_case",
+      "discrepancy_detected": true,
+      "recommended_owner": "shared_revops_finance",
+      "recommended_action": "hold_for_finance_review",
+      "needs_human_review": true,
+      "confidence": "low",
+      "adjudication_notes": [
+        "The billing signal is stronger than the operational signal, but the packet does not justify a final invoice adjustment decision.",
+        "The short degradation should not dominate routing."
+      ],
+      "reference_customer_note": "We found an unresolved mismatch between the invoice preview and the explanation available in the current billing records, so we are routing this for finance review before giving you a final answer. At this stage, we are not treating it as an SLA credit case.",
+      "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because the strongest unresolved signal is invoice_confusion, root cause is still unknown, and the brief operational note does not support a breach finding."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "customer_claims_platform_failure",
+        "retry_storm",
+        "review_needed"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "Healthy platform telemetry and repeated retry behavior point to customer configuration, but engineering still wants one final validation pass before closing the case.",
+      "generator_family": "customer_caused_failure",
+      "latent_facts": [
+        "The retries were triggered by invalid customer-supplied configuration rather than service unavailability.",
+        "The contract excludes customer-caused failures from SLA remedies.",
+        "Engineering attribution is strong but not final yet."
+      ],
+      "likely_failure_modes": [
+        "The model treats repeated retries as a platform retry storm.",
+        "The model closes the case too confidently instead of preserving the requested engineering review."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": null
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_012",
+      "title": "Repeated retries from invalid customer config still under final validation",
+      "crm_record": {
+        "account_id": "acct_012",
+        "account_name": "Pine Harbor ML",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-120",
+        "contracted_commitment_gpu_hours": 120,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "standard-covered-service",
+        "renewal_date": null,
+        "notes": [
+          "Customer insists the repeated retries reflect platform instability."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_012",
+        "configured_plan_name": "Committed-120",
+        "configured_commitment_gpu_hours": 120,
+        "invoice_preview_usd": 4120,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No billing anomaly detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 23,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Cluster availability remained healthy while repeated validation failures triggered customer-visible retries.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Retry loop repeated after invalid runtime configuration was resubmitted."
+        ]
+      },
+      "incident_record": {
+        "incident_id": null,
+        "status": "no_known_incident",
+        "service": "job-runtime",
+        "duration_minutes": null,
+        "customer_visible": false,
+        "customer_impact_summary": "Jobs repeatedly retried after failing validation.",
+        "engineering_summary": "Primary logs point to an invalid customer config manifest that triggered repeated retries, but engineering wants one final validation pass before closing the case.",
+        "covered_by_sla": false,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "The platform kept retrying our workload and burning time. We think this should be treated as a service issue unless you can prove otherwise.",
+      "policy_snippet": "Failures caused by invalid customer inputs, artifacts, or configuration are excluded from SLA service credits.",
+      "calculator_output": null,
+      "visible_case_summary": "Retry storm complaint with healthy telemetry and strong but not final customer-attribution evidence."
+    },
+    "ground_truth": {
+      "issue_type": "customer_caused_issue",
+      "root_cause": "customer_misconfiguration",
+      "customer_impact": "retry_storm",
+      "contractual_applicability": "sla_excluded_customer_caused",
+      "discrepancy_detected": false,
+      "recommended_owner": "engineering_owner",
+      "recommended_action": "hold_for_engineering_review",
+      "needs_human_review": true,
+      "confidence": "medium",
+      "adjudication_notes": [
+        "This is still a customer-caused case, but the response should preserve the requested final engineering validation step."
+      ],
+      "reference_customer_note": "We found strong evidence that the repeated retries were caused by a customer-supplied configuration issue rather than a platform outage, but engineering is doing one final validation pass before we send a final resolution. Based on the current evidence, this would not qualify for SLA credits because customer-caused failures are excluded.",
+      "reference_internal_note": "Owner: engineering_owner. Action: hold_for_engineering_review because current evidence points to customer_misconfiguration, customer impact is retry_storm, and engineering requested one final validation pass before closure."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "maintenance_exclusion",
+        "delayed_start",
+        "strategic_account"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "A strategic account saw delayed job starts during planned maintenance, and the exclusion is clear, but the communication path still needs review before a final response is sent.",
+      "generator_family": "maintenance_exclusion",
+      "latent_facts": [
+        "The delay occurred during scheduled maintenance announced ahead of time.",
+        "Scheduled maintenance remains excluded from SLA remedies.",
+        "The customer communication path needs review because the account is strategically sensitive."
+      ],
+      "likely_failure_modes": [
+        "The model treats the delayed starts as a covered performance incident.",
+        "The model ignores the need for shared review on a communication-sensitive exclusion case."
+      ],
+      "commercial_context": {
+        "strategic_account": true,
+        "renewal_days": 19,
+        "prior_incidents_30d": 1
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_013",
+      "title": "Strategic account delayed during planned maintenance",
+      "crm_record": {
+        "account_id": "acct_013",
+        "account_name": "Northline Systems",
+        "account_tier": "strategic",
+        "plan_name": "Committed-240",
+        "contracted_commitment_gpu_hours": 240,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "premium-covered-service",
+        "renewal_date": "2026-04-24",
+        "notes": [
+          "Customer disputes whether the maintenance communication was clear enough for their overnight runs.",
+          "Strategic renewal review is active."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_013",
+        "configured_plan_name": "Committed-240",
+        "configured_commitment_gpu_hours": 240,
+        "invoice_preview_usd": 19240,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No billing variance detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 229,
+        "covered_service_minutes_unavailable": 36,
+        "telemetry_summary": "New job submissions were delayed during the planned maintenance window and resumed after maintenance completed.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      },
+      "incident_record": {
+        "incident_id": "maint_2026_0327",
+        "status": "planned_maintenance",
+        "service": "batch-inference-api",
+        "duration_minutes": 36,
+        "customer_visible": true,
+        "customer_impact_summary": "New submissions started late during planned maintenance.",
+        "engineering_summary": "Planned control-plane maintenance delayed new job starts but did not reflect an unplanned service failure.",
+        "covered_by_sla": false,
+        "scheduled_maintenance": true
+      },
+      "customer_note": "Our jobs started late during the maintenance window, and because this account is in active renewal review we need to know whether credits apply and whether the notice was handled correctly.",
+      "policy_snippet": "Scheduled maintenance windows announced in advance are excluded from SLA service credits. Communication quality may still be reviewed separately for strategic accounts.",
+      "calculator_output": "Maintenance exclusion applies. No automatic credit triggered.",
+      "visible_case_summary": "Planned-maintenance exclusion is clear, but the strategic account context still requires review."
+    },
+    "ground_truth": {
+      "issue_type": "policy_applicability_review",
+      "root_cause": "scheduled_maintenance",
+      "customer_impact": "delayed_job_start",
+      "contractual_applicability": "sla_excluded_scheduled_maintenance",
+      "discrepancy_detected": false,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "hold_for_engineering_review",
+      "needs_human_review": true,
+      "confidence": "medium",
+      "adjudication_notes": [
+        "The contractual result is still an exclusion, but the customer communication path should be reviewed because the account is strategically sensitive."
+      ],
+      "reference_customer_note": "The delayed job starts occurred during a planned maintenance window that is excluded from SLA credits under your contract, so no service credit applies. We are reviewing the maintenance communication details before sending the final response and can share the maintenance timing once that review is complete.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: hold_for_engineering_review because the scheduled maintenance exclusion is clear, but the strategic account context and communication dispute still require review."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "covered_delay",
+        "scheduler_failure",
+        "flat_credit_policy"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "A scheduler control-plane failure delayed job starts for more than the covered threshold, and the policy explicitly grants a flat credit for that condition.",
+      "generator_family": "clean_covered_outage",
+      "latent_facts": [
+        "The affected service is covered by contract.",
+        "The scheduler failure delayed job starts for longer than the credit threshold.",
+        "The case should resolve cleanly without extra human review."
+      ],
+      "likely_failure_modes": [
+        "The model assumes a delay cannot qualify for credit because it is not a full outage.",
+        "The model routes to manual review despite explicit calculator and policy support."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": 0
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_014",
+      "title": "Scheduler failure delays starts beyond covered threshold",
+      "crm_record": {
+        "account_id": "acct_014",
+        "account_name": "Quill Compute",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-300",
+        "contracted_commitment_gpu_hours": 300,
+        "billing_owner": "finance@prime.example",
+        "sla_tier": "premium-covered-service",
+        "renewal_date": "2026-08-15",
+        "notes": [
+          "Premium addendum includes flat credit for covered control-plane delays over 30 minutes."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_014",
+        "configured_plan_name": "Committed-300",
+        "configured_commitment_gpu_hours": 300,
+        "invoice_preview_usd": 24010,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No pricing anomaly detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 291,
+        "covered_service_minutes_unavailable": 37,
+        "telemetry_summary": "Job execution capacity remained available, but new starts were delayed for 37 minutes by control-plane scheduler failures.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Scheduler backlog prevented new job starts while existing jobs continued."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0316_sched",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 37,
+        "customer_visible": true,
+        "customer_impact_summary": "New training jobs could not start for 37 minutes.",
+        "engineering_summary": "A scheduler failure in the control plane blocked new job admissions until the scheduler quorum was restored.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "Our jobs did not start for over half an hour even though existing jobs kept running. Please confirm what applies commercially.",
+      "policy_snippet": "Covered control-plane delays longer than 30 minutes on the managed training service receive the same flat service credit as covered outages.",
+      "calculator_output": "Covered control-plane delay duration: 37 minutes. Flat credit threshold met.",
+      "visible_case_summary": "Clean scheduler failure with explicit credit support despite delay rather than full outage."
+    },
+    "ground_truth": {
+      "issue_type": "incident_impact_review",
+      "root_cause": "scheduler_failure",
+      "customer_impact": "delayed_job_start",
+      "contractual_applicability": "credit_due",
+      "discrepancy_detected": false,
+      "recommended_owner": "shared_revops_engineering",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "This is a clean covered incident where delayed starts are contractually covered once they cross the threshold."
+      ],
+      "reference_customer_note": "We confirmed a covered 37-minute control-plane delay on the managed training service, which qualifies for the contract’s flat service credit. We will communicate the credit application and the scheduler incident summary.",
+      "reference_internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because incident evidence is clean, root cause is scheduler_failure, customer impact is delayed_job_start, and contractual outcome is credit_due."
+    }
+  },
+  {
+    "metadata": {
+      "benchmark_version": "v1",
+      "authoring_style": "handwritten",
+      "created_at": "2026-04-05",
+      "adversarial_tags": [
+        "short_incident",
+        "no_credit_due",
+        "job_failure"
+      ]
+    },
+    "hidden_state": {
+      "scenario_summary": "A short GPU node failure caused customer-visible job failures, but the incident stayed below contract thresholds and does not warrant a credit or goodwill path.",
+      "generator_family": "clean_covered_outage",
+      "latent_facts": [
+        "The incident is real and customer-visible.",
+        "The duration and policy path do not support a credit.",
+        "The account context does not make goodwill review necessary."
+      ],
+      "likely_failure_modes": [
+        "The model sees customer-visible failures and incorrectly awards a credit.",
+        "The model escalates to goodwill review even though there is no commercial sensitivity signal."
+      ],
+      "commercial_context": {
+        "strategic_account": false,
+        "renewal_days": null,
+        "prior_incidents_30d": 0
+      }
+    },
+    "case_packet": {
+      "case_id": "gold_case_015",
+      "title": "Short GPU node failure does not trigger credit",
+      "crm_record": {
+        "account_id": "acct_015",
+        "account_name": "Argent Models",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-220",
+        "contracted_commitment_gpu_hours": 220,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "standard-covered-service",
+        "renewal_date": "2026-12-10",
+        "notes": [
+          "Standard enterprise terms without special goodwill commitments."
+        ]
+      },
+      "billing_record": {
+        "billing_account_id": "bill_015",
+        "configured_plan_name": "Committed-220",
+        "configured_commitment_gpu_hours": 220,
+        "invoice_preview_usd": 17690,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "No billing anomaly detected."
+        ]
+      },
+      "usage_record": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 214,
+        "covered_service_minutes_unavailable": 11,
+        "telemetry_summary": "A single GPU node failure caused several jobs to fail, but the incident resolved within 11 minutes.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": [
+          "Jobs pinned to one GPU pool failed and were rescheduled after node replacement."
+        ]
+      },
+      "incident_record": {
+        "incident_id": "inc_2026_0322_gpu",
+        "status": "resolved",
+        "service": "managed-training-api",
+        "duration_minutes": 11,
+        "customer_visible": true,
+        "customer_impact_summary": "A subset of jobs failed during an 11-minute node incident.",
+        "engineering_summary": "A GPU node failure in one pool caused temporary job failures until workloads were rescheduled.",
+        "covered_by_sla": true,
+        "scheduled_maintenance": false
+      },
+      "customer_note": "Several jobs failed during a brief platform incident. Please confirm whether anything applies commercially.",
+      "policy_snippet": "Covered service credits apply only when customer-visible outages or covered delays exceed 30 minutes, or when monthly uptime thresholds are breached.",
+      "calculator_output": "Incident duration: 11 minutes. No automatic credit threshold met.",
+      "visible_case_summary": "Real customer-visible incident with job failures, but no credit is due under standard thresholds."
+    },
+    "ground_truth": {
+      "issue_type": "incident_impact_review",
+      "root_cause": "gpu_node_failure",
+      "customer_impact": "job_failure",
+      "contractual_applicability": "no_credit_due",
+      "discrepancy_detected": false,
+      "recommended_owner": "engineering_owner",
+      "recommended_action": "send_explanation_only",
+      "needs_human_review": false,
+      "confidence": "high",
+      "adjudication_notes": [
+        "The incident is cleanly attributable, but commercial relief is not triggered because duration stayed below threshold and no special account context is present."
+      ],
+      "reference_customer_note": "We confirmed a brief platform incident caused the job failures, but the event stayed below the contract’s service-credit threshold, so no credit is due. We can share the incident summary and remediation details.",
+      "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because root cause is gpu_node_failure, customer impact is job_failure, and contractual outcome is no_credit_due."
+    }
+  }
+]

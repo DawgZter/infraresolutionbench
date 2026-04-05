@@ -1,19 +1,29 @@
+import { existsSync } from "node:fs";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { loadGoldCases } from "@infraresolutionbench/data";
 import type {
   AdapterRequest,
   AdapterResponse,
   ArtifactBundle,
   EpisodeArtifactBundle,
 } from "@infraresolutionbench/environment";
-import type { GoldCase } from "@infraresolutionbench/shared";
+import { GoldCaseSchema, type GoldCase } from "@infraresolutionbench/shared";
+import goldCasesSnapshotRaw from "./gold-cases.snapshot.json";
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDirectory = path.dirname(currentFilePath);
-const repoRoot = path.resolve(currentDirectory, "../../..");
+const repoRootCandidates = [
+  process.cwd(),
+  path.resolve(currentDirectory, "../../.."),
+  path.resolve(currentDirectory, "../../../.."),
+  path.resolve(currentDirectory, "../../../../.."),
+];
+const repoRoot =
+  repoRootCandidates.find((candidate) =>
+    existsSync(path.join(candidate, "packages/data/gold_cases")),
+  ) ?? path.resolve(currentDirectory, "../../..");
 
 const localRunsDirectory = path.join(repoRoot, "artifacts/local-runs");
 const localRunSummariesDirectory = path.join(repoRoot, "artifacts/local-runs/summaries");
@@ -24,6 +34,7 @@ const primeResponsesDirectory = path.join(repoRoot, "artifacts/prime-responses")
 const generatedCasesDirectory = path.join(repoRoot, "packages/data/generated_cases");
 const modelSweepDirectory = path.join(repoRoot, "artifacts/model-sweeps");
 const finalRoundupPath = path.join(modelSweepDirectory, "final-roundup-2026-04-05.json");
+const goldCasesSnapshot = GoldCaseSchema.array().parse(goldCasesSnapshotRaw);
 
 export type LeaderboardRow = {
   modelName: string;
@@ -272,6 +283,10 @@ function average(values: number[]): number {
     : values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
+async function loadGoldCasesFromRepo(): Promise<GoldCase[]> {
+  return goldCasesSnapshot;
+}
+
 async function countSyntheticCases(): Promise<number> {
   const families = await readdir(generatedCasesDirectory, { withFileTypes: true }).catch(() => []);
   let total = 0;
@@ -385,7 +400,7 @@ export async function loadOverviewData() {
     modelSweepSummaryCount,
     latestModelSweepSummary,
   ] = await Promise.all([
-    loadGoldCases(),
+    loadGoldCasesFromRepo(),
     loadArtifacts(),
     countSyntheticCases(),
     countSyntheticFamilies(),
@@ -420,7 +435,7 @@ export async function loadOverviewData() {
 
 export async function loadCaseExplorerData(selectedCaseId?: string) {
   const [goldCases, artifacts, primeRequests, primeResponses] = await Promise.all([
-    loadGoldCases(),
+    loadGoldCasesFromRepo(),
     loadArtifacts(),
     loadPrimeRequests(),
     loadPrimeResponses(),

@@ -124,7 +124,9 @@ export default async function HomePage() {
         </div>
         <div className="ml-2">
           <p className="stat-value">
-            {data.hostedLeaderboardRows.filter((r) => r.overallScore !== null)
+            {data.hostedLeaderboardRows.filter(
+              (r: (typeof data.hostedLeaderboardRows)[number]) => r.overallScore !== null,
+            )
               .length}
           </p>
           <p className="stat-label">Models Ranked</p>
@@ -329,7 +331,7 @@ export default async function HomePage() {
             </div>
             <p className="text-sm text-[var(--color-text-secondary)]">
               {data.hostedLeaderboardRows.filter(
-                (r) => r.overallScore !== null,
+                (r: (typeof data.hostedLeaderboardRows)[number]) => r.overallScore !== null,
               ).length}
               + models ranked on hosted Prime evaluations. Current leader:{" "}
               {leaderName} at {topScore}.

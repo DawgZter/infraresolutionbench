@@ -8,6 +8,14 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() || "";
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.resolve(configDirectory, "../.."),
+  outputFileTracingIncludes: {
+    "/cases": [
+      "../../packages/data/gold_cases/**/*.json",
+      "../../artifacts/local-runs/**/*.json",
+      "../../artifacts/prime-requests/**/*.json",
+      "../../artifacts/prime-responses/**/*.json",
+    ],
+  },
   ...(basePath
     ? {
         basePath,
