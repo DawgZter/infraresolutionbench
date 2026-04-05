@@ -36,7 +36,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-4 flex items-center gap-5">
               <a
-                href="https://github.com/placeholder/infra-resolution-bench"
+                href="https://github.com/DawgZter/infraresolutionbench"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text)] transition-colors"
@@ -55,7 +55,7 @@ export default async function HomePage() {
                 View on GitHub
               </a>
               <a
-                href="https://www.primeintellect.ai/"
+                href="https://app.primeintellect.ai/dashboard/environments/kariminal/infraresolutionbench"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text)] transition-colors"

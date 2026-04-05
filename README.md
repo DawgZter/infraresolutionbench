@@ -2,6 +2,10 @@
 
 A [Prime Lab](https://docs.primeintel.ai/) environment and benchmark for evaluating AI agents on commercial operations tasks in AI infrastructure — the kind of work that sits between contracts, compute usage, incidents, billing, and customer communication.
 
+Live frontend: [infraresolutionbench.com](https://infraresolutionbench.com)  
+GitHub: [DawgZter/infraresolutionbench](https://github.com/DawgZter/infraresolutionbench)  
+Prime environment: [`kariminal/infraresolutionbench`](https://app.primeintellect.ai/dashboard/environments/kariminal/infraresolutionbench)
+
 Published on Prime's Environments Hub as [`kariminal/infraresolutionbench`](https://lab.primeintel.ai/).
 
 ## Why this exists
