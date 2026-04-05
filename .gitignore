@@ -10,3 +10,4 @@ artifacts/local-runs/*
 artifacts/screenshots/*
 !artifacts/local-runs/.gitkeep
 !artifacts/screenshots/.gitkeep
+.vercel

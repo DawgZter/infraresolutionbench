@@ -401,7 +401,9 @@ export function LeaderboardView({ rows }: { rows: LeaderboardRow[] }) {
     return ranked
       .filter((r) => r.costEstimate !== null && r.costEstimate > 0)
       .map((r) => {
-        const rawProvider = (r.modelName.includes("/") ? r.modelName.split("/")[0] : r.providerLabel).toLowerCase();
+        const rawProvider = (
+          r.modelName.includes("/") ? (r.modelName.split("/")[0] ?? r.providerLabel) : r.providerLabel
+        ).toLowerCase();
         // Normalize all Prime Intellect variants to a single key
         const provider = rawProvider === "primeintellect" ? "prime-intellect" : rawProvider;
         return {
