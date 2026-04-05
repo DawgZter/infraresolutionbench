@@ -1,0 +1,20 @@
+{
+  "source": "retry subset for remaining-requested-gold-tools-1510.json",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-05T00:00:00.000Z",
+  "target_case_source": "gold",
+  "target_prompt_mode": "tools",
+  "target_num_examples": 15,
+  "target_rollouts_per_example": 10,
+  "target_limit": 15,
+  "selected_prime_models": [
+    { "rank": 5, "model": "arcee-ai/Trinity-Mini", "notes": "Retry failed gold run" },
+    { "rank": 24, "model": "qwen/qwen3-235b-a22b-instruct-2507", "notes": "Retry failed gold run" },
+    { "rank": 25, "model": "qwen/qwen3-235b-a22b-thinking-2507", "notes": "Retry failed gold run" },
+    { "rank": 26, "model": "qwen/qwen3-coder-next", "notes": "Retry failed gold run" },
+    { "rank": 27, "model": "z-ai/glm-5", "notes": "Retry failed gold run" },
+    { "rank": 28, "model": "x-ai/grok-4", "notes": "Retry failed gold run" },
+    { "rank": 29, "model": "x-ai/grok-4.1-fast", "notes": "Retry failed gold run" }
+  ],
+  "selected_openrouter_models": []
+}

@@ -1,0 +1,774 @@
+{
+  "gold_cases": [
+    {
+      "case_id": "gold_case_001",
+      "title": "CRM commitment and billing configuration disagree",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "gold_case_002",
+      "title": "Covered outage exceeds service-credit threshold",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "gold_case_003",
+      "title": "Planned maintenance causes temporary unavailability",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "gold_case_004",
+      "title": "Usage dashboard lags invoice preview",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "gold_case_005",
+      "title": "Job failure traced to invalid checkpoint format",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "gold_case_006",
+      "title": "Sub-threshold degradation on a renewal-sensitive account",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "gold_case_007",
+      "title": "Mixed operational and billing signals with ambiguous policy",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "gold_case_008",
+      "title": "Burst pricing surprises the customer after normal overage",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "gold_case_009",
+      "title": "Lower invoice explained by rollover credits",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "gold_case_010",
+      "title": "Strategic account sees repeated short degradations",
+      "issue_type": "incident_impact_review"
+    }
+  ],
+  "synthetic_cases": [
+    {
+      "case_id": "synthetic_ambiguous_case_001",
+      "title": "Synthetic ambiguous mixed-evidence case 1",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_002",
+      "title": "Synthetic ambiguous mixed-evidence case 2",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_003",
+      "title": "Synthetic ambiguous mixed-evidence case 3",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_004",
+      "title": "Synthetic ambiguous mixed-evidence case 4",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_005",
+      "title": "Synthetic ambiguous mixed-evidence case 5",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_006",
+      "title": "Synthetic ambiguous mixed-evidence case 6",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_007",
+      "title": "Synthetic ambiguous mixed-evidence case 7",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_008",
+      "title": "Synthetic ambiguous mixed-evidence case 8",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_009",
+      "title": "Synthetic ambiguous mixed-evidence case 9",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_010",
+      "title": "Synthetic ambiguous mixed-evidence case 10",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_011",
+      "title": "Synthetic ambiguous mixed-evidence case 11",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_012",
+      "title": "Synthetic ambiguous mixed-evidence case 12",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_013",
+      "title": "Synthetic ambiguous mixed-evidence case 13",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_014",
+      "title": "Synthetic ambiguous mixed-evidence case 14",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_015",
+      "title": "Synthetic ambiguous mixed-evidence case 15",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_016",
+      "title": "Synthetic ambiguous mixed-evidence case 16",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_017",
+      "title": "Synthetic ambiguous mixed-evidence case 17",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_018",
+      "title": "Synthetic ambiguous mixed-evidence case 18",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_019",
+      "title": "Synthetic ambiguous mixed-evidence case 19",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_ambiguous_case_020",
+      "title": "Synthetic ambiguous mixed-evidence case 20",
+      "issue_type": "ambiguous_case"
+    },
+    {
+      "case_id": "synthetic_clean_outage_001",
+      "title": "Synthetic clean covered outage 1",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_002",
+      "title": "Synthetic clean covered outage 2",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_003",
+      "title": "Synthetic clean covered outage 3",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_004",
+      "title": "Synthetic clean covered outage 4",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_005",
+      "title": "Synthetic clean covered outage 5",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_006",
+      "title": "Synthetic clean covered outage 6",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_007",
+      "title": "Synthetic clean covered outage 7",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_008",
+      "title": "Synthetic clean covered outage 8",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_009",
+      "title": "Synthetic clean covered outage 9",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_010",
+      "title": "Synthetic clean covered outage 10",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_011",
+      "title": "Synthetic clean covered outage 11",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_012",
+      "title": "Synthetic clean covered outage 12",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_013",
+      "title": "Synthetic clean covered outage 13",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_014",
+      "title": "Synthetic clean covered outage 14",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_015",
+      "title": "Synthetic clean covered outage 15",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_016",
+      "title": "Synthetic clean covered outage 16",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_017",
+      "title": "Synthetic clean covered outage 17",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_018",
+      "title": "Synthetic clean covered outage 18",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_019",
+      "title": "Synthetic clean covered outage 19",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_clean_outage_020",
+      "title": "Synthetic clean covered outage 20",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_customer_caused_001",
+      "title": "Synthetic customer-caused failure 1",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_002",
+      "title": "Synthetic customer-caused failure 2",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_003",
+      "title": "Synthetic customer-caused failure 3",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_004",
+      "title": "Synthetic customer-caused failure 4",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_005",
+      "title": "Synthetic customer-caused failure 5",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_006",
+      "title": "Synthetic customer-caused failure 6",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_007",
+      "title": "Synthetic customer-caused failure 7",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_008",
+      "title": "Synthetic customer-caused failure 8",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_009",
+      "title": "Synthetic customer-caused failure 9",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_010",
+      "title": "Synthetic customer-caused failure 10",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_011",
+      "title": "Synthetic customer-caused failure 11",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_012",
+      "title": "Synthetic customer-caused failure 12",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_013",
+      "title": "Synthetic customer-caused failure 13",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_014",
+      "title": "Synthetic customer-caused failure 14",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_015",
+      "title": "Synthetic customer-caused failure 15",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_016",
+      "title": "Synthetic customer-caused failure 16",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_017",
+      "title": "Synthetic customer-caused failure 17",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_018",
+      "title": "Synthetic customer-caused failure 18",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_019",
+      "title": "Synthetic customer-caused failure 19",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_customer_caused_020",
+      "title": "Synthetic customer-caused failure 20",
+      "issue_type": "customer_caused_issue"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "title": "Synthetic commercial sensitivity case 1",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "title": "Synthetic commercial sensitivity case 2",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "title": "Synthetic commercial sensitivity case 3",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_004",
+      "title": "Synthetic commercial sensitivity case 4",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_005",
+      "title": "Synthetic commercial sensitivity case 5",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_006",
+      "title": "Synthetic commercial sensitivity case 6",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_007",
+      "title": "Synthetic commercial sensitivity case 7",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_008",
+      "title": "Synthetic commercial sensitivity case 8",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_009",
+      "title": "Synthetic commercial sensitivity case 9",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_010",
+      "title": "Synthetic commercial sensitivity case 10",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_011",
+      "title": "Synthetic commercial sensitivity case 11",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_012",
+      "title": "Synthetic commercial sensitivity case 12",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_013",
+      "title": "Synthetic commercial sensitivity case 13",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_014",
+      "title": "Synthetic commercial sensitivity case 14",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_015",
+      "title": "Synthetic commercial sensitivity case 15",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_016",
+      "title": "Synthetic commercial sensitivity case 16",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_017",
+      "title": "Synthetic commercial sensitivity case 17",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_018",
+      "title": "Synthetic commercial sensitivity case 18",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_019",
+      "title": "Synthetic commercial sensitivity case 19",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_commercial_sensitivity_020",
+      "title": "Synthetic commercial sensitivity case 20",
+      "issue_type": "incident_impact_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_001",
+      "title": "Synthetic maintenance exclusion 1",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_002",
+      "title": "Synthetic maintenance exclusion 2",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_003",
+      "title": "Synthetic maintenance exclusion 3",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_004",
+      "title": "Synthetic maintenance exclusion 4",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_005",
+      "title": "Synthetic maintenance exclusion 5",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_006",
+      "title": "Synthetic maintenance exclusion 6",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_007",
+      "title": "Synthetic maintenance exclusion 7",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_008",
+      "title": "Synthetic maintenance exclusion 8",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_009",
+      "title": "Synthetic maintenance exclusion 9",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_010",
+      "title": "Synthetic maintenance exclusion 10",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_011",
+      "title": "Synthetic maintenance exclusion 11",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_012",
+      "title": "Synthetic maintenance exclusion 12",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_013",
+      "title": "Synthetic maintenance exclusion 13",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_014",
+      "title": "Synthetic maintenance exclusion 14",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_015",
+      "title": "Synthetic maintenance exclusion 15",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_016",
+      "title": "Synthetic maintenance exclusion 16",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_017",
+      "title": "Synthetic maintenance exclusion 17",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_018",
+      "title": "Synthetic maintenance exclusion 18",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_019",
+      "title": "Synthetic maintenance exclusion 19",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_maintenance_exclusion_020",
+      "title": "Synthetic maintenance exclusion 20",
+      "issue_type": "policy_applicability_review"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_001",
+      "title": "Synthetic metering discrepancy 1",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_002",
+      "title": "Synthetic metering discrepancy 2",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_003",
+      "title": "Synthetic metering discrepancy 3",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_004",
+      "title": "Synthetic metering discrepancy 4",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_005",
+      "title": "Synthetic metering discrepancy 5",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_006",
+      "title": "Synthetic metering discrepancy 6",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_007",
+      "title": "Synthetic metering discrepancy 7",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_008",
+      "title": "Synthetic metering discrepancy 8",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_009",
+      "title": "Synthetic metering discrepancy 9",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_010",
+      "title": "Synthetic metering discrepancy 10",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_011",
+      "title": "Synthetic metering discrepancy 11",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_012",
+      "title": "Synthetic metering discrepancy 12",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_013",
+      "title": "Synthetic metering discrepancy 13",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_014",
+      "title": "Synthetic metering discrepancy 14",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_015",
+      "title": "Synthetic metering discrepancy 15",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_016",
+      "title": "Synthetic metering discrepancy 16",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_017",
+      "title": "Synthetic metering discrepancy 17",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_018",
+      "title": "Synthetic metering discrepancy 18",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_019",
+      "title": "Synthetic metering discrepancy 19",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_metering_discrepancy_020",
+      "title": "Synthetic metering discrepancy 20",
+      "issue_type": "metering_discrepancy"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_001",
+      "title": "Synthetic pricing mismatch 1",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_002",
+      "title": "Synthetic pricing mismatch 2",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_003",
+      "title": "Synthetic pricing mismatch 3",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_004",
+      "title": "Synthetic pricing mismatch 4",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_005",
+      "title": "Synthetic pricing mismatch 5",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_006",
+      "title": "Synthetic pricing mismatch 6",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_007",
+      "title": "Synthetic pricing mismatch 7",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_008",
+      "title": "Synthetic pricing mismatch 8",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_009",
+      "title": "Synthetic pricing mismatch 9",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_010",
+      "title": "Synthetic pricing mismatch 10",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_011",
+      "title": "Synthetic pricing mismatch 11",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_012",
+      "title": "Synthetic pricing mismatch 12",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_013",
+      "title": "Synthetic pricing mismatch 13",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_014",
+      "title": "Synthetic pricing mismatch 14",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_015",
+      "title": "Synthetic pricing mismatch 15",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_016",
+      "title": "Synthetic pricing mismatch 16",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_017",
+      "title": "Synthetic pricing mismatch 17",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_018",
+      "title": "Synthetic pricing mismatch 18",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_019",
+      "title": "Synthetic pricing mismatch 19",
+      "issue_type": "pricing_config_mismatch"
+    },
+    {
+      "case_id": "synthetic_pricing_mismatch_020",
+      "title": "Synthetic pricing mismatch 20",
+      "issue_type": "pricing_config_mismatch"
+    }
+  ],
+  "issue_type_distribution": {
+    "gold": {
+      "pricing_config_mismatch": 1,
+      "metering_discrepancy": 1,
+      "incident_impact_review": 3,
+      "customer_caused_issue": 1,
+      "policy_applicability_review": 3,
+      "ambiguous_case": 1
+    },
+    "synthetic": {
+      "pricing_config_mismatch": 20,
+      "metering_discrepancy": 20,
+      "incident_impact_review": 40,
+      "customer_caused_issue": 20,
+      "policy_applicability_review": 20,
+      "ambiguous_case": 20
+    }
+  }
+}

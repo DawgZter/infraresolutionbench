@@ -1,0 +1,68 @@
+{
+  "evaluation_id": "lfr0ue479wu6oj4pru3f84k3",
+  "name": "synthetic-tools-google_gemini-3-pro-preview",
+  "status": "FAILED",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "hnvayp3dg2vuqyh8h2uy9bvi",
+  "version_id": "k5r1hb6tfsq8t5t5pd3uivdg",
+  "is_hosted": true,
+  "sandbox_id": "f0rp97rqif9g89ccdckxfnus",
+  "inference_model": "google/gemini-3-pro-preview",
+  "eval_config": {
+    "num_examples": 21,
+    "rollouts_per_example": 3,
+    "env_args": {
+      "case_source": "synthetic",
+      "prompt_mode": "tools",
+      "limit": "21"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": null,
+    "api_key_var": null,
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "google/gemini-3-pro-preview",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with google/gemini-3-pro-preview",
+  "tags": [
+    "hosted",
+    "inference"
+  ],
+  "total_samples": 0,
+  "avg_score": null,
+  "min_score": null,
+  "max_score": null,
+  "started_at": null,
+  "completed_at": null,
+  "created_at": "2026-04-04T22:06:14.059000Z",
+  "updated_at": "2026-04-04T22:06:44.832000Z",
+  "metadata": {
+    "model": "google/gemini-3-pro-preview",
+    "num_examples": 21,
+    "rollouts_per_example": 3
+  },
+  "metrics": {},
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lfr0ue479wu6oj4pru3f84k3",
+  "is_public": false,
+  "statistics": null,
+  "chartData": null,
+  "rubricInfo": null,
+  "detailedMetrics": null,
+  "rewardStats": null
+}

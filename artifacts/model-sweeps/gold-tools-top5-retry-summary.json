@@ -1,0 +1,133 @@
+{
+  "source": "retry:followup:Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "summarized_at": "2026-04-05T00:39:17.414Z",
+  "selection": "prime",
+  "case_source": "gold",
+  "prompt_mode": "tools",
+  "completed_rankings": [],
+  "pending_or_missing": [
+    {
+      "provider": "prime",
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max) | sweep_score=0.931 | json_valid=1.000 | eval_id=xjfyhbzhqv39yd2fcaqktydv | retry_status=FAILED | anomaly=failed | prior_eval_id=rzx36h5t9mmi4ro82gi94cf4",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "rzx36h5t9mmi4ro82gi94cf4",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/rzx36h5t9mmi4ro82gi94cf4",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high) | sweep_score=0.922 | json_valid=1.000 | eval_id=hb585vdhdbg5gkd5d739tz4s | retry_status=FAILED | anomaly=failed | prior_eval_id=iseo540jnro8c5j9yf09pxq3",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "iseo540jnro8c5j9yf09pxq3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/iseo540jnro8c5j9yf09pxq3",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max) | sweep_score=0.922 | json_valid=1.000 | eval_id=dhbnwlha48i3tfx64muvpwwz | retry_status=FAILED | anomaly=failed | prior_eval_id=ahkfp7ebnyfldukajiny7nzo",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "ahkfp7ebnyfldukajiny7nzo",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ahkfp7ebnyfldukajiny7nzo",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5 | sweep_score=0.921 | json_valid=1.000 | eval_id=wdd9idfxqos5qdzb32jnru5r | retry_status=FAILED | anomaly=failed | prior_eval_id=c6vy098eonsbcnw73qhd2x38",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "c6vy098eonsbcnw73qhd2x38",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/c6vy098eonsbcnw73qhd2x38",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh) | sweep_score=0.920 | json_valid=1.000 | eval_id=hzzjdp8fy7fcy2xj6zn9i5ni | retry_status=FAILED | anomaly=failed | prior_eval_id=m2yx3jaw0xg4hbnzsb2mnq3y",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "m2yx3jaw0xg4hbnzsb2mnq3y",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/m2yx3jaw0xg4hbnzsb2mnq3y",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    }
+  ],
+  "anomalies": [
+    {
+      "provider": "prime",
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max) | sweep_score=0.931 | json_valid=1.000 | eval_id=xjfyhbzhqv39yd2fcaqktydv | retry_status=FAILED | anomaly=failed | prior_eval_id=rzx36h5t9mmi4ro82gi94cf4",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "rzx36h5t9mmi4ro82gi94cf4",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/rzx36h5t9mmi4ro82gi94cf4",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high) | sweep_score=0.922 | json_valid=1.000 | eval_id=hb585vdhdbg5gkd5d739tz4s | retry_status=FAILED | anomaly=failed | prior_eval_id=iseo540jnro8c5j9yf09pxq3",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "iseo540jnro8c5j9yf09pxq3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/iseo540jnro8c5j9yf09pxq3",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max) | sweep_score=0.922 | json_valid=1.000 | eval_id=dhbnwlha48i3tfx64muvpwwz | retry_status=FAILED | anomaly=failed | prior_eval_id=ahkfp7ebnyfldukajiny7nzo",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "ahkfp7ebnyfldukajiny7nzo",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ahkfp7ebnyfldukajiny7nzo",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5 | sweep_score=0.921 | json_valid=1.000 | eval_id=wdd9idfxqos5qdzb32jnru5r | retry_status=FAILED | anomaly=failed | prior_eval_id=c6vy098eonsbcnw73qhd2x38",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "c6vy098eonsbcnw73qhd2x38",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/c6vy098eonsbcnw73qhd2x38",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    },
+    {
+      "provider": "prime",
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh) | sweep_score=0.920 | json_valid=1.000 | eval_id=hzzjdp8fy7fcy2xj6zn9i5ni | retry_status=FAILED | anomaly=failed | prior_eval_id=m2yx3jaw0xg4hbnzsb2mnq3y",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "m2yx3jaw0xg4hbnzsb2mnq3y",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/m2yx3jaw0xg4hbnzsb2mnq3y",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    }
+  ]
+}

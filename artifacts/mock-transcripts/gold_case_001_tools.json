@@ -1,0 +1,9 @@
+[
+  "get_crm_record",
+  "get_billing_record",
+  "get_usage_record",
+  "get_incident_record",
+  "get_customer_note",
+  "get_policy_snippet",
+  "get_calculator_output"
+]

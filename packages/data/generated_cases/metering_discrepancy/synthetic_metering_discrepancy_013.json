@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "meter_lag",
+      "wording_variation",
+      "extra_irrelevant_fields"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic meter-visibility case where the customer dashboard trails internal usage reporting, but the final invoice is not expected to change.",
+    "generator_family": "metering_discrepancy",
+    "latent_facts": [
+      "There is no underlying compute incident.",
+      "The discrepancy is limited to customer-visible usage reporting rather than final invoice correctness.",
+      "The case should be explained clearly without promising an invoice adjustment."
+    ],
+    "likely_failure_modes": [
+      "Model escalates straight to invoice adjustment even though the issue is only a visibility gap.",
+      "Model mistakes the reporting lag for an SLA service issue."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_metering_discrepancy_013",
+    "title": "Synthetic metering discrepancy 13",
+    "crm_record": {
+      "account_id": "acct_meter_013",
+      "account_name": "North Coast AI",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": null,
+      "notes": [
+        "Customer actively monitors the self-serve usage dashboard."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_meter_013",
+      "configured_plan_name": "Committed-100",
+      "configured_commitment_gpu_hours": 100,
+      "invoice_preview_usd": 7562,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 3,
+      "pricing_notes": [
+        "Invoice preview currently reflects 103 GPU-hours of billable usage."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 92,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Compute services are healthy; only the meter ingestion pipeline is delayed.",
+      "meter_ingestion_status": "partial",
+      "anomalies": [
+        "Customer dashboard trails the internal usage feed by 11 GPU-hours, but final invoice cutover has not happened yet."
+      ]
+    },
+    "incident_record": {
+      "incident_id": null,
+      "status": "no_known_incident",
+      "service": "billing-meter-pipeline",
+      "duration_minutes": null,
+      "customer_visible": false,
+      "customer_impact_summary": null,
+      "engineering_summary": "Compute services are healthy; only the meter ingestion pipeline is delayed.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "The usage dashboard does not match the invoice preview and we cannot reconcile the gap.",
+    "policy_snippet": "If usage evidence is delayed or incomplete, hold invoice changes for finance review and correct the final invoice if needed.",
+    "calculator_output": "Dashboard shows 92 GPU-hours while the internal usage feed shows 103. Final invoice has not been adjusted yet.",
+    "visible_case_summary": "Synthetic reporting-lag case where finance explanation is needed but no invoice adjustment is expected."
+  },
+  "ground_truth": {
+    "issue_type": "metering_discrepancy",
+    "root_cause": "usage_metering_error",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "finance_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "Ground truth is driven by generator logic, not note wording."
+    ],
+    "reference_customer_note": "We found a lag in the customer-visible usage reporting pipeline, which is why the dashboard does not yet align with the latest internal usage records. At this stage, we are treating this as a reporting explanation issue rather than an invoice adjustment case.",
+    "reference_internal_note": "Owner: finance_owner. Action: send_explanation_only because the issue is limited to reporting visibility and does not yet support an invoice adjustment."
+  }
+}

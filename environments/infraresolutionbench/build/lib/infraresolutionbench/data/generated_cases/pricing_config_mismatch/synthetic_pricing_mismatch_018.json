@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "cross_system_disagreement",
+      "wording_variation"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic pricing config mismatch where CRM commitment and billing commitment disagree without an operational incident.",
+    "generator_family": "pricing_config_mismatch",
+    "latent_facts": [
+      "CRM remains the signed commercial source of truth.",
+      "Billing configuration drifted after a manual update.",
+      "Usage telemetry is healthy and not the cause of the dispute."
+    ],
+    "likely_failure_modes": [
+      "Model trusts billing over CRM and misses the discrepancy.",
+      "Model misclassifies the case as metering discrepancy because the customer mentions invoice mismatch."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": 11,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_pricing_mismatch_018",
+    "title": "Synthetic pricing mismatch 18",
+    "crm_record": {
+      "account_id": "acct_syn_018",
+      "account_name": "Cascade Reasoning",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-05-01",
+      "notes": [
+        "Signed order form lists Committed-100.",
+        "Commercial ops note: pricing terms unchanged since the last executed agreement.",
+        "Renewal conversation is tentatively scheduled before 2026-05-01."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_syn_018",
+      "configured_plan_name": "Committed-130",
+      "configured_commitment_gpu_hours": 130,
+      "invoice_preview_usd": 10107,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Billing plan currently set to Committed-130.",
+        "Current invoice preview was produced from the active billing plan setting."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 116,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Metered usage is complete for the period and there are no compute health anomalies.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "We expected different charges this month and want someone to verify the committed plan tied to billing.",
+    "policy_snippet": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing.",
+    "calculator_output": "Invoice preview currently uses Committed-130.",
+    "visible_case_summary": "Synthetic commercial dispute with a plan mismatch between CRM and billing and no service incident."
+  },
+  "ground_truth": {
+    "issue_type": "pricing_config_mismatch",
+    "root_cause": "billing_config_out_of_sync_with_crm",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_revops_review",
+    "needs_human_review": true,
+    "confidence": "high",
+    "adjudication_notes": [
+      "Ground truth is set programmatically from template logic.",
+      "Noise injectors only vary wording and non-critical fields."
+    ],
+    "reference_customer_note": "We found a mismatch between your contracted commitment and the current billing configuration, so we are routing this for commercial review before confirming the final invoice.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review because CRM and billing commitment levels disagree while usage telemetry is healthy."
+  }
+}

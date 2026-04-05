@@ -1,0 +1,99 @@
+{
+  "evaluation_id": "onu74fl401a6v2p03tevsm55",
+  "imported_at": "2026-04-04T21:19:45.257Z",
+  "total": 9,
+  "total_pages": 1,
+  "limit": 100,
+  "samples": [
+    {
+      "sample_id": "sahma3apj4ezb909zah8rstt",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.8518518518518517,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "efplzub8giu4s2cuulz4yd17",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.7518518518518519,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "rwmysxg4fcjzsf4dqbr3a892",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.8222222222222223,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fzc4ty2tyu8v04sdayx3vupq",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.8592592592592592,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "v3f9wzpbcs2p1vg7pi6t03y1",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.8888888888888888,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "w6x2e1u9tt140wxlssjft1ff",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.7222222222222222,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "u34fuuz0cwa5kki06vfg1ryz",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.8629629629629628,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "yaacnn8mdk1ojgww9gpgkexc",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.8962962962962964,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wyyyhafhdhiyxekhmwxpxt6k",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.9629629629629629,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "packet",
+      "authoring_style": "synthetic"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["meter_lag", "dashboard_invoice_mismatch"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Usage dashboard and invoice preview disagree because meter ingestion is lagging even though compute service health is normal.",
+    "generator_family": "metering_discrepancy",
+    "latent_facts": [
+      "There is no underlying service incident.",
+      "The discrepancy is caused by an internal meter ingestion lag.",
+      "Commercial handling requires finance review because invoicing may need adjustment."
+    ],
+    "likely_failure_modes": [
+      "The model mistakes this for a pricing configuration issue.",
+      "The model ignores the engineering note that compute was healthy."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_004",
+    "title": "Usage dashboard lags invoice preview",
+    "crm_record": {
+      "account_id": "acct_004",
+      "account_name": "Lattice Foundry",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-200",
+      "contracted_commitment_gpu_hours": 200,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": "2026-08-08",
+      "notes": [
+        "Customer often watches the self-serve usage dashboard closely."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_004",
+      "configured_plan_name": "Committed-200",
+      "configured_commitment_gpu_hours": 200,
+      "invoice_preview_usd": 14750,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 12,
+      "pricing_notes": [
+        "Invoice preview includes 212 GPU-hours of billable usage.",
+        "No pricing config drift detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 186,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Compute path is healthy, but the meter ingestion pipeline is delayed by several hours.",
+      "meter_ingestion_status": "lagging",
+      "anomalies": [
+        "Usage dashboard currently trails internal billable meter by approximately 26 GPU-hours."
+      ]
+    },
+    "incident_record": {
+      "incident_id": null,
+      "status": "no_known_incident",
+      "service": "billing-meter-pipeline",
+      "duration_minutes": null,
+      "customer_visible": false,
+      "customer_impact_summary": null,
+      "engineering_summary": "Compute services are healthy; only the meter ingestion pipeline is lagging.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "The usage dashboard does not match our invoice preview and we cannot reconcile the difference.",
+    "policy_snippet": "If usage evidence is incomplete or delayed, hold invoicing changes for finance review and correct the final invoice if needed.",
+    "calculator_output": "Invoice preview reflects 212 GPU-hours. Dashboard currently shows 186 GPU-hours because ingestion is lagging.",
+    "visible_case_summary": "Operationally healthy service with a metering visibility gap."
+  },
+  "ground_truth": {
+    "issue_type": "metering_discrepancy",
+    "root_cause": "usage_metering_error",
+    "customer_impact": "usage_visibility_gap",
+    "contractual_applicability": "invoice_adjustment_due",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_finance_review",
+    "needs_human_review": true,
+    "confidence": "medium",
+    "adjudication_notes": [
+      "The customer-facing problem is visibility and invoice reconciliation, not service downtime.",
+      "Finance review is needed because the invoice may need adjustment after meter catch-up."
+    ],
+    "reference_customer_note": "We found a lag in the usage meter pipeline, which is why the dashboard and invoice preview do not line up right now. We are holding this for finance review and will correct the final invoice if the adjustment is confirmed.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because metering is lagging, compute path is healthy, discrepancy_detected is true, and invoice adjustment may be due."
+  }
+}

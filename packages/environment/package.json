@@ -1,0 +1,13 @@
+{
+  "name": "@infraresolutionbench/environment",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@infraresolutionbench/data": "0.1.0",
+    "@infraresolutionbench/scoring": "0.1.0",
+    "@infraresolutionbench/shared": "0.1.0"
+  }
+}

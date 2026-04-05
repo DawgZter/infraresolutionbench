@@ -1,0 +1,904 @@
+{
+  "generated_at": "2026-04-05T01:16:45.563Z",
+  "datasets": {
+    "gold": {
+      "case_count": 15,
+      "distinct_ground_truth_combos": 14,
+      "top_ground_truth_combos": [
+        {
+          "value": "policy_applicability_review | unknown_root_cause | invoice_confusion | not_an_sla_case | revops_owner | send_explanation_only | false | high",
+          "count": 2
+        },
+        {
+          "value": "ambiguous_case | unknown_root_cause | degraded_performance | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+          "count": 1
+        },
+        {
+          "value": "ambiguous_case | unknown_root_cause | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_finance_review | true | low",
+          "count": 1
+        },
+        {
+          "value": "customer_caused_issue | customer_misconfiguration | job_failure | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | high",
+          "count": 1
+        },
+        {
+          "value": "customer_caused_issue | customer_misconfiguration | retry_storm | sla_excluded_customer_caused | engineering_owner | hold_for_engineering_review | true | medium",
+          "count": 1
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | consider_goodwill_credit | true | medium",
+          "count": 1
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | hold_for_engineering_review | true | medium",
+          "count": 1
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+          "count": 1
+        },
+        {
+          "value": "incident_impact_review | gpu_node_failure | job_failure | no_credit_due | engineering_owner | send_explanation_only | false | high",
+          "count": 1
+        },
+        {
+          "value": "incident_impact_review | scheduler_failure | delayed_job_start | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+          "count": 1
+        },
+        {
+          "value": "metering_discrepancy | usage_metering_error | usage_visibility_gap | invoice_adjustment_due | shared_revops_finance | hold_for_finance_review | true | medium",
+          "count": 1
+        },
+        {
+          "value": "policy_applicability_review | scheduled_maintenance | delayed_job_start | sla_excluded_scheduled_maintenance | shared_revops_engineering | hold_for_engineering_review | true | medium",
+          "count": 1
+        }
+      ],
+      "generator_families": [
+        {
+          "value": "clean_covered_outage",
+          "count": 3
+        },
+        {
+          "value": "ambiguous_case",
+          "count": 2
+        },
+        {
+          "value": "customer_caused_failure",
+          "count": 2
+        },
+        {
+          "value": "degraded_performance_with_commercial_sensitivity",
+          "count": 2
+        },
+        {
+          "value": "maintenance_exclusion",
+          "count": 2
+        },
+        {
+          "value": "policy_applicability_review",
+          "count": 2
+        },
+        {
+          "value": "metering_discrepancy",
+          "count": 1
+        },
+        {
+          "value": "pricing_config_mismatch",
+          "count": 1
+        }
+      ],
+      "by_family": [
+        {
+          "family": "ambiguous_case",
+          "case_count": 2,
+          "distinct_ground_truth_combos": 2,
+          "top_ground_truth_combos": [
+            {
+              "value": "ambiguous_case | unknown_root_cause | degraded_performance | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+              "count": 1
+            },
+            {
+              "value": "ambiguous_case | unknown_root_cause | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_finance_review | true | low",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "clean_covered_outage",
+          "case_count": 3,
+          "distinct_ground_truth_combos": 3,
+          "top_ground_truth_combos": [
+            {
+              "value": "incident_impact_review | capacity_shortfall | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+              "count": 1
+            },
+            {
+              "value": "incident_impact_review | gpu_node_failure | job_failure | no_credit_due | engineering_owner | send_explanation_only | false | high",
+              "count": 1
+            },
+            {
+              "value": "incident_impact_review | scheduler_failure | delayed_job_start | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "customer_caused_failure",
+          "case_count": 2,
+          "distinct_ground_truth_combos": 2,
+          "top_ground_truth_combos": [
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | job_failure | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | high",
+              "count": 1
+            },
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | retry_storm | sla_excluded_customer_caused | engineering_owner | hold_for_engineering_review | true | medium",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "degraded_performance_with_commercial_sensitivity",
+          "case_count": 2,
+          "distinct_ground_truth_combos": 2,
+          "top_ground_truth_combos": [
+            {
+              "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | consider_goodwill_credit | true | medium",
+              "count": 1
+            },
+            {
+              "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | hold_for_engineering_review | true | medium",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "maintenance_exclusion",
+          "case_count": 2,
+          "distinct_ground_truth_combos": 2,
+          "top_ground_truth_combos": [
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | delayed_job_start | sla_excluded_scheduled_maintenance | shared_revops_engineering | hold_for_engineering_review | true | medium",
+              "count": 1
+            },
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | outage | sla_excluded_scheduled_maintenance | engineering_owner | send_explanation_only | false | high",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "metering_discrepancy",
+          "case_count": 1,
+          "distinct_ground_truth_combos": 1,
+          "top_ground_truth_combos": [
+            {
+              "value": "metering_discrepancy | usage_metering_error | usage_visibility_gap | invoice_adjustment_due | shared_revops_finance | hold_for_finance_review | true | medium",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "family": "policy_applicability_review",
+          "case_count": 2,
+          "distinct_ground_truth_combos": 1,
+          "top_ground_truth_combos": [
+            {
+              "value": "policy_applicability_review | unknown_root_cause | invoice_confusion | not_an_sla_case | revops_owner | send_explanation_only | false | high",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "family": "pricing_config_mismatch",
+          "case_count": 1,
+          "distinct_ground_truth_combos": 1,
+          "top_ground_truth_combos": [
+            {
+              "value": "pricing_config_mismatch | billing_config_out_of_sync_with_crm | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_revops_review | true | high",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "synthetic": {
+      "case_count": 140,
+      "distinct_ground_truth_combos": 24,
+      "top_ground_truth_combos": [
+        {
+          "value": "pricing_config_mismatch | billing_config_out_of_sync_with_crm | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_revops_review | true | high",
+          "count": 15
+        },
+        {
+          "value": "policy_applicability_review | scheduled_maintenance | outage | sla_excluded_scheduled_maintenance | engineering_owner | send_explanation_only | false | high",
+          "count": 13
+        },
+        {
+          "value": "customer_caused_issue | customer_misconfiguration | job_failure | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | high",
+          "count": 10
+        },
+        {
+          "value": "metering_discrepancy | usage_metering_error | usage_visibility_gap | invoice_adjustment_due | shared_revops_finance | hold_for_finance_review | true | high",
+          "count": 10
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | consider_goodwill_credit | true | medium",
+          "count": 8
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | hold_for_engineering_review | true | medium",
+          "count": 8
+        },
+        {
+          "value": "incident_impact_review | capacity_shortfall | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+          "count": 7
+        },
+        {
+          "value": "incident_impact_review | scheduler_failure | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+          "count": 7
+        },
+        {
+          "value": "incident_impact_review | gpu_node_failure | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+          "count": 6
+        },
+        {
+          "value": "ambiguous_case | unknown_root_cause | degraded_performance | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+          "count": 5
+        },
+        {
+          "value": "ambiguous_case | unknown_root_cause | degraded_performance | not_an_sla_case | human_review_required | hold_for_revops_review | true | low",
+          "count": 5
+        },
+        {
+          "value": "ambiguous_case | unknown_root_cause | delayed_job_start | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+          "count": 5
+        }
+      ],
+      "generator_families": [
+        {
+          "value": "ambiguous_case",
+          "count": 20
+        },
+        {
+          "value": "clean_covered_outage",
+          "count": 20
+        },
+        {
+          "value": "customer_caused_failure",
+          "count": 20
+        },
+        {
+          "value": "degraded_performance_with_commercial_sensitivity",
+          "count": 20
+        },
+        {
+          "value": "maintenance_exclusion",
+          "count": 20
+        },
+        {
+          "value": "metering_discrepancy",
+          "count": 20
+        },
+        {
+          "value": "pricing_config_mismatch",
+          "count": 20
+        }
+      ],
+      "by_family": [
+        {
+          "family": "ambiguous_case",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 4,
+          "top_ground_truth_combos": [
+            {
+              "value": "ambiguous_case | unknown_root_cause | degraded_performance | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+              "count": 5
+            },
+            {
+              "value": "ambiguous_case | unknown_root_cause | degraded_performance | not_an_sla_case | human_review_required | hold_for_revops_review | true | low",
+              "count": 5
+            },
+            {
+              "value": "ambiguous_case | unknown_root_cause | delayed_job_start | no_sla_breach | shared_revops_engineering | hold_for_engineering_review | true | low",
+              "count": 5
+            },
+            {
+              "value": "ambiguous_case | unknown_root_cause | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_finance_review | true | low",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "family": "clean_covered_outage",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 3,
+          "top_ground_truth_combos": [
+            {
+              "value": "incident_impact_review | capacity_shortfall | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+              "count": 7
+            },
+            {
+              "value": "incident_impact_review | scheduler_failure | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+              "count": 7
+            },
+            {
+              "value": "incident_impact_review | gpu_node_failure | outage | credit_due | shared_revops_engineering | send_explanation_only | false | high",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "family": "customer_caused_failure",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 5,
+          "top_ground_truth_combos": [
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | job_failure | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | high",
+              "count": 10
+            },
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | delayed_job_start | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | medium",
+              "count": 3
+            },
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | job_failure | sla_excluded_customer_caused | engineering_owner | hold_for_engineering_review | true | medium",
+              "count": 3
+            },
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | retry_storm | sla_excluded_customer_caused | engineering_owner | hold_for_engineering_review | true | medium",
+              "count": 2
+            },
+            {
+              "value": "customer_caused_issue | customer_misconfiguration | retry_storm | sla_excluded_customer_caused | engineering_owner | send_explanation_only | false | high",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "family": "degraded_performance_with_commercial_sensitivity",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 3,
+          "top_ground_truth_combos": [
+            {
+              "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | consider_goodwill_credit | true | medium",
+              "count": 8
+            },
+            {
+              "value": "incident_impact_review | capacity_shortfall | degraded_performance | goodwill_credit_optional | shared_revops_engineering | hold_for_engineering_review | true | medium",
+              "count": 8
+            },
+            {
+              "value": "incident_impact_review | capacity_shortfall | degraded_performance | no_credit_due | engineering_owner | send_explanation_only | false | high",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "family": "maintenance_exclusion",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 4,
+          "top_ground_truth_combos": [
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | outage | sla_excluded_scheduled_maintenance | engineering_owner | send_explanation_only | false | high",
+              "count": 13
+            },
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | delayed_job_start | sla_excluded_scheduled_maintenance | engineering_owner | send_explanation_only | false | high",
+              "count": 3
+            },
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | delayed_job_start | sla_excluded_scheduled_maintenance | shared_revops_engineering | hold_for_engineering_review | true | medium",
+              "count": 2
+            },
+            {
+              "value": "policy_applicability_review | scheduled_maintenance | outage | sla_excluded_scheduled_maintenance | shared_revops_engineering | hold_for_engineering_review | true | medium",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "family": "metering_discrepancy",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 3,
+          "top_ground_truth_combos": [
+            {
+              "value": "metering_discrepancy | usage_metering_error | usage_visibility_gap | invoice_adjustment_due | shared_revops_finance | hold_for_finance_review | true | high",
+              "count": 10
+            },
+            {
+              "value": "metering_discrepancy | usage_metering_error | invoice_confusion | not_an_sla_case | finance_owner | send_explanation_only | false | high",
+              "count": 5
+            },
+            {
+              "value": "metering_discrepancy | usage_metering_error | usage_visibility_gap | invoice_adjustment_due | shared_revops_finance | hold_for_finance_review | true | medium",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "family": "pricing_config_mismatch",
+          "case_count": 20,
+          "distinct_ground_truth_combos": 2,
+          "top_ground_truth_combos": [
+            {
+              "value": "pricing_config_mismatch | billing_config_out_of_sync_with_crm | invoice_confusion | not_an_sla_case | shared_revops_finance | hold_for_revops_review | true | high",
+              "count": 15
+            },
+            {
+              "value": "pricing_config_mismatch | billing_config_out_of_sync_with_crm | invoice_confusion | not_an_sla_case | revops_owner | hold_for_revops_review | true | high",
+              "count": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "eval_slices": {
+    "gold_tools": [
+      {
+        "model": "anthropic/claude-opus-4.6",
+        "evaluation_id": "ynm0bj1ryijfc6wo5nf96lx9",
+        "samples": 100,
+        "avg_score": 0.9213703703703697,
+        "exact": 0.8211111111111111,
+        "consistency": 0.955,
+        "rubric": 0.988,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.1",
+        "evaluation_id": "yszsglmsjbjc22fwe9apa9jg",
+        "samples": 100,
+        "avg_score": 0.9168148148148143,
+        "exact": 0.8144444444444444,
+        "consistency": 0.9359999999999999,
+        "rubric": 1,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.3-codex",
+        "evaluation_id": "ux1cqoazxawfw8no7pcaqfjb",
+        "samples": 100,
+        "avg_score": 0.9151851851851853,
+        "exact": 0.8155555555555556,
+        "consistency": 0.9420000000000001,
+        "rubric": 0.988,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-sonnet-4.6",
+        "evaluation_id": "uz4vnwyzmad6uz62jc4m63h0",
+        "samples": 100,
+        "avg_score": 0.9111851851851844,
+        "exact": 0.7855555555555556,
+        "consistency": 0.96,
+        "rubric": 0.988,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-opus-4.5",
+        "evaluation_id": "hkvqzicglsu3v5ttwkwlh82t",
+        "samples": 100,
+        "avg_score": 0.9110370370370363,
+        "exact": 0.7911111111111111,
+        "consistency": 0.958,
+        "rubric": 0.9840000000000001,
+        "json_valid": 0.99
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "yove7qept5a0q58eh2ao9vzx",
+        "samples": 10,
+        "avg_score": 0.5051851851851852,
+        "exact": 0.15555555555555553,
+        "consistency": 0.8,
+        "rubric": 0.56,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "ry7d1097ykevw933f8dw614g",
+        "samples": 30,
+        "avg_score": 0.4877777777777778,
+        "exact": 0.16666666666666666,
+        "consistency": 0.7900000000000001,
+        "rubric": 0.5066666666666667,
+        "json_valid": 1
+      }
+    ],
+    "synthetic_tools": [
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "w84ptwplbom3b5ozhhjr7sco",
+        "samples": 9,
+        "avg_score": 0.9716049382716049,
+        "exact": 0.9259259259259258,
+        "consistency": 0.9888888888888889,
+        "rubric": 1,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-opus-4.6",
+        "evaluation_id": "xjfyhbzhqv39yd2fcaqktydv",
+        "samples": 63,
+        "avg_score": 0.9305702527924752,
+        "exact": 0.8694885361552028,
+        "consistency": 0.9412698412698414,
+        "rubric": 0.9809523809523809,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-opus-4.6",
+        "evaluation_id": "h0ddoedanykl5jgl6ku5dlq2",
+        "samples": 105,
+        "avg_score": 0.9277601410934748,
+        "exact": 0.8708994708994708,
+        "consistency": 0.9409523809523809,
+        "rubric": 0.9714285714285714,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-opus-4.5",
+        "evaluation_id": "dhtpyap6jfge9483ec73bxn3",
+        "samples": 105,
+        "avg_score": 0.924867724867725,
+        "exact": 0.8507936507936508,
+        "consistency": 0.9561904761904763,
+        "rubric": 0.9676190476190476,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-sonnet-4.6",
+        "evaluation_id": "gvzkkf6xdn2dni69dpxiu3ce",
+        "samples": 105,
+        "avg_score": 0.9221516754850092,
+        "exact": 0.8455026455026454,
+        "consistency": 0.9342857142857143,
+        "rubric": 0.9866666666666666,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.1",
+        "evaluation_id": "hb585vdhdbg5gkd5d739tz4s",
+        "samples": 63,
+        "avg_score": 0.9216343327454435,
+        "exact": 0.8712522045855379,
+        "consistency": 0.9063492063492063,
+        "rubric": 0.9873015873015873,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-sonnet-4.6",
+        "evaluation_id": "dhbnwlha48i3tfx64muvpwwz",
+        "samples": 63,
+        "avg_score": 0.921575543797766,
+        "exact": 0.8377425044091711,
+        "consistency": 0.9365079365079365,
+        "rubric": 0.9904761904761904,
+        "json_valid": 1
+      },
+      {
+        "model": "anthropic/claude-opus-4.5",
+        "evaluation_id": "wdd9idfxqos5qdzb32jnru5r",
+        "samples": 63,
+        "avg_score": 0.9210464432686656,
+        "exact": 0.8377425044091711,
+        "consistency": 0.953968253968254,
+        "rubric": 0.9714285714285714,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.3-codex",
+        "evaluation_id": "hzzjdp8fy7fcy2xj6zn9i5ni",
+        "samples": 63,
+        "avg_score": 0.9204585537918875,
+        "exact": 0.8518518518518519,
+        "consistency": 0.9507936507936507,
+        "rubric": 0.9587301587301587,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.3-codex",
+        "evaluation_id": "b0pgr8utqsnoixapraisy6qc",
+        "samples": 105,
+        "avg_score": 0.9145326278659618,
+        "exact": 0.8359788359788359,
+        "consistency": 0.9495238095238095,
+        "rubric": 0.958095238095238,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.1",
+        "evaluation_id": "eeepfv9efakwptcevtuuk32r",
+        "samples": 105,
+        "avg_score": 0.9135802469135805,
+        "exact": 0.8645502645502645,
+        "consistency": 0.9009523809523811,
+        "rubric": 0.9752380952380952,
+        "json_valid": 0.9904761904761905
+      },
+      {
+        "model": "openai/gpt-5.4",
+        "evaluation_id": "pdhsa31a5zpj3xad8ss9enb6",
+        "samples": 105,
+        "avg_score": 0.9135097001763673,
+        "exact": 0.8338624338624339,
+        "consistency": 0.9409523809523809,
+        "rubric": 0.9657142857142857,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.4",
+        "evaluation_id": "onkyl5t727w1olpzkj4mcdif",
+        "samples": 63,
+        "avg_score": 0.9133450911228693,
+        "exact": 0.8447971781305115,
+        "consistency": 0.9333333333333333,
+        "rubric": 0.9619047619047619,
+        "json_valid": 1
+      },
+      {
+        "model": "google/gemini-3.1-pro-preview",
+        "evaluation_id": "m3embysugwvoah7rbcs0x63g",
+        "samples": 63,
+        "avg_score": 0.9098177542621991,
+        "exact": 0.8342151675485009,
+        "consistency": 0.9492063492063492,
+        "rubric": 0.946031746031746,
+        "json_valid": 0.9841269841269841
+      },
+      {
+        "model": "openai/gpt-5",
+        "evaluation_id": "uhh3t7f0kl9h0hv8lif86lkt",
+        "samples": 63,
+        "avg_score": 0.9024691358024693,
+        "exact": 0.8042328042328042,
+        "consistency": 0.9285714285714286,
+        "rubric": 0.9746031746031746,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.1-codex",
+        "evaluation_id": "oruc0op76752ipnuckec61w3",
+        "samples": 63,
+        "avg_score": 0.9023515579071135,
+        "exact": 0.8165784832451499,
+        "consistency": 0.9349206349206349,
+        "rubric": 0.9555555555555556,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5.1-codex",
+        "evaluation_id": "v0gaq4ouwft4aqh822b1yv3u",
+        "samples": 105,
+        "avg_score": 0.900740740740741,
+        "exact": 0.8222222222222222,
+        "consistency": 0.92,
+        "rubric": 0.96,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5",
+        "evaluation_id": "qxte1hk5rbp05p2k78g1zadk",
+        "samples": 105,
+        "avg_score": 0.8955908289241623,
+        "exact": 0.782010582010582,
+        "consistency": 0.9371428571428572,
+        "rubric": 0.9676190476190476,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-5-codex",
+        "evaluation_id": "xlq4nlwlqv4fjw4xi006cf2e",
+        "samples": 63,
+        "avg_score": 0.8817754262198713,
+        "exact": 0.8024691358024691,
+        "consistency": 0.9126984126984127,
+        "rubric": 0.9301587301587302,
+        "json_valid": 0.9841269841269841
+      },
+      {
+        "model": "openai/gpt-5.2",
+        "evaluation_id": "e9566gytn9otyrrd0gzcu6v1",
+        "samples": 63,
+        "avg_score": 0.8767195767195768,
+        "exact": 0.7777777777777778,
+        "consistency": 0.8936507936507937,
+        "rubric": 0.9587301587301587,
+        "json_valid": 0.9841269841269841
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "uvy4oxlet4vvzggnjm79zars",
+        "samples": 9,
+        "avg_score": 0.8637860082304526,
+        "exact": 0.8024691358024691,
+        "consistency": 0.9222222222222223,
+        "rubric": 0.8666666666666667,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "rl2anuwijpfnvc4wizih6xmb",
+        "samples": 63,
+        "avg_score": 0.8633156966490301,
+        "exact": 0.7407407407407407,
+        "consistency": 0.9507936507936507,
+        "rubric": 0.8984126984126984,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "vlvt0yjmskpeqy0fape01civ",
+        "samples": 9,
+        "avg_score": 0.8526748971193417,
+        "exact": 0.9135802469135802,
+        "consistency": 0.8444444444444446,
+        "rubric": 0.8,
+        "json_valid": 1
+      },
+      {
+        "model": "google/gemini-3-flash-preview",
+        "evaluation_id": "ir8kga0968ta0804u4ufdydn",
+        "samples": 63,
+        "avg_score": 0.830864197530864,
+        "exact": 0.7671957671957672,
+        "consistency": 0.8650793650793651,
+        "rubric": 0.8603174603174604,
+        "json_valid": 0.8888888888888888
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "ckqyii6udlwbmofn57n8ik1d",
+        "samples": 63,
+        "avg_score": 0.7679012345679013,
+        "exact": 0.7513227513227514,
+        "consistency": 0.853968253968254,
+        "rubric": 0.6984126984126984,
+        "json_valid": 1
+      },
+      {
+        "model": "z-ai/glm-5",
+        "evaluation_id": "qo0blvrrikxftb3zwxbrwbzu",
+        "samples": 63,
+        "avg_score": 0.7641975308641975,
+        "exact": 0.7037037037037037,
+        "consistency": 0.788888888888889,
+        "rubric": 0.7999999999999999,
+        "json_valid": 0.8253968253968254
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "bn5xmaqmesz2lnsxb88z8c55",
+        "samples": 9,
+        "avg_score": 0.7543209876543211,
+        "exact": 0.6296296296296297,
+        "consistency": 0.8999999999999999,
+        "rubric": 0.7333333333333334,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "fn2esjccx3d3wivkv6pvkokg",
+        "samples": 9,
+        "avg_score": 0.7460905349794239,
+        "exact": 0.6049382716049383,
+        "consistency": 0.8999999999999999,
+        "rubric": 0.7333333333333333,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "blfhpn5d7jcjqg3mdsbv0rnb",
+        "samples": 9,
+        "avg_score": 0.7407407407407409,
+        "exact": 0.6666666666666666,
+        "consistency": 0.8,
+        "rubric": 0.7555555555555555,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "bhpmmb15j5j45bidap44der0",
+        "samples": 63,
+        "avg_score": 0.7205761316872429,
+        "exact": 0.6490299823633157,
+        "consistency": 0.8111111111111111,
+        "rubric": 0.7015873015873016,
+        "json_valid": 0.9682539682539683
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "asg7q9bfb3ke4aujtswqnvvv",
+        "samples": 9,
+        "avg_score": 0.7106995884773663,
+        "exact": 0.8765432098765431,
+        "consistency": 0.8111111111111112,
+        "rubric": 0.4444444444444444,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "r3slaig8ok3dzmlr92nsbra8",
+        "samples": 9,
+        "avg_score": 0.6979423868312757,
+        "exact": 0.7160493827160495,
+        "consistency": 0.8222222222222223,
+        "rubric": 0.5555555555555556,
+        "json_valid": 1
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "qe3ew2dkw0a1lziecoxxddta",
+        "samples": 63,
+        "avg_score": 0.46607877718988844,
+        "exact": 0.1728395061728395,
+        "consistency": 0.780952380952381,
+        "rubric": 0.4444444444444444,
+        "json_valid": 0.9841269841269841
+      },
+      {
+        "model": "moonshotai/kimi-k2.5",
+        "evaluation_id": "jw5tcsqx6fld0qdf79yzdlku",
+        "samples": 63,
+        "avg_score": 0.4459729570840682,
+        "exact": 0.41093474426807763,
+        "consistency": 0.4507936507936508,
+        "rubric": 0.47619047619047616,
+        "json_valid": 0.49206349206349204
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "xjur2o62rvqls0zv9w893r8a",
+        "samples": 20,
+        "avg_score": 0.43925925925925924,
+        "exact": 0.12777777777777777,
+        "consistency": 0.76,
+        "rubric": 0.43,
+        "json_valid": 0.95
+      },
+      {
+        "model": "openai/gpt-4.1-nano",
+        "evaluation_id": "lwiwlqv8i00zx83a3x3eema1",
+        "samples": 60,
+        "avg_score": 0.43024691358024675,
+        "exact": 0.1074074074074074,
+        "consistency": 0.7866666666666667,
+        "rubric": 0.39666666666666667,
+        "json_valid": 0.9833333333333333
+      },
+      {
+        "model": "anthropic/claude-opus-4.6",
+        "evaluation_id": "hz087hlytmtrksyb7q0bcxnj",
+        "samples": 63,
+        "avg_score": 0,
+        "exact": 0,
+        "consistency": 0,
+        "rubric": 0,
+        "json_valid": 0
+      },
+      {
+        "model": "anthropic/claude-sonnet-4.6",
+        "evaluation_id": "nrub05shjizxpbtoyzulcs5a",
+        "samples": 63,
+        "avg_score": 0,
+        "exact": 0,
+        "consistency": 0,
+        "rubric": 0,
+        "json_valid": 0
+      },
+      {
+        "model": "anthropic/claude-opus-4.5",
+        "evaluation_id": "x66nuppy4sm1ilqzb8vlczvc",
+        "samples": 63,
+        "avg_score": 0,
+        "exact": 0,
+        "consistency": 0,
+        "rubric": 0,
+        "json_valid": 0
+      }
+    ]
+  }
+}

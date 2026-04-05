@@ -1,0 +1,72 @@
+{
+  "source": "followup:Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "summarized_at": "2026-04-05T00:51:40.978Z",
+  "selection": "prime",
+  "case_source": "gold",
+  "prompt_mode": "tools",
+  "completed_rankings": [
+    {
+      "provider": "prime",
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max) | sweep_score=0.931 | json_valid=1.000 | eval_id=xjfyhbzhqv39yd2fcaqktydv",
+      "status": "COMPLETED",
+      "avg_score": 0.9213703703703697,
+      "evaluation_id": "ynm0bj1ryijfc6wo5nf96lx9",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ynm0bj1ryijfc6wo5nf96lx9",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high) | sweep_score=0.922 | json_valid=1.000 | eval_id=hb585vdhdbg5gkd5d739tz4s",
+      "status": "COMPLETED",
+      "avg_score": 0.9168148148148143,
+      "evaluation_id": "yszsglmsjbjc22fwe9apa9jg",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/yszsglmsjbjc22fwe9apa9jg",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh) | sweep_score=0.920 | json_valid=1.000 | eval_id=hzzjdp8fy7fcy2xj6zn9i5ni",
+      "status": "COMPLETED",
+      "avg_score": 0.9151851851851853,
+      "evaluation_id": "ux1cqoazxawfw8no7pcaqfjb",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ux1cqoazxawfw8no7pcaqfjb",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max) | sweep_score=0.922 | json_valid=1.000 | eval_id=dhbnwlha48i3tfx64muvpwwz",
+      "status": "COMPLETED",
+      "avg_score": 0.9111851851851844,
+      "evaluation_id": "uz4vnwyzmad6uz62jc4m63h0",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uz4vnwyzmad6uz62jc4m63h0",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5 | sweep_score=0.921 | json_valid=1.000 | eval_id=wdd9idfxqos5qdzb32jnru5r",
+      "status": "COMPLETED",
+      "avg_score": 0.9110370370370363,
+      "evaluation_id": "hkvqzicglsu3v5ttwkwlh82t",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hkvqzicglsu3v5ttwkwlh82t",
+      "json_valid_metric": 0.99,
+      "anomaly": null
+    }
+  ],
+  "pending_or_missing": [],
+  "anomalies": []
+}

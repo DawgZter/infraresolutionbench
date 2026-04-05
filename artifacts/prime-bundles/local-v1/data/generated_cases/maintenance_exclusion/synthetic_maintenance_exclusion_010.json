@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "maintenance_exclusion",
+      "status_note_brevity"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic planned maintenance case where the customer experienced real downtime, but credits are excluded by policy.",
+    "generator_family": "maintenance_exclusion",
+    "latent_facts": [
+      "Maintenance was announced ahead of time.",
+      "The interruption is real but contractually excluded from SLA credits.",
+      "This should not be treated as a breach or discrepancy."
+    ],
+    "likely_failure_modes": [
+      "Model sees outage language and grants a credit anyway.",
+      "Model misses the maintenance exclusion and routes to the wrong owner."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_maintenance_exclusion_010",
+    "title": "Synthetic maintenance exclusion 10",
+    "crm_record": {
+      "account_id": "acct_maint_010",
+      "account_name": "Argent Models",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-120",
+      "contracted_commitment_gpu_hours": 120,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": null,
+      "notes": [
+        "Maintenance notices are sent through email and the status page."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_maint_010",
+      "configured_plan_name": "Committed-120",
+      "configured_commitment_gpu_hours": 120,
+      "invoice_preview_usd": 9854,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No commercial billing variance detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 114,
+      "covered_service_minutes_unavailable": 41,
+      "telemetry_summary": "Usage paused during the maintenance window and resumed after planned work completed.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": "maint_syn_010",
+      "status": "planned_maintenance",
+      "service": "batch-inference-api",
+      "duration_minutes": 41,
+      "customer_visible": true,
+      "customer_impact_summary": "Service unavailable during a planned maintenance window for 41 minutes.",
+      "engineering_summary": "Maintenance work was executed within the announced window and created a short customer-visible interruption.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": true
+    },
+    "customer_note": "We saw downtime during planned maintenance and want to understand the commercial treatment.",
+    "policy_snippet": "Scheduled maintenance windows announced in advance are excluded from SLA service credits.",
+    "calculator_output": "Maintenance exclusion applies. No automatic credit triggered.",
+    "visible_case_summary": "Synthetic planned maintenance case with real impact but excluded contractual remedy."
+  },
+  "ground_truth": {
+    "issue_type": "policy_applicability_review",
+    "root_cause": "scheduled_maintenance",
+    "customer_impact": "outage",
+    "contractual_applicability": "sla_excluded_scheduled_maintenance",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "Exclusion is controlled by policy and not affected by note wording."
+    ],
+    "reference_customer_note": "The interruption occurred during a planned maintenance window that is excluded from SLA credits under your contract, so no service credit applies. We can still share the maintenance summary and timing.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because this was scheduled maintenance with a contractual exclusion and no discrepancy."
+  }
+}

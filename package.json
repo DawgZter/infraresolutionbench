@@ -1,0 +1,51 @@
+{
+  "name": "infraresolutionbench",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "validate:cases": "tsx packages/data/scripts/validate_gold_cases.ts",
+    "validate:generated": "tsx packages/data/scripts/validate_generated_cases.ts",
+    "validate:protocol": "tsx packages/environment/src/validate_protocol_payload.ts",
+    "generate:synthetic": "tsx packages/data/generator/generate_synthetic_cases.ts",
+    "sync:env-data": "tsx packages/environment/src/sync_packaged_env_data.ts",
+    "inspect:case": "tsx packages/environment/src/inspect_case.ts",
+    "prime:eval:import": "tsx packages/environment/src/import_prime_eval.ts",
+    "prime:eval:samples:import": "tsx packages/environment/src/import_prime_eval_samples.ts",
+    "prepare:prime-request": "tsx packages/environment/src/prepare_prime_request.ts",
+    "package:prime": "tsx packages/environment/src/package_prime_bundle.ts",
+    "run:protocol": "tsx packages/environment/src/run_protocol_roundtrip.ts",
+    "run:episode": "tsx packages/environment/src/run_episode.ts",
+    "run:adapter-dataset": "tsx packages/environment/src/run_adapter_dataset.ts",
+    "score:case": "tsx packages/environment/src/run_case.ts",
+    "eval:dataset": "tsx packages/environment/src/evaluate_dataset.ts",
+    "prime:login": "prime login --plain",
+    "prime:config:view": "prime config view",
+    "prime:env:install": "npm run sync:env-data && prime env install infraresolutionbench -p ./environments --plain",
+    "prime:env:push": "npm run sync:env-data && prime env push infraresolutionbench --path ./environments --plain",
+    "prime:eval:gold": "prime eval run infraresolutionbench --env-dir-path ./environments --env-args '{\"case_source\":\"gold\",\"prompt_mode\":\"packet\",\"limit\":10}' --save-results --abbreviated-summary",
+    "prime:eval:synthetic": "prime eval run infraresolutionbench --env-dir-path ./environments --env-args '{\"case_source\":\"synthetic\",\"prompt_mode\":\"packet\",\"limit\":21}' --save-results --abbreviated-summary",
+    "prime:eval:all": "prime eval run infraresolutionbench --env-dir-path ./environments --env-args '{\"case_source\":\"all\",\"prompt_mode\":\"packet\"}' --save-results --abbreviated-summary",
+    "prime:eval:gold:hosted": "prime eval run infraresolutionbench --env-dir-path ./environments --env-args '{\"case_source\":\"gold\",\"prompt_mode\":\"packet\",\"limit\":10}' --save-results --abbreviated-summary --hosted --follow",
+    "audit:benchmark": "tsx --no-cache packages/environment/src/audit_benchmark.ts",
+    "eval:hosted": "tsx packages/environment/src/run_hosted_eval.ts",
+    "sweep:plan": "tsx --no-cache packages/environment/src/plan_model_sweep.ts",
+    "sweep:plan:followup": "tsx --no-cache packages/environment/src/plan_followup_sweep.ts",
+    "sweep:plan:retry": "tsx --no-cache packages/environment/src/plan_retry_sweep.ts",
+    "sweep:run": "tsx --no-cache packages/environment/src/run_model_sweep.ts",
+    "sweep:summarize": "tsx --no-cache packages/environment/src/summarize_model_sweep.ts",
+    "dev:web": "npm run dev --workspace @infraresolutionbench/web",
+    "build:web": "npm run build --workspace @infraresolutionbench/web"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

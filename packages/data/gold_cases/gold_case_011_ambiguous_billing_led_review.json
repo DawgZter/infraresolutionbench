@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["mixed_evidence", "billing_led_ambiguity", "finance_review"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Invoice confusion is the clearest customer-facing problem, while a brief operational note adds noise without resolving whether a commercial adjustment is due.",
+    "generator_family": "ambiguous_case",
+    "latent_facts": [
+      "The customer is primarily asking about an unexpected invoice preview.",
+      "A short degradation note exists, but it is too weak to support an SLA remedy.",
+      "The case should route to finance review without overcommitting to a root cause."
+    ],
+    "likely_failure_modes": [
+      "The model over-indexes on the incident note and treats this as an outage review.",
+      "The model assumes an invoice adjustment is definitely due instead of preserving uncertainty."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": 41,
+      "prior_incidents_30d": 1
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_011",
+    "title": "Invoice preview mismatch with weak operational noise",
+    "crm_record": {
+      "account_id": "acct_011",
+      "account_name": "Signal Harbor",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-180",
+      "contracted_commitment_gpu_hours": 180,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-05-16",
+      "notes": [
+        "Customer is focused on an invoice preview that looks materially higher than expected.",
+        "No prior pricing-config mismatch on record."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_011",
+      "configured_plan_name": "Committed-180",
+      "configured_commitment_gpu_hours": 180,
+      "invoice_preview_usd": 15480,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 18,
+      "pricing_notes": [
+        "Invoice preview shows burst usage above commitment.",
+        "Dashboard explanation for the burst line items is incomplete."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 198,
+      "covered_service_minutes_unavailable": 8,
+      "telemetry_summary": "A short degraded-performance notice overlapped with the billing complaint, but usage stayed largely stable.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Customer-facing invoice explanation did not reconcile to burst line items."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_2026_0325",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 8,
+      "customer_visible": true,
+      "customer_impact_summary": "Brief slowdown reported, but customer mainly complained about billing.",
+      "engineering_summary": "Minor capacity pressure was observed but resolved quickly and did not cross breach thresholds.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "The invoice preview is much higher than we expected, and we also noticed a brief slowdown earlier that day. Please explain whether either of these changed what we owe.",
+    "policy_snippet": "Commercial review should confirm whether pricing explanation gaps reflect a true discrepancy before applying invoice adjustments. Short degradations below SLA thresholds do not automatically trigger credits.",
+    "calculator_output": "Burst usage detected, but current calculator output does not determine whether the preview discrepancy reflects billable overage or explanation gap.",
+    "visible_case_summary": "Billing confusion is primary, but a short incident note introduces irrelevant operational noise."
+  },
+  "ground_truth": {
+    "issue_type": "ambiguous_case",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_finance_review",
+    "needs_human_review": true,
+    "confidence": "low",
+    "adjudication_notes": [
+      "The billing signal is stronger than the operational signal, but the packet does not justify a final invoice adjustment decision.",
+      "The short degradation should not dominate routing."
+    ],
+    "reference_customer_note": "We found an unresolved mismatch between the invoice preview and the explanation available in the current billing records, so we are routing this for finance review before giving you a final answer. At this stage, we are not treating it as an SLA credit case.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because the strongest unresolved signal is invoice_confusion, root cause is still unknown, and the brief operational note does not support a breach finding."
+  }
+}

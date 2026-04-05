@@ -1,0 +1,228 @@
+{
+  "source": "Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-04T22:04:28.885Z",
+  "already_run_models": [
+    "openai/gpt-4.1-nano"
+  ],
+  "selected_prime_models": [
+    {
+      "rank": 1,
+      "model": "google/gemini-3.1-pro-preview",
+      "canonical_model": "google/gemini-3.1-pro-preview",
+      "notes": "Artificial Analysis: Gemini 3.1 Pro Preview"
+    },
+    {
+      "rank": 2,
+      "model": "openai/gpt-5.4",
+      "canonical_model": "openai/gpt-5.4",
+      "notes": "Artificial Analysis: GPT-5.4 (xhigh)"
+    },
+    {
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "canonical_model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh)"
+    },
+    {
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "canonical_model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max)"
+    },
+    {
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "canonical_model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max)"
+    },
+    {
+      "rank": 6,
+      "model": "openai/gpt-5.2",
+      "canonical_model": "openai/gpt-5.2",
+      "notes": "Artificial Analysis: GPT-5.2 (xhigh)"
+    },
+    {
+      "rank": 7,
+      "model": "z-ai/glm-5",
+      "canonical_model": "z-ai/glm-5",
+      "notes": "Artificial Analysis: GLM-5"
+    },
+    {
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "canonical_model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5"
+    },
+    {
+      "rank": 13,
+      "model": "google/gemini-3-pro-preview",
+      "canonical_model": "google/gemini-3-pro-preview",
+      "notes": "Artificial Analysis: Gemini 3 Pro Preview (high)"
+    },
+    {
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "canonical_model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high)"
+    },
+    {
+      "rank": 16,
+      "model": "moonshotai/kimi-k2.5",
+      "canonical_model": "moonshotai/kimi-k2.5",
+      "notes": "Artificial Analysis: Kimi K2.5"
+    },
+    {
+      "rank": 20,
+      "model": "google/gemini-3-flash-preview",
+      "canonical_model": "google/gemini-3-flash-preview",
+      "notes": "Artificial Analysis: Gemini 3 Flash"
+    },
+    {
+      "rank": 23,
+      "model": "openai/gpt-5",
+      "canonical_model": "openai/gpt-5",
+      "notes": "Artificial Analysis: GPT-5 (high)"
+    },
+    {
+      "rank": 25,
+      "model": "openai/gpt-5-codex",
+      "canonical_model": "openai/gpt-5-codex",
+      "notes": "Artificial Analysis: GPT-5 Codex (high)"
+    },
+    {
+      "rank": 29,
+      "model": "openai/gpt-5.1-codex",
+      "canonical_model": "openai/gpt-5.1-codex",
+      "notes": "Artificial Analysis: GPT-5.1 Codex (high)"
+    }
+  ],
+  "selected_openrouter_models": [
+    {
+      "rank": 9,
+      "model": "minimax/minimax-m2.7",
+      "canonical_model": "minimax/minimax-m2.7",
+      "notes": "Artificial Analysis: MiniMax-M2.7"
+    },
+    {
+      "rank": 10,
+      "model": "xiaomi/mimo-v2-pro",
+      "canonical_model": "xiaomi/mimo-v2-pro",
+      "notes": "Artificial Analysis: MiMo-V2-Pro"
+    },
+    {
+      "rank": 11,
+      "model": "openai/gpt-5.2-codex",
+      "canonical_model": "openai/gpt-5.2-codex",
+      "notes": "Artificial Analysis: GPT-5.2 Codex (xhigh)"
+    },
+    {
+      "rank": 12,
+      "model": "x-ai/grok-4.20",
+      "canonical_model": "x-ai/grok-4.20",
+      "notes": "Artificial Analysis: Grok 4.20 Beta 0309"
+    },
+    {
+      "rank": 14,
+      "model": "openai/gpt-5.4-mini",
+      "canonical_model": "openai/gpt-5.4-mini",
+      "notes": "Artificial Analysis: GPT-5.4 mini (xhigh)"
+    },
+    {
+      "rank": 17,
+      "model": "z-ai/glm-5-turbo",
+      "canonical_model": "z-ai/glm-5-turbo",
+      "notes": "Artificial Analysis: GLM-5-Turbo"
+    },
+    {
+      "rank": 21,
+      "model": "qwen/qwen3.5-397b-a17b",
+      "canonical_model": "qwen/qwen3.5-397b-a17b",
+      "notes": "Artificial Analysis: Qwen3.5 397B A17B"
+    },
+    {
+      "rank": 26,
+      "model": "openai/gpt-5.4-nano",
+      "canonical_model": "openai/gpt-5.4-nano",
+      "notes": "Artificial Analysis: GPT-5.4 nano (xhigh)"
+    },
+    {
+      "rank": 28,
+      "model": "xiaomi/mimo-v2-omni",
+      "canonical_model": "xiaomi/mimo-v2-omni",
+      "notes": "Artificial Analysis: MiMo-V2-Omni"
+    },
+    {
+      "rank": 35,
+      "model": "qwen/qwen3.5-27b",
+      "canonical_model": "qwen/qwen3.5-27b",
+      "notes": "Artificial Analysis: Qwen3.5 27B"
+    },
+    {
+      "rank": 42,
+      "model": "xiaomi/mimo-v2-flash",
+      "canonical_model": "xiaomi/mimo-v2-flash",
+      "notes": "Artificial Analysis: MiMo-V2-Flash (Feb 2026)"
+    },
+    {
+      "rank": 49,
+      "model": "qwen/qwen3-max-thinking",
+      "canonical_model": "qwen/qwen3-max-thinking",
+      "notes": "Artificial Analysis: Qwen3 Max Thinking"
+    },
+    {
+      "rank": 50,
+      "model": "minimax/minimax-m2.1",
+      "canonical_model": "minimax/minimax-m2.1",
+      "notes": "Artificial Analysis: MiniMax-M2.1"
+    },
+    {
+      "rank": 53,
+      "model": "google/gemma-4-31b-it",
+      "canonical_model": "google/gemma-4-31b-it",
+      "notes": "Artificial Analysis: Gemma 4 31B"
+    },
+    {
+      "rank": 67,
+      "model": "qwen/qwen3.5-35b-a3b",
+      "canonical_model": "qwen/qwen3.5-35b-a3b",
+      "notes": "Artificial Analysis: Qwen3.5 35B A3B"
+    },
+    {
+      "rank": 69,
+      "model": "minimax/minimax-m2",
+      "canonical_model": "minimax/minimax-m2",
+      "notes": "Artificial Analysis: MiniMax-M2"
+    },
+    {
+      "rank": 71,
+      "model": "stepfun/step-3.5-flash",
+      "canonical_model": "stepfun/step-3.5-flash",
+      "notes": "Manual shortlist add: Step 3.5 Flash"
+    },
+    {
+      "rank": 72,
+      "model": "google/gemma-4-26b-a4b-it",
+      "canonical_model": "google/gemma-4-26b-a4b-it",
+      "notes": "Manual shortlist add: Gemma 4 26B / Gemma 4 MoE variant"
+    },
+    {
+      "rank": 73,
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "canonical_model": "nvidia/nemotron-3-super-120b-a12b",
+      "notes": "Manual shortlist add: NVIDIA Nemotron 3 Super"
+    },
+    {
+      "rank": 74,
+      "model": "qwen/qwen3.6-plus:free",
+      "canonical_model": "qwen/qwen3.6-plus",
+      "notes": "Manual shortlist add: Qwen 3.6 Plus"
+    },
+    {
+      "rank": 75,
+      "model": "arcee-ai/trinity-large-thinking",
+      "canonical_model": "arcee-ai/trinity-large-thinking",
+      "notes": "Manual shortlist add: Arcee Trinity Large Thinking"
+    }
+  ]
+}

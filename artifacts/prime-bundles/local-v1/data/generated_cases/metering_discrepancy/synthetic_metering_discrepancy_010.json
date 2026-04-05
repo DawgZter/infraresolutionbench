@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "meter_lag",
+      "wording_variation",
+      "missing_noncritical_field"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic metering discrepancy where the customer-visible dashboard trails the billable meter despite healthy compute service.",
+    "generator_family": "metering_discrepancy",
+    "latent_facts": [
+      "There is no underlying compute incident.",
+      "The discrepancy is caused by lagging usage meter ingestion.",
+      "Commercial handling may require invoice correction after finance review."
+    ],
+    "likely_failure_modes": [
+      "Model mistakes this for pricing configuration drift.",
+      "Model treats the visibility gap as an SLA service outage."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_metering_discrepancy_010",
+    "title": "Synthetic metering discrepancy 10",
+    "crm_record": {
+      "account_id": "acct_meter_010",
+      "account_name": "Kite Memory",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-150",
+      "contracted_commitment_gpu_hours": 150,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": null,
+      "notes": [
+        "Customer actively monitors the self-serve usage dashboard."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_meter_010",
+      "configured_plan_name": "Committed-150",
+      "configured_commitment_gpu_hours": 150,
+      "invoice_preview_usd": 11462,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 12,
+      "pricing_notes": [
+        "Invoice preview currently reflects 162 GPU-hours of billable usage."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 145,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "No runtime incident is present. The discrepancy comes from delayed meter ingestion.",
+      "meter_ingestion_status": "lagging",
+      "anomalies": [
+        "Dashboard currently trails the internal billable meter by 17 GPU-hours."
+      ]
+    },
+    "incident_record": {
+      "incident_id": null,
+      "status": "no_known_incident",
+      "service": "billing-meter-pipeline",
+      "duration_minutes": null,
+      "customer_visible": false,
+      "customer_impact_summary": null,
+      "engineering_summary": "No runtime incident is present. The discrepancy comes from delayed meter ingestion.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "We are seeing different usage totals across billing and the dashboard. Please verify what is actually billable.",
+    "policy_snippet": "When the customer-visible usage dashboard lags the billable meter, route the case for billing review before finalizing invoicing.",
+    "calculator_output": "Invoice preview reflects 162 GPU-hours while dashboard shows 145.",
+    "visible_case_summary": "Synthetic visibility-gap case with healthy compute service and lagging meter ingestion."
+  },
+  "ground_truth": {
+    "issue_type": "metering_discrepancy",
+    "root_cause": "usage_metering_error",
+    "customer_impact": "usage_visibility_gap",
+    "contractual_applicability": "invoice_adjustment_due",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_finance_review",
+    "needs_human_review": true,
+    "confidence": "medium",
+    "adjudication_notes": [
+      "Ground truth is driven by generator logic, not note wording."
+    ],
+    "reference_customer_note": "We found a lag in the usage meter pipeline, which is why the dashboard and invoice preview do not align yet. We are holding the case for finance review and will correct the final invoice if an adjustment is confirmed.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because the billable meter is ahead of the customer-visible dashboard and invoice adjustment may be required."
+  }
+}

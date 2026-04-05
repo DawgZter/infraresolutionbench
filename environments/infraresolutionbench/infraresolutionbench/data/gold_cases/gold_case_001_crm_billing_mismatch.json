@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["cross_system_disagreement", "customer_confusion"]
+  },
+  "hidden_state": {
+    "scenario_summary": "CRM shows a Committed-100 plan while the billing system is configured for Committed-150, creating a pricing configuration mismatch without an operational incident.",
+    "generator_family": "pricing_config_mismatch",
+    "latent_facts": [
+      "CRM is the source of truth for the signed commercial commitment.",
+      "Billing configuration drift happened during a manual plan update.",
+      "Usage is above the CRM commitment but below the billing commitment."
+    ],
+    "likely_failure_modes": [
+      "The model trusts billing over CRM and misses the discrepancy.",
+      "The model treats this as a metering issue instead of a pricing config issue."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_001",
+    "title": "CRM commitment and billing configuration disagree",
+    "crm_record": {
+      "account_id": "acct_001",
+      "account_name": "Northstar Labs",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-07-15",
+      "notes": [
+        "Executed order form lists Committed-100.",
+        "No pending amendment recorded in CRM."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_001",
+      "configured_plan_name": "Committed-150",
+      "configured_commitment_gpu_hours": 150,
+      "invoice_preview_usd": 8200,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Active billing plan is Committed-150.",
+        "No overage line item generated at 118 GPU-hours."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 118,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Usage telemetry is complete and healthy for the period.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "Our invoice preview looks lower than expected. We thought we'd cross our committed amount this month.",
+    "policy_snippet": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing.",
+    "calculator_output": "Projected invoice uses current billing config: Committed-150 with no overage.",
+    "visible_case_summary": "Commercial dispute with no service incident and a plan mismatch between systems."
+  },
+  "ground_truth": {
+    "issue_type": "pricing_config_mismatch",
+    "root_cause": "billing_config_out_of_sync_with_crm",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_revops_review",
+    "needs_human_review": true,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The mismatch is between signed commercial terms and billing configuration, not telemetry.",
+      "This should be routed for commercial review rather than treated as an SLA matter."
+    ],
+    "reference_customer_note": "We found a mismatch between your contracted plan and the current billing configuration, so we are holding the invoice for RevOps review before confirming the final amount.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review due to CRM Committed-100 versus billing Committed-150 with healthy usage telemetry."
+  }
+}

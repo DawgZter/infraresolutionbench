@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["prepaid_credits", "lower_invoice_than_expected"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Customer expected a higher invoice, but prepaid rollover credits reduced the billed amount.",
+    "generator_family": "policy_applicability_review",
+    "latent_facts": [
+      "Invoice is lower because stored credits were consumed automatically.",
+      "No incident or billing error occurred."
+    ],
+    "likely_failure_modes": [
+      "The model interprets the lower invoice as a pricing or metering bug.",
+      "The model misses that this is a simple contract explanation case."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_009",
+    "title": "Lower invoice explained by rollover credits",
+    "crm_record": {
+      "account_id": "acct_009",
+      "account_name": "Mariner Research",
+      "account_tier": "enterprise",
+      "plan_name": "Prepaid-Quarterly",
+      "contracted_commitment_gpu_hours": 120,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-06-30",
+      "notes": [
+        "Unused prepaid credits roll forward within the active term."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_009",
+      "configured_plan_name": "Prepaid-Quarterly",
+      "configured_commitment_gpu_hours": 120,
+      "invoice_preview_usd": 2100,
+      "credits_applied_usd": 1650,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Rollover credit balance applied before new charges."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 73,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Usage is lower than the committed quarterly average and there were no service anomalies.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "Our invoice came in lower than we expected and we want to understand what offset the charges.",
+    "policy_snippet": "Unused prepaid credits may roll forward within the active term and are automatically consumed before new invoice charges are applied.",
+    "calculator_output": "Available rollover credits applied: 1650 USD.",
+    "visible_case_summary": "Low invoice caused by prepaid credit rollover, not an operational or pricing defect."
+  },
+  "ground_truth": {
+    "issue_type": "policy_applicability_review",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": false,
+    "recommended_owner": "revops_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The invoice is lower for an expected commercial reason and does not need correction."
+    ],
+    "reference_customer_note": "Your invoice was reduced because rollover prepaid credits from the current term were automatically applied before new charges. We do not see a billing discrepancy or service issue in this case.",
+    "reference_internal_note": "Owner: revops_owner. Action: send_explanation_only because rollover credits explain the low invoice and there is no discrepancy."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@infraresolutionbench/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "@heroui/react": "^3.0.2",
+    "@infraresolutionbench/data": "0.1.0",
+    "@infraresolutionbench/environment": "0.1.0",
+    "@infraresolutionbench/shared": "0.1.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "framer-motion": "^12.38.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.2.2"
+  }
+}

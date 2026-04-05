@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["maintenance_exclusion"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Customer experienced unavailability during a planned maintenance window that is excluded from service credits.",
+    "generator_family": "maintenance_exclusion",
+    "latent_facts": [
+      "The maintenance was announced ahead of time.",
+      "The service interruption was real but contractually excluded.",
+      "The incident should not be treated as a breach."
+    ],
+    "likely_failure_modes": [
+      "The model sees outage language and incorrectly grants credit.",
+      "The model misses the maintenance exclusion in the policy."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_003",
+    "title": "Planned maintenance causes temporary unavailability",
+    "crm_record": {
+      "account_id": "acct_003",
+      "account_name": "Vector Harbor",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-80",
+      "contracted_commitment_gpu_hours": 80,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": "2026-10-20",
+      "notes": [
+        "Maintenance notices are delivered by email and status page."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_003",
+      "configured_plan_name": "Committed-80",
+      "configured_commitment_gpu_hours": 80,
+      "invoice_preview_usd": 6400,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No commercial billing variance."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 74,
+      "covered_service_minutes_unavailable": 42,
+      "telemetry_summary": "Usage stopped during the planned maintenance window and resumed immediately after.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": "maint_2026_0320",
+      "status": "planned_maintenance",
+      "service": "managed-training-api",
+      "duration_minutes": 42,
+      "customer_visible": true,
+      "customer_impact_summary": "Training API unavailable during a planned maintenance window.",
+      "engineering_summary": "Planned control-plane maintenance temporarily paused new job submissions.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": true
+    },
+    "customer_note": "Our run queue was unavailable during the maintenance window and we want to know whether credits apply.",
+    "policy_snippet": "Scheduled maintenance windows announced in advance are excluded from SLA service credits.",
+    "calculator_output": null,
+    "visible_case_summary": "Real customer impact, but the contract excludes scheduled maintenance from credits."
+  },
+  "ground_truth": {
+    "issue_type": "policy_applicability_review",
+    "root_cause": "scheduled_maintenance",
+    "customer_impact": "outage",
+    "contractual_applicability": "sla_excluded_scheduled_maintenance",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The impact is real, but maintenance exclusion controls the commercial outcome."
+    ],
+    "reference_customer_note": "The interruption occurred during a planned maintenance window that was excluded from SLA credits under your contract, so no service credit applies. We can still share the maintenance summary and timing.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because this is scheduled_maintenance with contractual exclusion and no system discrepancy."
+  }
+}

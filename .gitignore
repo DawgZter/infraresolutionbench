@@ -1,0 +1,12 @@
+node_modules
+.next
+dist
+coverage
+.DS_Store
+.claude/
+.playwright-cli/
+.vercel/
+artifacts/local-runs/*
+artifacts/screenshots/*
+!artifacts/local-runs/.gitkeep
+!artifacts/screenshots/.gitkeep

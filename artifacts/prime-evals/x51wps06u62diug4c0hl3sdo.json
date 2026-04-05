@@ -1,0 +1,566 @@
+{
+  "evaluation_id": "x51wps06u62diug4c0hl3sdo",
+  "name": "infraresolutionbench-openai/gpt-5",
+  "status": "COMPLETED",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "tmu4j906fihif8afmyl07jhw",
+  "version_id": "xq82hde6r1fepqwdskg6pf5a",
+  "is_hosted": true,
+  "sandbox_id": "tr76cojqb5h69ho5kif49r1g",
+  "inference_model": "openai/gpt-5",
+  "eval_config": {
+    "num_examples": 15,
+    "rollouts_per_example": 10,
+    "env_args": {
+      "case_source": "gold",
+      "prompt_mode": "tools",
+      "limit": "15"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": null,
+    "api_key_var": null,
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "openai/gpt-5",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with openai/gpt-5",
+  "tags": [],
+  "total_samples": 150,
+  "avg_score": 0.83397037037037,
+  "min_score": 0.37777777777777777,
+  "max_score": 0.9999999999999999,
+  "started_at": null,
+  "completed_at": "2026-04-05T01:53:14.796000Z",
+  "created_at": "2026-04-05T01:46:59.890000Z",
+  "updated_at": "2026-04-05T01:53:30.834000Z",
+  "metadata": {
+    "env": "infraresolutionbench",
+    "env_args": {
+      "case_source": "gold",
+      "prompt_mode": "tools",
+      "limit": "15"
+    },
+    "model": "openai/gpt-5",
+    "base_url": "https://api.pinference.ai/api/v1",
+    "num_examples": 15,
+    "rollouts_per_example": 10,
+    "sampling_args": {
+      "n": 1,
+      "extra_body": {},
+      "max_tokens": null
+    },
+    "time_ms": 325474.23553466797,
+    "pass_at_k": {
+      "1": 0.9666666666666667,
+      "2": 0.9851851851851853,
+      "4": 0.9984126984126984,
+      "8": 1
+    },
+    "pass_all_k": {
+      "1": 0.9666666666666667,
+      "2": 0.9481481481481481,
+      "4": 0.9349206349206349,
+      "8": 0.9333333333333333
+    },
+    "pass_threshold": 0.5,
+    "usage": {
+      "input_tokens": 3346.9333333333334,
+      "output_tokens": 2649.64
+    },
+    "version_info": {
+      "vf_version": "0.1.11",
+      "vf_commit": null,
+      "env_version": "0.1.12",
+      "env_commit": null
+    },
+    "state_columns": [],
+    "tools": [
+      {
+        "name": "get_crm_record",
+        "description": "Return the CRM and account record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_crm_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_billing_record",
+        "description": "Return the billing and pricing record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_billing_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_usage_record",
+        "description": "Return the usage and telemetry summary for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_usage_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_incident_record",
+        "description": "Return the incident or engineering record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_incident_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_customer_note",
+        "description": "Return the customer-authored note for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_customer_note_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_policy_snippet",
+        "description": "Return the relevant policy or SLA snippet for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_policy_snippet_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_calculator_output",
+        "description": "Return the calculator or invoice helper output for a \ncase.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_calculator_output_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      }
+    ]
+  },
+  "metrics": {
+    "reward": 0.8339703703703704,
+    "metrics": {
+      "_composite_reward": 0.8339703703703704,
+      "_exact_metric": 0.7814814814814814,
+      "_consistency_metric": 0.938,
+      "_rubric_metric": 0.9933333333333333,
+      "_json_valid_metric": 1,
+      "num_turns": 2,
+      "total_tool_calls": 7,
+      "get_crm_record_calls": 1,
+      "get_billing_record_calls": 1,
+      "get_usage_record_calls": 1,
+      "get_incident_record_calls": 1,
+      "get_customer_note_calls": 1,
+      "get_policy_snippet_calls": 1,
+      "get_calculator_output_calls": 1
+    },
+    "error": 0
+  },
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x51wps06u62diug4c0hl3sdo",
+  "is_public": false,
+  "statistics": null,
+  "chartData": {
+    "histogramData": [
+      {
+        "range": "0.378-0.430",
+        "x": 0.4037037037037037,
+        "displayValue": 0.4037037037037037,
+        "count": 2,
+        "midpoint": 0.4037037037037037,
+        "binStart": 0.37777777777777777,
+        "binEnd": 0.4296296296296296,
+        "percentage": 1.3333333333333335
+      },
+      {
+        "range": "0.430-0.481",
+        "x": 0.4555555555555555,
+        "displayValue": 0.4555555555555555,
+        "count": 3,
+        "midpoint": 0.4555555555555555,
+        "binStart": 0.4296296296296296,
+        "binEnd": 0.48148148148148145,
+        "percentage": 2
+      },
+      {
+        "range": "0.481-0.533",
+        "x": 0.5074074074074074,
+        "displayValue": 0.5074074074074074,
+        "count": 3,
+        "midpoint": 0.5074074074074074,
+        "binStart": 0.48148148148148145,
+        "binEnd": 0.5333333333333333,
+        "percentage": 2
+      },
+      {
+        "range": "0.533-0.585",
+        "x": 0.5592592592592592,
+        "displayValue": 0.5592592592592592,
+        "count": 2,
+        "midpoint": 0.5592592592592592,
+        "binStart": 0.5333333333333333,
+        "binEnd": 0.5851851851851851,
+        "percentage": 1.3333333333333335
+      },
+      {
+        "range": "0.585-0.637",
+        "x": 0.611111111111111,
+        "displayValue": 0.611111111111111,
+        "count": 2,
+        "midpoint": 0.611111111111111,
+        "binStart": 0.5851851851851851,
+        "binEnd": 0.637037037037037,
+        "percentage": 1.3333333333333335
+      },
+      {
+        "range": "0.637-0.689",
+        "x": 0.662962962962963,
+        "displayValue": 0.662962962962963,
+        "count": 10,
+        "midpoint": 0.662962962962963,
+        "binStart": 0.637037037037037,
+        "binEnd": 0.6888888888888889,
+        "percentage": 6.666666666666667
+      },
+      {
+        "range": "0.689-0.741",
+        "x": 0.7148148148148148,
+        "displayValue": 0.7148148148148148,
+        "count": 16,
+        "midpoint": 0.7148148148148148,
+        "binStart": 0.6888888888888889,
+        "binEnd": 0.7407407407407407,
+        "percentage": 10.666666666666668
+      },
+      {
+        "range": "0.741-0.793",
+        "x": 0.7666666666666666,
+        "displayValue": 0.7666666666666666,
+        "count": 22,
+        "midpoint": 0.7666666666666666,
+        "binStart": 0.7407407407407407,
+        "binEnd": 0.7925925925925925,
+        "percentage": 14.666666666666666
+      },
+      {
+        "range": "0.793-0.844",
+        "x": 0.8185185185185184,
+        "displayValue": 0.8185185185185184,
+        "count": 7,
+        "midpoint": 0.8185185185185184,
+        "binStart": 0.7925925925925925,
+        "binEnd": 0.8444444444444443,
+        "percentage": 4.666666666666667
+      },
+      {
+        "range": "0.844-0.896",
+        "x": 0.8703703703703702,
+        "displayValue": 0.8703703703703702,
+        "count": 12,
+        "midpoint": 0.8703703703703702,
+        "binStart": 0.8444444444444443,
+        "binEnd": 0.8962962962962961,
+        "percentage": 8
+      },
+      {
+        "range": "0.896-0.948",
+        "x": 0.922222222222222,
+        "displayValue": 0.922222222222222,
+        "count": 21,
+        "midpoint": 0.922222222222222,
+        "binStart": 0.8962962962962961,
+        "binEnd": 0.9481481481481481,
+        "percentage": 14.000000000000002
+      },
+      {
+        "range": "0.948-1.000",
+        "x": 0.974074074074074,
+        "displayValue": 0.974074074074074,
+        "count": 50,
+        "midpoint": 0.974074074074074,
+        "binStart": 0.9481481481481481,
+        "binEnd": 0.9999999999999999,
+        "percentage": 33.33333333333333
+      }
+    ],
+    "stats": {
+      "minReward": 0.37777777777777777,
+      "maxReward": 0.9999999999999999,
+      "avgReward": 0.8339703703703701,
+      "medianReward": 0.8822222222222221,
+      "totalExamples": 150,
+      "totalRollouts": 150
+    },
+    "sortedRewards": [
+      0.37777777777777777,
+      0.37777777777777777,
+      0.4355555555555556,
+      0.4555555555555555,
+      0.4555555555555555,
+      0.5133333333333333,
+      0.5133333333333333,
+      0.5133333333333333,
+      0.5333333333333333,
+      0.5333333333333333,
+      0.5911111111111111,
+      0.611111111111111,
+      0.648888888888889,
+      0.648888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6688888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.6888888888888889,
+      0.7266666666666667,
+      0.7266666666666667,
+      0.7266666666666667,
+      0.7266666666666667,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7466666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.7666666666666666,
+      0.8044444444444444,
+      0.8044444444444444,
+      0.8244444444444444,
+      0.8244444444444444,
+      0.8244444444444444,
+      0.8244444444444444,
+      0.8244444444444444,
+      0.8444444444444444,
+      0.8444444444444444,
+      0.8444444444444444,
+      0.8444444444444444,
+      0.8444444444444444,
+      0.8622222222222222,
+      0.8822222222222221,
+      0.8822222222222221,
+      0.8822222222222221,
+      0.8822222222222221,
+      0.8822222222222221,
+      0.8822222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9022222222222221,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.9222222222222222,
+      0.96,
+      0.96,
+      0.96,
+      0.96,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.98,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999,
+      0.9999999999999999
+    ]
+  },
+  "rubricInfo": {
+    "functions": [
+      "_composite_reward"
+    ]
+  },
+  "detailedMetrics": {
+    "detectedMetrics": [
+      "_composite_reward"
+    ],
+    "metricsStats": {
+      "_composite_reward": {
+        "mean": 0.8339703703703701,
+        "stdDev": 0.15397639425016618,
+        "count": 150,
+        "p5": 0.5223333333333333,
+        "p25": 0.7316666666666667,
+        "p50": 0.8822222222222221,
+        "p75": 0.98,
+        "p95": 0.9999999999999998
+      }
+    }
+  },
+  "rewardStats": null
+}

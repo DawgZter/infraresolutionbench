@@ -1,0 +1,609 @@
+{
+  "evaluation_id": "lwiwlqv8i00zx83a3x3eema1",
+  "imported_at": "2026-04-04T20:51:53.218Z",
+  "total": 60,
+  "total_pages": 1,
+  "limit": 100,
+  "samples": [
+    {
+      "sample_id": "w0ew404r1m5az0uh12qkeha6",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "hgpygce29ejhp1l7h8th1fs5",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "hvs8gews09t1yvocif9451pw",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "bm4cr60ak50c4grc2m6qeyo6",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "euqfwuvm0797udiy8hkiumqa",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ovd4v89czuibb6pkn6m2vnxd",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "jxe90q6l2snxc9d3ch520pzm",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.26666666666666666,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "yd2hmbger3oqg4s0iwaowuqi",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "nm4i39kzkb16io47zvc3w07j",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "z18ljq7exm9o7q22u50nf825",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_004",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "c5lkayyuvinxqqlg3pl2efy9",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_004",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "iy07j5efrzqto3xzrd97iiw7",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_004",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "gasv01dvfllq5kxadpd4e1cs",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_005",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "v4x0cnjawklrwl5d99stq9vw",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_005",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "p8sw55wwzfcwwz429cdthrcn",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.6074074074074074,
+      "case_id": "synthetic_ambiguous_case_005",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "r44smcnswtufqtc6c0z40xdj",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_006",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ol0u5602mqjcx4pvgu2zuko7",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_006",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "bn8k1qt2iwbhmikqsdt45dqy",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_006",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wxwbdp5u85ofnsf6qc87d5ys",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_007",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "nyqo228gtwxnddejezwds1uo",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_ambiguous_case_007",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "o3ajr6oy8u01k68dpq3wsa5g",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.6074074074074074,
+      "case_id": "synthetic_ambiguous_case_007",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "q7rqz4h6b0eaaf2bjcvsnmnl",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_008",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wr1seesp4e73xu9nk1hmvqb0",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.4666666666666666,
+      "case_id": "synthetic_ambiguous_case_008",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "cei7241j70n2fixuh6kjtk24",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_ambiguous_case_008",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "mrous9srqxvdw0adrxrgx7nn",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0,
+      "case_id": "synthetic_ambiguous_case_009",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wls5woc72opb5ati0ctkewpr",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_009",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "lqs7sty2yw1qj54ekuqtvod0",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_009",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "p35ss9qod5g0sojlsxgtni6y",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_ambiguous_case_010",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "syk45bcrj9f3ww61bp9puedp",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_010",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "vfi8ut0bpv9hksargi82kdmo",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_010",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "r5xy13oaag17h07mt39w9mvp",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_011",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "d34efqlpyh6y45nqnbdch8eh",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.5333333333333333,
+      "case_id": "synthetic_ambiguous_case_011",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "kffv9jj6914clp9356poh8o5",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_ambiguous_case_011",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "zj1nbcpvmihhwcn866503m57",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_ambiguous_case_012",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "lks4ci725io1hmmi9xbqww38",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_012",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "m10c0lst9706ljva9d4madmx",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_ambiguous_case_012",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "pwmga6mi7p1s142f3nhebw15",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_013",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "y53fl1imcwoe2ebwqd0kdmsa",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_013",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fvvnnsgtao8cgr0qgs5qyqdd",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_013",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "t7ijrm4c30519szcg57pov3r",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_ambiguous_case_014",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "k1w6zlkpapubkqd9crytc12t",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_ambiguous_case_014",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "dr6q8vgp2uvt074uscl1nmve",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.4666666666666666,
+      "case_id": "synthetic_ambiguous_case_014",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "iumvfd8obqripgudrkf46l3k",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_015",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "u3awb1vxv89bgti71f39nn9k",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_015",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "zf8qy9o1fuggxaarul9jbu1w",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_015",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "pv5pv9g0qljvaytkxbp3vrwz",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_016",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "vynrk3bn0fzedi96omq3y1qs",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_ambiguous_case_016",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "my3k348yrpcwf15mbearoqa4",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_016",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "xjfpbe3pp16hx7bbehkvhs3k",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_017",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "l486hnoz9rongxwwl3ykmwac",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.4666666666666666,
+      "case_id": "synthetic_ambiguous_case_017",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "uvpnctlm5dza07imng90zzak",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_017",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "s56i9bnrj45vrh4rtirfw3z7",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0.30370370370370375,
+      "case_id": "synthetic_ambiguous_case_018",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "of126kdwtgmn0odx4a499lmk",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_018",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "f2dkq0x3lfjaqcovn4d5eh98",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_018",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ypcp8c45sp6z0qoyx49j6i1m",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.5333333333333333,
+      "case_id": "synthetic_ambiguous_case_019",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "f1tnqivkf97qopr5pgaf8hox",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.6074074074074074,
+      "case_id": "synthetic_ambiguous_case_019",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "vqwedli3j60yyt3bhxkhxpyn",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_019",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "kh893ure337ssgmb1820p4as",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_020",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "cz4mw18nsmey0dqm7t40mnan",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_020",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fgca0n0tmoafhgt1lz8p7wmi",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_020",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    }
+  ]
+}

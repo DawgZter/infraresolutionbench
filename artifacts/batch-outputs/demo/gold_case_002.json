@@ -1,0 +1,13 @@
+{
+  "issue_type": "incident_impact_review",
+  "root_cause": "capacity_shortfall",
+  "customer_impact": "outage",
+  "contractual_applicability": "credit_due",
+  "discrepancy_detected": false,
+  "recommended_owner": "shared_revops_engineering",
+  "recommended_action": "send_explanation_only",
+  "needs_human_review": false,
+  "confidence": "high",
+  "customer_note": "We confirmed a covered outage on the managed training service that exceeded the contract threshold, so the flat service credit applies. We will share the incident summary and credit handling details.",
+  "internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because the outage was covered, exceeded the threshold, and credit_due applies."
+}

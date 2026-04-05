@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["short_incident", "no_credit_due", "job_failure"]
+  },
+  "hidden_state": {
+    "scenario_summary": "A short GPU node failure caused customer-visible job failures, but the incident stayed below contract thresholds and does not warrant a credit or goodwill path.",
+    "generator_family": "clean_covered_outage",
+    "latent_facts": [
+      "The incident is real and customer-visible.",
+      "The duration and policy path do not support a credit.",
+      "The account context does not make goodwill review necessary."
+    ],
+    "likely_failure_modes": [
+      "The model sees customer-visible failures and incorrectly awards a credit.",
+      "The model escalates to goodwill review even though there is no commercial sensitivity signal."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": 0
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_015",
+    "title": "Short GPU node failure does not trigger credit",
+    "crm_record": {
+      "account_id": "acct_015",
+      "account_name": "Argent Models",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-220",
+      "contracted_commitment_gpu_hours": 220,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": "2026-12-10",
+      "notes": [
+        "Standard enterprise terms without special goodwill commitments."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_015",
+      "configured_plan_name": "Committed-220",
+      "configured_commitment_gpu_hours": 220,
+      "invoice_preview_usd": 17690,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No billing anomaly detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 214,
+      "covered_service_minutes_unavailable": 11,
+      "telemetry_summary": "A single GPU node failure caused several jobs to fail, but the incident resolved within 11 minutes.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Jobs pinned to one GPU pool failed and were rescheduled after node replacement."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_2026_0322_gpu",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 11,
+      "customer_visible": true,
+      "customer_impact_summary": "A subset of jobs failed during an 11-minute node incident.",
+      "engineering_summary": "A GPU node failure in one pool caused temporary job failures until workloads were rescheduled.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "Several jobs failed during a brief platform incident. Please confirm whether anything applies commercially.",
+    "policy_snippet": "Covered service credits apply only when customer-visible outages or covered delays exceed 30 minutes, or when monthly uptime thresholds are breached.",
+    "calculator_output": "Incident duration: 11 minutes. No automatic credit threshold met.",
+    "visible_case_summary": "Real customer-visible incident with job failures, but no credit is due under standard thresholds."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "gpu_node_failure",
+    "customer_impact": "job_failure",
+    "contractual_applicability": "no_credit_due",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The incident is cleanly attributable, but commercial relief is not triggered because duration stayed below threshold and no special account context is present."
+    ],
+    "reference_customer_note": "We confirmed a brief platform incident caused the job failures, but the event stayed below the contract’s service-credit threshold, so no credit is due. We can share the incident summary and remediation details.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because root cause is gpu_node_failure, customer impact is job_failure, and contractual outcome is no_credit_due."
+  }
+}

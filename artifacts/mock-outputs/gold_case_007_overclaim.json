@@ -1,0 +1,13 @@
+{
+  "issue_type": "ambiguous_case",
+  "root_cause": "unknown_root_cause",
+  "customer_impact": "degraded_performance",
+  "contractual_applicability": "no_sla_breach",
+  "discrepancy_detected": true,
+  "recommended_owner": "shared_revops_engineering",
+  "recommended_action": "hold_for_engineering_review",
+  "needs_human_review": true,
+  "confidence": "low",
+  "customer_note": "We confirmed the root cause and have a final resolution. This was definitely a platform incident, and no further review is needed.",
+  "internal_note": "Owner: shared_revops_engineering. Action: hold_for_engineering_review. Confirmed root cause is scheduler failure and we have the definitive cause."
+}

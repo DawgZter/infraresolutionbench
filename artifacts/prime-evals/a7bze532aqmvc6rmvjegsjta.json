@@ -1,0 +1,70 @@
+{
+  "evaluation_id": "a7bze532aqmvc6rmvjegsjta",
+  "name": "gold-tools-qwen_qwen3.6-plus-free-or-v1",
+  "status": "RUNNING",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "ikqpqq8g3gzwpew91q7lq6ga",
+  "version_id": "xq82hde6r1fepqwdskg6pf5a",
+  "is_hosted": true,
+  "sandbox_id": "yoq4l541ejdsacq39akusfed",
+  "inference_model": "qwen/qwen3.6-plus:free",
+  "eval_config": {
+    "num_examples": 15,
+    "rollouts_per_example": 1,
+    "env_args": {
+      "case_source": "gold",
+      "prompt_mode": "tools",
+      "limit": "15"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": "https://openrouter.ai/api/v1",
+    "api_key_var": "OPENROUTER_API_KEY",
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "qwen/qwen3.6-plus:free",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with qwen/qwen3.6-plus:free",
+  "tags": [
+    "hosted",
+    "inference"
+  ],
+  "total_samples": 0,
+  "avg_score": null,
+  "min_score": null,
+  "max_score": null,
+  "started_at": null,
+  "completed_at": null,
+  "created_at": "2026-04-05T04:17:34.099000Z",
+  "updated_at": "2026-04-05T04:17:35.012000Z",
+  "metadata": {
+    "model": "qwen/qwen3.6-plus:free",
+    "num_examples": 15,
+    "rollouts_per_example": 1,
+    "api_base_url": "https://openrouter.ai/api/v1",
+    "api_key_var": "OPENROUTER_API_KEY"
+  },
+  "metrics": {},
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/a7bze532aqmvc6rmvjegsjta",
+  "is_public": false,
+  "statistics": null,
+  "chartData": null,
+  "rubricInfo": null,
+  "detailedMetrics": null,
+  "rewardStats": null
+}

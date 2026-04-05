@@ -1,0 +1,174 @@
+{
+  "protocol_version": "v1",
+  "case_id": "gold_case_001",
+  "mode": "tools",
+  "prompt_bundle": {
+    "system_prompt": "You are an AI copilot for AI infrastructure commercial operations.\n\nYou will receive records from multiple internal systems:\n- CRM/account record\n- billing/pricing record\n- usage summary\n- incident/engineering notes\n- customer note\n- policy snippet if relevant\n\nYour task:\n1. identify the likely issue type\n2. determine root cause and customer impact\n3. determine contractual applicability\n4. detect whether systems disagree\n5. recommend an owner and bounded next action\n6. decide whether human review is required\n7. draft a customer note\n8. draft an internal ops note\n\nImportant:\n- do not assume facts not present\n- if evidence is conflicting, reflect that in confidence and review recommendation\n- do not recompute billing formulas unless calculator output is explicitly missing\n- return valid JSON only",
+    "user_prompt": "Case ID: gold_case_001\n\nUse the available read-only tools to inspect the internal records for this case before answering.\nYou may call every tool if needed.\n\nReturn a single JSON object with exactly these keys:\n- issue_type\n- root_cause\n- customer_impact\n- contractual_applicability\n- discrepancy_detected\n- recommended_owner\n- recommended_action\n- needs_human_review\n- confidence\n- customer_note\n- internal_note",
+    "tool_instructions": "Available tools:\n- get_crm_record(case_id=\"gold_case_001\"): Returns the CRM and account record for the case.\n- get_billing_record(case_id=\"gold_case_001\"): Returns the billing and pricing record for the case.\n- get_usage_record(case_id=\"gold_case_001\"): Returns the usage and telemetry summary for the case.\n- get_incident_record(case_id=\"gold_case_001\"): Returns the incident or engineering record for the case, if present.\n- get_customer_note(case_id=\"gold_case_001\"): Returns the customer-authored note or complaint for the case.\n- get_policy_snippet(case_id=\"gold_case_001\"): Returns the relevant policy or SLA snippet for the case, if present.\n- get_calculator_output(case_id=\"gold_case_001\"): Returns calculator or invoice helper output when the case includes it."
+  },
+  "tool_definitions": [
+    {
+      "name": "get_crm_record",
+      "description": "Returns the CRM and account record for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_billing_record",
+      "description": "Returns the billing and pricing record for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_usage_record",
+      "description": "Returns the usage and telemetry summary for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_incident_record",
+      "description": "Returns the incident or engineering record for the case, if present.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_customer_note",
+      "description": "Returns the customer-authored note or complaint for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_policy_snippet",
+      "description": "Returns the relevant policy or SLA snippet for the case, if present.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_calculator_output",
+      "description": "Returns calculator or invoice helper output when the case includes it.",
+      "inputExample": "case_id=\"gold_case_001\""
+    }
+  ],
+  "case_packet": {
+    "case_id": "gold_case_001",
+    "title": "CRM commitment and billing configuration disagree",
+    "crm_record": {
+      "account_id": "acct_001",
+      "account_name": "Northstar Labs",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-07-15",
+      "notes": [
+        "Executed order form lists Committed-100.",
+        "No pending amendment recorded in CRM."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_001",
+      "configured_plan_name": "Committed-150",
+      "configured_commitment_gpu_hours": 150,
+      "invoice_preview_usd": 8200,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Active billing plan is Committed-150.",
+        "No overage line item generated at 118 GPU-hours."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 118,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Usage telemetry is complete and healthy for the period.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "Our invoice preview looks lower than expected. We thought we'd cross our committed amount this month.",
+    "policy_snippet": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing.",
+    "calculator_output": "Projected invoice uses current billing config: Committed-150 with no overage.",
+    "visible_case_summary": "Commercial dispute with no service incident and a plan mismatch between systems."
+  },
+  "prefetched_tool_calls": [
+    {
+      "tool": "get_crm_record",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": {
+        "account_id": "acct_001",
+        "account_name": "Northstar Labs",
+        "account_tier": "enterprise",
+        "plan_name": "Committed-100",
+        "contracted_commitment_gpu_hours": 100,
+        "billing_owner": "revops@prime.example",
+        "sla_tier": "enterprise-standard",
+        "renewal_date": "2026-07-15",
+        "notes": [
+          "Executed order form lists Committed-100.",
+          "No pending amendment recorded in CRM."
+        ]
+      }
+    },
+    {
+      "tool": "get_billing_record",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": {
+        "billing_account_id": "bill_001",
+        "configured_plan_name": "Committed-150",
+        "configured_commitment_gpu_hours": 150,
+        "invoice_preview_usd": 8200,
+        "credits_applied_usd": 0,
+        "burst_usage_gpu_hours": 0,
+        "pricing_notes": [
+          "Active billing plan is Committed-150.",
+          "No overage line item generated at 118 GPU-hours."
+        ]
+      }
+    },
+    {
+      "tool": "get_usage_record",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": {
+        "window_start": "2026-03-01",
+        "window_end": "2026-03-31",
+        "total_gpu_hours": 118,
+        "covered_service_minutes_unavailable": 0,
+        "telemetry_summary": "Usage telemetry is complete and healthy for the period.",
+        "meter_ingestion_status": "healthy",
+        "anomalies": []
+      }
+    },
+    {
+      "tool": "get_incident_record",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": null
+    },
+    {
+      "tool": "get_customer_note",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": "Our invoice preview looks lower than expected. We thought we'd cross our committed amount this month."
+    },
+    {
+      "tool": "get_policy_snippet",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing."
+    },
+    {
+      "tool": "get_calculator_output",
+      "arguments": {
+        "case_id": "gold_case_001"
+      },
+      "result": "Projected invoice uses current billing config: Committed-150 with no overage."
+    }
+  ]
+}

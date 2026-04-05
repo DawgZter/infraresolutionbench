@@ -1,0 +1,99 @@
+{
+  "evaluation_id": "fn2esjccx3d3wivkv6pvkokg",
+  "imported_at": "2026-04-04T21:04:31.284Z",
+  "total": 9,
+  "total_pages": 1,
+  "limit": 100,
+  "samples": [
+    {
+      "sample_id": "agnxjm61s5hk59eeooobzi7f",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.7222222222222222,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "q4mwd76j1g251auaa5ake0u7",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.6518518518518519,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "o88o3asipknptjfk95ia3x45",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.8185185185185185,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ejzvwzcq760dt0vg6vbb2vl8",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.8222222222222223,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "pachsc6eh2qv7utks2yjx0gx",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.8222222222222223,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "aox9moec9ghfhpqic3ba662s",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.7555555555555555,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "konbcdll3jwtfzpm42714orj",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.6851851851851852,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "i2ztwyfhbiuntwoptzj370fc",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.7185185185185187,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "vxxbckvj9hurgwey1xta7lea",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.7185185185185187,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    }
+  ]
+}

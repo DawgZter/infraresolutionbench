@@ -1,0 +1,204 @@
+{
+  "evaluation_id": "oghcf4b22q99wt6q4r6gzw37",
+  "name": "infraresolutionbench-openai/gpt-4.1-nano",
+  "status": "COMPLETED",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "ibyhsow8250opzkzs2iezkow",
+  "version_id": "ns44fdy94owirx9e3rs9lbmw",
+  "is_hosted": true,
+  "sandbox_id": "p713a800vzz88cp9pg25e3jr",
+  "inference_model": "openai/gpt-4.1-nano",
+  "eval_config": {
+    "num_examples": 3,
+    "rollouts_per_example": 3,
+    "env_args": {
+      "case_source": "synthetic",
+      "prompt_mode": "packet",
+      "generator_family": "clean_covered_outage",
+      "limit": "3"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": null,
+    "api_key_var": null,
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "openai/gpt-4.1-nano",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with openai/gpt-4.1-nano",
+  "tags": [],
+  "total_samples": 9,
+  "avg_score": 0.831275720164609,
+  "min_score": 0.7222222222222222,
+  "max_score": 0.9296296296296296,
+  "started_at": null,
+  "completed_at": "2026-04-04T21:13:50.760000Z",
+  "created_at": "2026-04-04T21:13:02.154000Z",
+  "updated_at": "2026-04-04T21:14:04.874000Z",
+  "metadata": {
+    "env": "infraresolutionbench",
+    "env_args": {
+      "case_source": "synthetic",
+      "prompt_mode": "packet",
+      "generator_family": "clean_covered_outage",
+      "limit": "3"
+    },
+    "model": "openai/gpt-4.1-nano",
+    "base_url": "https://api.pinference.ai/api/v1",
+    "num_examples": 3,
+    "rollouts_per_example": 3,
+    "sampling_args": {
+      "n": 1,
+      "extra_body": {},
+      "max_tokens": null
+    },
+    "time_ms": 3137.7580165863037,
+    "pass_at_k": {
+      "1": 1,
+      "2": 1
+    },
+    "pass_all_k": {
+      "1": 1,
+      "2": 1
+    },
+    "pass_threshold": 0.5,
+    "usage": {
+      "input_tokens": 1039,
+      "output_tokens": 197.22222222222223
+    },
+    "version_info": {
+      "vf_version": "0.1.11",
+      "vf_commit": null,
+      "env_version": "0.1.6",
+      "env_commit": null
+    },
+    "state_columns": [],
+    "tools": null
+  },
+  "metrics": {
+    "reward": 0.831275720164609,
+    "metrics": {
+      "_composite_reward": 0.831275720164609,
+      "_exact_metric": 0.7160493827160495,
+      "_consistency_metric": 0.9333333333333333,
+      "_rubric_metric": 0.8444444444444446,
+      "_json_valid_metric": 1,
+      "num_turns": 1
+    },
+    "error": 0
+  },
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/oghcf4b22q99wt6q4r6gzw37",
+  "is_public": false,
+  "statistics": null,
+  "chartData": {
+    "histogramData": [
+      {
+        "range": "0.722-0.764",
+        "x": 0.7429629629629629,
+        "displayValue": 0.7429629629629629,
+        "count": 2,
+        "midpoint": 0.7429629629629629,
+        "binStart": 0.7222222222222222,
+        "binEnd": 0.7637037037037037,
+        "percentage": 22.22222222222222
+      },
+      {
+        "range": "0.764-0.805",
+        "x": 0.7844444444444444,
+        "displayValue": 0.7844444444444444,
+        "count": 2,
+        "midpoint": 0.7844444444444444,
+        "binStart": 0.7637037037037037,
+        "binEnd": 0.8051851851851851,
+        "percentage": 22.22222222222222
+      },
+      {
+        "range": "0.805-0.847",
+        "x": 0.825925925925926,
+        "displayValue": 0.825925925925926,
+        "count": 2,
+        "midpoint": 0.825925925925926,
+        "binStart": 0.8051851851851851,
+        "binEnd": 0.8466666666666667,
+        "percentage": 22.22222222222222
+      },
+      {
+        "range": "0.847-0.888",
+        "x": 0.8674074074074074,
+        "displayValue": 0.8674074074074074,
+        "count": 0,
+        "midpoint": 0.8674074074074074,
+        "binStart": 0.8466666666666667,
+        "binEnd": 0.8881481481481481,
+        "percentage": 0
+      },
+      {
+        "range": "0.888-0.930",
+        "x": 0.9088888888888889,
+        "displayValue": 0.9088888888888889,
+        "count": 3,
+        "midpoint": 0.9088888888888889,
+        "binStart": 0.8881481481481481,
+        "binEnd": 0.9296296296296296,
+        "percentage": 33.33333333333333
+      }
+    ],
+    "stats": {
+      "minReward": 0.7222222222222222,
+      "maxReward": 0.9296296296296296,
+      "avgReward": 0.831275720164609,
+      "medianReward": 0.8222222222222223,
+      "totalExamples": 9,
+      "totalRollouts": 9
+    },
+    "sortedRewards": [
+      0.7222222222222222,
+      0.7555555555555555,
+      0.7888888888888889,
+      0.7888888888888889,
+      0.8222222222222223,
+      0.8222222222222223,
+      0.9259259259259259,
+      0.9259259259259259,
+      0.9296296296296296
+    ]
+  },
+  "rubricInfo": {
+    "functions": [
+      "_composite_reward"
+    ]
+  },
+  "detailedMetrics": {
+    "detectedMetrics": [
+      "_composite_reward"
+    ],
+    "metricsStats": {
+      "_composite_reward": {
+        "mean": 0.831275720164609,
+        "stdDev": 0.07376708218849937,
+        "count": 9,
+        "p5": 0.7355555555555555,
+        "p25": 0.7888888888888889,
+        "p50": 0.8222222222222223,
+        "p75": 0.9259259259259259,
+        "p95": 0.9281481481481481
+      }
+    }
+  },
+  "rewardStats": null
+}

@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["burst_usage", "cost_spike"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Customer exceeded their commitment and was billed burst pricing without any operational incident.",
+    "generator_family": "policy_applicability_review",
+    "latent_facts": [
+      "This is ordinary contract behavior, not a service problem.",
+      "The right resolution is explanatory rather than corrective."
+    ],
+    "likely_failure_modes": [
+      "The model hallucinates a pricing mistake because the customer reports a spike.",
+      "The model incorrectly escalates to finance review."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_008",
+    "title": "Burst pricing surprises the customer after normal overage",
+    "crm_record": {
+      "account_id": "acct_008",
+      "account_name": "Signal Forge",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-12-18",
+      "notes": [
+        "Commitment includes burst pricing for usage above 100 GPU-hours."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_008",
+      "configured_plan_name": "Committed-100",
+      "configured_commitment_gpu_hours": 100,
+      "invoice_preview_usd": 9380,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 45,
+      "pricing_notes": [
+        "Burst rate applied to 45 GPU-hours above commitment."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 145,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Usage is consistent with the overage billed; service health was normal.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "We had a cost spike this month and want to understand why the invoice jumped so much.",
+    "policy_snippet": "Usage above commitment is billed at the burst rate defined in the order form. Burst usage is not an SLA matter.",
+    "calculator_output": "Committed usage: 100 GPU-hours. Burst usage: 45 GPU-hours at burst rate.",
+    "visible_case_summary": "Normal overage billed at burst rate with no incident."
+  },
+  "ground_truth": {
+    "issue_type": "policy_applicability_review",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": false,
+    "recommended_owner": "revops_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "Burst pricing is behaving as contracted, so the response is explanatory."
+    ],
+    "reference_customer_note": "Your invoice increased because usage exceeded the 100 GPU-hour commitment and the additional 45 GPU-hours were billed at the burst rate defined in your plan. There is no service incident or billing discrepancy in this case.",
+    "reference_internal_note": "Owner: revops_owner. Action: send_explanation_only because the overage is normal burst pricing, discrepancy_detected is false, and this is not an SLA case."
+  }
+}

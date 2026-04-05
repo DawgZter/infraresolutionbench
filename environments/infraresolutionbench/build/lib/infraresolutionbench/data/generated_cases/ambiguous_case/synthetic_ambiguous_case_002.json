@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "mixed_evidence",
+      "ambiguous_policy",
+      "billing_signal_noise"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic mixed-evidence case where invoice confusion is the clearest customer-facing symptom, but limited operational noise makes the commercial answer still require review.",
+    "generator_family": "ambiguous_case",
+    "latent_facts": [
+      "Billing surprise is the most concrete customer-facing problem in the packet.",
+      "Operational evidence is too weak to support an SLA remedy.",
+      "The case should stay conservative and route to finance review."
+    ],
+    "likely_failure_modes": [
+      "Model overcommits to an outage or SLA claim because an incident note exists.",
+      "Model ignores the billing-led nature of the case and routes away from finance review."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": 19,
+      "prior_incidents_30d": 2
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_ambiguous_case_002",
+    "title": "Synthetic ambiguous mixed-evidence case 2",
+    "crm_record": {
+      "account_id": "acct_amb_002",
+      "account_name": "Morrow Dynamics",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-140",
+      "contracted_commitment_gpu_hours": 140,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-05-20",
+      "notes": [
+        "Customer has raised both operational and billing concerns in the same thread."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_amb_002",
+      "configured_plan_name": "Committed-140",
+      "configured_commitment_gpu_hours": 140,
+      "invoice_preview_usd": 11388,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 18,
+      "pricing_notes": [
+        "Invoice preview includes 18 burst GPU-hours above commitment.",
+        "No billing config mismatch detected.",
+        "Customer also asked for a fresh invoice PDF copy."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 158,
+      "covered_service_minutes_unavailable": 11,
+      "telemetry_summary": "A brief degradation notice overlapped with customer billing confusion, but usage remained mostly stable.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Invoice preview and customer expectation remain materially misaligned despite no CRM mismatch."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_amb_syn_002",
+      "status": "investigating",
+      "service": "managed-training-api",
+      "duration_minutes": 11,
+      "customer_visible": true,
+      "customer_impact_summary": "Customer noticed minor stalls, but the billing confusion is the dominant concern.",
+      "engineering_summary": "Engineering saw signs of service degradation, but incident evidence is not yet sufficient to confirm a single cause.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "We saw degraded performance, but now billing also looks off. Can you help us understand what is actually going on?",
+    "policy_snippet": "Do not apply a contractual remedy until incident classification and billing variance are both confirmed.",
+    "calculator_output": "Invoice preview reflects 18 burst GPU-hours, but the final commercial explanation still needs finance review.",
+    "visible_case_summary": "Synthetic mixed-evidence case where billing surprise is stronger than the operational signal."
+  },
+  "ground_truth": {
+    "issue_type": "ambiguous_case",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_finance_review",
+    "needs_human_review": true,
+    "confidence": "low",
+    "adjudication_notes": [
+      "Ambiguous cases should preserve uncertainty and avoid overclaiming a remedy.",
+      "This case follows the billing_dominant ambiguity profile and should route according to the strongest unresolved signal."
+    ],
+    "reference_customer_note": "We found a mismatch between the invoice preview and the commercial explanation available in the current records, so we are routing this for finance review before sending a final answer. At this stage, we are not treating it as an SLA credit case.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_finance_review because the root cause remains unknown, customer impact is invoice_confusion, and the strongest unresolved signal is commercial rather than contractual outage exposure."
+  }
+}

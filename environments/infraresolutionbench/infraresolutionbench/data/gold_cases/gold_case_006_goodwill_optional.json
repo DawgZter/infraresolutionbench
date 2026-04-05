@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["commercial_sensitivity", "subthreshold_incident"]
+  },
+  "hidden_state": {
+    "scenario_summary": "The customer experienced degraded performance for only 18 minutes, which is below the SLA threshold, but the account is enterprise, renewal is close, and there have been prior incidents.",
+    "generator_family": "degraded_performance_with_commercial_sensitivity",
+    "latent_facts": [
+      "This is not a clean SLA breach.",
+      "Commercial sensitivity should push the case into goodwill review.",
+      "Human review is appropriate because renewal is imminent."
+    ],
+    "likely_failure_modes": [
+      "The model returns no action required and ignores account context.",
+      "The model incorrectly marks this as an SLA breach due to customer frustration."
+    ],
+    "commercial_context": {
+      "strategic_account": true,
+      "renewal_days": 8,
+      "prior_incidents_30d": 3
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_006",
+    "title": "Sub-threshold degradation on a renewal-sensitive account",
+    "crm_record": {
+      "account_id": "acct_006",
+      "account_name": "Pioneer Robotics",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-500",
+      "contracted_commitment_gpu_hours": 500,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "premium-covered-service",
+      "renewal_date": "2026-04-13",
+      "notes": [
+        "Renewal call scheduled within 8 days.",
+        "Prior reliability concerns were raised twice this month."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_006",
+      "configured_plan_name": "Committed-500",
+      "configured_commitment_gpu_hours": 500,
+      "invoice_preview_usd": 42100,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Account is in active renewal cycle."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 472,
+      "covered_service_minutes_unavailable": 18,
+      "telemetry_summary": "Training jobs started slowly for 18 minutes during regional saturation, then performance normalized.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Queue latency spiked above normal during the impacted window."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_2026_0324",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 18,
+      "customer_visible": true,
+      "customer_impact_summary": "Jobs started slowly and some retries were needed for 18 minutes.",
+      "engineering_summary": "Regional capacity shortfall caused temporary degraded performance but not a sustained outage.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "We saw slow starts and instability again. This is especially hard given we are finalizing renewal next week.",
+    "policy_snippet": "Service credits apply only to covered outages longer than 30 minutes. Account teams may consider goodwill for strategic renewals or repeated minor incidents.",
+    "calculator_output": "Incident duration 18 minutes. SLA threshold for credit not met.",
+    "visible_case_summary": "Commercially sensitive but contractually sub-threshold degradation."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "capacity_shortfall",
+    "customer_impact": "degraded_performance",
+    "contractual_applicability": "goodwill_credit_optional",
+    "discrepancy_detected": false,
+    "recommended_owner": "shared_revops_engineering",
+    "recommended_action": "consider_goodwill_credit",
+    "needs_human_review": true,
+    "confidence": "medium",
+    "adjudication_notes": [
+      "There is no SLA breach, but the account context makes commercial review appropriate."
+    ],
+    "reference_customer_note": "We confirmed a short period of degraded performance that does not meet the SLA credit threshold. Because your account is in an active renewal window, we are reviewing the case internally to determine whether a goodwill gesture is appropriate.",
+    "reference_internal_note": "Owner: shared_revops_engineering. Action: consider_goodwill_credit due to capacity_shortfall, degraded_performance, renewal in 8 days, and repeated prior incidents."
+  }
+}

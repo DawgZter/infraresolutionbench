@@ -1,0 +1,13 @@
+{
+  "issue_type": "pricing_config_mismatch",
+  "root_cause": "billing_config_out_of_sync_with_crm",
+  "customer_impact": "invoice_confusion",
+  "contractual_applicability": "not_an_sla_case",
+  "discrepancy_detected": true,
+  "recommended_owner": "shared_revops_finance",
+  "recommended_action": "hold_for_revops_review",
+  "needs_human_review": true,
+  "confidence": "high",
+  "customer_note": "We found a mismatch between your contracted plan and the current billing configuration, so we are routing this for RevOps review before confirming the final invoice amount.",
+  "internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review because CRM shows Committed-100 while billing is set to Committed-150 and usage telemetry is healthy."
+}

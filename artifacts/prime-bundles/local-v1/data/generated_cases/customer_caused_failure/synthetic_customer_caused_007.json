@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "customer_claims_platform_failure",
+      "customer_caused_issue"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic customer-caused failure where the customer attributes a job failure to the platform but engineering logs point to invalid customer-supplied artifacts or configuration.",
+    "generator_family": "customer_caused_failure",
+    "latent_facts": [
+      "The failure happens during validation or model load rather than service availability.",
+      "The contract excludes customer-caused failures from SLA remedies."
+    ],
+    "likely_failure_modes": [
+      "Model trusts the customer complaint over the engineering evidence.",
+      "Model marks the case as a platform outage instead of customer-caused failure."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_customer_caused_007",
+    "title": "Synthetic customer-caused failure 7",
+    "crm_record": {
+      "account_id": "acct_cust_007",
+      "account_name": "Juniper Models",
+      "account_tier": "standard",
+      "plan_name": "OnDemand",
+      "contracted_commitment_gpu_hours": null,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": null,
+      "notes": [
+        "Self-serve customer on standard terms."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_cust_007",
+      "configured_plan_name": "OnDemand",
+      "configured_commitment_gpu_hours": null,
+      "invoice_preview_usd": 2100,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": null,
+      "pricing_notes": [
+        "No billing anomalies detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 28,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Cluster availability remained healthy while the job failed during validation.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": null,
+      "status": "no_known_incident",
+      "service": "job-runtime",
+      "duration_minutes": null,
+      "customer_visible": false,
+      "customer_impact_summary": null,
+      "engineering_summary": "The job failed during validation because the provided container image did not meet runtime requirements.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "We saw another failed run and need help understanding why the platform rejected it.",
+    "policy_snippet": "Failures caused by invalid customer inputs, artifacts, or configuration are excluded from SLA service credits.",
+    "calculator_output": null,
+    "visible_case_summary": "Synthetic customer-caused failure with healthy platform telemetry and clear engineering attribution."
+  },
+  "ground_truth": {
+    "issue_type": "customer_caused_issue",
+    "root_cause": "customer_misconfiguration",
+    "customer_impact": "job_failure",
+    "contractual_applicability": "sla_excluded_customer_caused",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The operational evidence cleanly attributes the failure to a customer-supplied artifact or configuration."
+    ],
+    "reference_customer_note": "We reviewed the runtime logs and found the failure was caused by an invalid customer-supplied artifact or configuration rather than a platform outage. Because the issue was customer-caused, it does not qualify for SLA credits, but we can share the validation details to help you rerun successfully.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because root cause is customer_misconfiguration and the contract excludes customer-caused failures."
+  }
+}

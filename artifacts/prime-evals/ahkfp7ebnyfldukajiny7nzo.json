@@ -1,0 +1,68 @@
+{
+  "evaluation_id": "ahkfp7ebnyfldukajiny7nzo",
+  "name": "gold-tools-anthropic_claude-sonnet-4.6",
+  "status": "FAILED",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "rzup30njyzzoio94mz27use0",
+  "version_id": "wuqdsggqfn1is69d70qeclcg",
+  "is_hosted": true,
+  "sandbox_id": null,
+  "inference_model": "anthropic/claude-sonnet-4.6",
+  "eval_config": {
+    "num_examples": 10,
+    "rollouts_per_example": 3,
+    "env_args": {
+      "case_source": "gold",
+      "prompt_mode": "tools",
+      "limit": "10"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": null,
+    "api_key_var": null,
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "anthropic/claude-sonnet-4.6",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with anthropic/claude-sonnet-4.6",
+  "tags": [
+    "hosted",
+    "inference"
+  ],
+  "total_samples": 0,
+  "avg_score": null,
+  "min_score": null,
+  "max_score": null,
+  "started_at": null,
+  "completed_at": null,
+  "created_at": "2026-04-04T22:21:52.663000Z",
+  "updated_at": "2026-04-04T22:21:53.003000Z",
+  "metadata": {
+    "model": "anthropic/claude-sonnet-4.6",
+    "num_examples": 10,
+    "rollouts_per_example": 3
+  },
+  "metrics": {},
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ahkfp7ebnyfldukajiny7nzo",
+  "is_public": false,
+  "statistics": null,
+  "chartData": null,
+  "rubricInfo": null,
+  "detailedMetrics": null,
+  "rewardStats": null
+}

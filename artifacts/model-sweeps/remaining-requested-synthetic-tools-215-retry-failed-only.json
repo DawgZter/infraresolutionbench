@@ -1,0 +1,23 @@
+{
+  "source": "retry subset for remaining-requested-synthetic-tools-215.json",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-05T00:00:00.000Z",
+  "target_case_source": "synthetic",
+  "target_prompt_mode": "tools",
+  "target_num_examples": 21,
+  "target_rollouts_per_example": 5,
+  "target_limit": 21,
+  "selected_prime_models": [
+    { "rank": 5, "model": "arcee-ai/Trinity-Mini", "notes": "Retry failed synthetic run" },
+    { "rank": 8, "model": "google/gemini-3-pro-preview", "notes": "Retry failed synthetic run" },
+    { "rank": 22, "model": "PrimeIntellect/INTELLECT-3.1", "notes": "Retry failed synthetic run" },
+    { "rank": 23, "model": "qwen/qwen3-max", "notes": "Retry failed synthetic run" },
+    { "rank": 24, "model": "qwen/qwen3-235b-a22b-instruct-2507", "notes": "Retry failed synthetic run" },
+    { "rank": 25, "model": "qwen/qwen3-235b-a22b-thinking-2507", "notes": "Retry failed synthetic run" },
+    { "rank": 26, "model": "qwen/qwen3-coder-next", "notes": "Retry failed synthetic run" },
+    { "rank": 27, "model": "z-ai/glm-5", "notes": "Retry failed synthetic run" },
+    { "rank": 28, "model": "x-ai/grok-4", "notes": "Retry failed synthetic run" },
+    { "rank": 29, "model": "x-ai/grok-4.1-fast", "notes": "Retry failed synthetic run" }
+  ],
+  "selected_openrouter_models": []
+}

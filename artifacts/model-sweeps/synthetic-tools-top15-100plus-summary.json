@@ -1,0 +1,108 @@
+{
+  "source": "followup:Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "summarized_at": "2026-04-05T00:51:40.978Z",
+  "selection": "prime",
+  "case_source": "synthetic",
+  "prompt_mode": "tools",
+  "completed_rankings": [
+    {
+      "provider": "prime",
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max) | sweep_score=0.931 | json_valid=1.000 | eval_id=xjfyhbzhqv39yd2fcaqktydv",
+      "status": "COMPLETED",
+      "avg_score": 0.9277601410934748,
+      "evaluation_id": "h0ddoedanykl5jgl6ku5dlq2",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/h0ddoedanykl5jgl6ku5dlq2",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5 | sweep_score=0.921 | json_valid=1.000 | eval_id=wdd9idfxqos5qdzb32jnru5r",
+      "status": "COMPLETED",
+      "avg_score": 0.924867724867725,
+      "evaluation_id": "dhtpyap6jfge9483ec73bxn3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/dhtpyap6jfge9483ec73bxn3",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max) | sweep_score=0.922 | json_valid=1.000 | eval_id=dhbnwlha48i3tfx64muvpwwz",
+      "status": "COMPLETED",
+      "avg_score": 0.9221516754850092,
+      "evaluation_id": "gvzkkf6xdn2dni69dpxiu3ce",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/gvzkkf6xdn2dni69dpxiu3ce",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh) | sweep_score=0.920 | json_valid=1.000 | eval_id=hzzjdp8fy7fcy2xj6zn9i5ni",
+      "status": "COMPLETED",
+      "avg_score": 0.9145326278659618,
+      "evaluation_id": "b0pgr8utqsnoixapraisy6qc",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/b0pgr8utqsnoixapraisy6qc",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high) | sweep_score=0.922 | json_valid=1.000 | eval_id=hb585vdhdbg5gkd5d739tz4s",
+      "status": "COMPLETED",
+      "avg_score": 0.9135802469135805,
+      "evaluation_id": "eeepfv9efakwptcevtuuk32r",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/eeepfv9efakwptcevtuuk32r",
+      "json_valid_metric": 0.9904761904761905,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 2,
+      "model": "openai/gpt-5.4",
+      "notes": "Artificial Analysis: GPT-5.4 (xhigh) | sweep_score=0.913 | json_valid=1.000 | eval_id=onkyl5t727w1olpzkj4mcdif",
+      "status": "COMPLETED",
+      "avg_score": 0.9135097001763673,
+      "evaluation_id": "pdhsa31a5zpj3xad8ss9enb6",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/pdhsa31a5zpj3xad8ss9enb6",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 29,
+      "model": "openai/gpt-5.1-codex",
+      "notes": "Artificial Analysis: GPT-5.1 Codex (high) | sweep_score=0.902 | json_valid=1.000 | eval_id=oruc0op76752ipnuckec61w3",
+      "status": "COMPLETED",
+      "avg_score": 0.900740740740741,
+      "evaluation_id": "v0gaq4ouwft4aqh822b1yv3u",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v0gaq4ouwft4aqh822b1yv3u",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 23,
+      "model": "openai/gpt-5",
+      "notes": "Artificial Analysis: GPT-5 (high) | sweep_score=0.902 | json_valid=1.000 | eval_id=uhh3t7f0kl9h0hv8lif86lkt",
+      "status": "COMPLETED",
+      "avg_score": 0.8955908289241623,
+      "evaluation_id": "qxte1hk5rbp05p2k78g1zadk",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/qxte1hk5rbp05p2k78g1zadk",
+      "json_valid_metric": 1,
+      "anomaly": null
+    }
+  ],
+  "pending_or_missing": [],
+  "anomalies": []
+}

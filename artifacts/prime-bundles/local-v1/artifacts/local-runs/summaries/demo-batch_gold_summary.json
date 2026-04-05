@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-04-04T18:32:24.928Z",
+  "model_name": "demo-batch",
+  "case_source": "gold",
+  "outputs_dir": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/batch-outputs/demo",
+  "evaluated_count": 3,
+  "missing_count": 7,
+  "missing_case_ids": [
+    "gold_case_003",
+    "gold_case_005",
+    "gold_case_006",
+    "gold_case_007",
+    "gold_case_008",
+    "gold_case_009",
+    "gold_case_010"
+  ],
+  "metrics": {
+    "exact_accuracy": 0.9629629629629629,
+    "consistency_pass_rate": 1,
+    "rubric_pass_rate": 1,
+    "composite_score": 0.9876543209876543
+  }
+}

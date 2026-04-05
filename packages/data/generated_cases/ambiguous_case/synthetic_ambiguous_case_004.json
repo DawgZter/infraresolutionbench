@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "mixed_evidence",
+      "ambiguous_policy",
+      "billing_signal_noise"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic mixed-evidence case where policy wording is the main blocker, leaving the model unable to resolve contractual applicability cleanly from the packet alone.",
+    "generator_family": "ambiguous_case",
+    "latent_facts": [
+      "The customer did see degraded performance, but policy wording is the main source of ambiguity.",
+      "Operational and billing evidence do not independently resolve the contractual question.",
+      "The case should be escalated for bounded human review rather than overclaimed."
+    ],
+    "likely_failure_modes": [
+      "Model treats ambiguous policy language as a confirmed credit exclusion or credit approval.",
+      "Model acts certain despite the packet leaving contractual applicability unresolved."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": 2
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_ambiguous_case_004",
+    "title": "Synthetic ambiguous mixed-evidence case 4",
+    "crm_record": {
+      "account_id": "acct_amb_004",
+      "account_name": "Quill Compute",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-220",
+      "contracted_commitment_gpu_hours": 220,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": null,
+      "notes": [
+        "Customer has raised both operational and billing concerns in the same thread."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_amb_004",
+      "configured_plan_name": "Committed-220",
+      "configured_commitment_gpu_hours": 220,
+      "invoice_preview_usd": 17764,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 27,
+      "pricing_notes": [
+        "Invoice preview includes 27 burst GPU-hours above commitment.",
+        "No billing config mismatch detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 247,
+      "covered_service_minutes_unavailable": 16,
+      "telemetry_summary": "Performance degraded briefly, but the evidence remains insufficient to resolve the policy path without review.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Policy wording conflicts with the observed customer symptoms and the available commercial notes."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_amb_syn_004",
+      "status": "investigating",
+      "service": "managed-training-api",
+      "duration_minutes": 16,
+      "customer_visible": true,
+      "customer_impact_summary": "Customer experienced degraded performance while commercial applicability stayed unclear.",
+      "engineering_summary": "Operational evidence suggests degraded performance, but the final incident classification remains unresolved.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "Please review this case because we are seeing both degraded runtime behavior and unexpected billing signals.",
+    "policy_snippet": "If the incident remains unresolved or billing evidence is incomplete, hold the case for manual review rather than promising a remedy.",
+    "calculator_output": "Calculator output is non-deterministic because the policy path is not conclusively resolved from the current case packet.",
+    "visible_case_summary": "Synthetic policy-led ambiguous case where the final contractual path still needs explicit human review."
+  },
+  "ground_truth": {
+    "issue_type": "ambiguous_case",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "degraded_performance",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": false,
+    "recommended_owner": "human_review_required",
+    "recommended_action": "hold_for_revops_review",
+    "needs_human_review": true,
+    "confidence": "low",
+    "adjudication_notes": [
+      "Ambiguous cases should preserve uncertainty and avoid overclaiming a remedy.",
+      "This case follows the policy_dominant ambiguity profile and should route according to the strongest unresolved signal."
+    ],
+    "reference_customer_note": "We found conflicting policy and case evidence, so we are routing this for human review before giving you a final commercial answer. We are not confirming an SLA remedy or invoice adjustment until that review is complete.",
+    "reference_internal_note": "Owner: human_review_required. Action: hold_for_revops_review because the root cause remains unknown, confidence is low, and policy wording is the main blocker to resolving contractual applicability."
+  }
+}

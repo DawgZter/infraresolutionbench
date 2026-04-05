@@ -1,0 +1,639 @@
+{
+  "evaluation_id": "qe3ew2dkw0a1lziecoxxddta",
+  "imported_at": "2026-04-04T20:57:33.744Z",
+  "total": 63,
+  "total_pages": 1,
+  "limit": 100,
+  "samples": [
+    {
+      "sample_id": "fxnrkyuyt4bwwy8infnrkir4",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "o8p45egs7ur0r3vvxtsuhhs3",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.4000000000000001,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "en3aaz5xi0osm604h7qmkoc0",
+      "example_id": 0,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_ambiguous_case_001",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fdbbypb99nbtyjctyoephcfl",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.5074074074074074,
+      "case_id": "synthetic_clean_outage_001",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "mk0kanh9aifg1fri5w5je8a5",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.5074074074074074,
+      "case_id": "synthetic_clean_outage_001",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "f9xwqcbomq0ondt50l870hdb",
+      "example_id": 1,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_clean_outage_001",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "u6vlllc077bkfvupdnnprujd",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.4666666666666666,
+      "case_id": "synthetic_customer_caused_001",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ibfil8etlsfuhs6x1rwp63z3",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_customer_caused_001",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "i3hxs179vt4zzbcnokmzh1sj",
+      "example_id": 2,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_customer_caused_001",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "b1dvs8rhw4qrgq1zxfjp4z6p",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "e0xxyw0gkcpjmmprtclwo5rn",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "cd4wuyzy5uweu0uzx8vzdyl8",
+      "example_id": 3,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_commercial_sensitivity_001",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ce504r0wiabnzjgdnbgq4edh",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_maintenance_exclusion_001",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "d69sx39yrwhqu8vj4y5wtnd3",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_maintenance_exclusion_001",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "nqc97tdeupwuoeyexww9lyhe",
+      "example_id": 4,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_maintenance_exclusion_001",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ntaffsgybj3dxni5cfon9i6n",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "krgqqciqnbi5oj749r1a5pfb",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ybzlgy6y4g5fmsi60fmhfypt",
+      "example_id": 5,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_metering_discrepancy_001",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "d50fa5dc7695ymdqmca1ie9v",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_pricing_mismatch_001",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "pwh73hmynpdrrv62xl0c4soj",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_pricing_mismatch_001",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "kqg6sbv9m48pk41z1mct08hu",
+      "example_id": 6,
+      "rollout_number": null,
+      "reward": 0.6074074074074074,
+      "case_id": "synthetic_pricing_mismatch_001",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "djwxx1g468ysziwfdgigqu7u",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "au5vgi50aw2bcfjaike2xtx3",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wv62hjio52f6yit1241veozl",
+      "example_id": 7,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_ambiguous_case_002",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "j9zytsq5ygjvm589gqdklwaf",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_clean_outage_002",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "vz3qpqdh3o1fetozaeowlw6a",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0.5074074074074074,
+      "case_id": "synthetic_clean_outage_002",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ck16x5tt8nfuo2sdsgh8vc79",
+      "example_id": 8,
+      "rollout_number": null,
+      "reward": 0.5111111111111111,
+      "case_id": "synthetic_clean_outage_002",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "z05dh1yum6cv7scrh32q4fkp",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.5333333333333333,
+      "case_id": "synthetic_customer_caused_002",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "u7j7jcuuirh69e2a3ppfzot3",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_customer_caused_002",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "up7z3ljaf9qitdzir84rqark",
+      "example_id": 9,
+      "rollout_number": null,
+      "reward": 0.3333333333333333,
+      "case_id": "synthetic_customer_caused_002",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "jhwkbwqj0nwdegveyxn8moxz",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "lu3lvnvor7e3xr38cw92q5a2",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "t0a0h1pw5c199tke1joi4q5h",
+      "example_id": 10,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_commercial_sensitivity_002",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "l213qntqktpv2skhl31f9zyv",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_maintenance_exclusion_002",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "hjkzpsknojhr25qw4c7zzhku",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_maintenance_exclusion_002",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "trmwmc6qbznlz0i3lblcw3i9",
+      "example_id": 11,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_maintenance_exclusion_002",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "t5aqeapn0nxnzwdy16whtk6u",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "gexm46ehtn4ug2jatw25znoj",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.5703703703703704,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "ppuudv5awk9s3hzfn06ai7mr",
+      "example_id": 12,
+      "rollout_number": null,
+      "reward": 0.4370370370370371,
+      "case_id": "synthetic_metering_discrepancy_002",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "a9hcpdvyaaf7bq6jrgfbe67l",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_pricing_mismatch_002",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "xtlgdk80kbkugpa9q5ugw8uz",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_pricing_mismatch_002",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "dxkco23jyva5td63106ae69u",
+      "example_id": 13,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_pricing_mismatch_002",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "enddx0vnmf3hmstwa749kndg",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "luprk3l9iohhgjtq2rtvydzv",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "xjqeo2uc8fjuctyr63z6f3gd",
+      "example_id": 14,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_ambiguous_case_003",
+      "generator_family": "ambiguous_case",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "d7ezamnzwkgpm4bjgk9xnnxe",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.5074074074074074,
+      "case_id": "synthetic_clean_outage_003",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "p1lgcdakl7w69rj350kwfy9j",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_clean_outage_003",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "odpf8dk9yhbk6wxokaesbxba",
+      "example_id": 15,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_clean_outage_003",
+      "generator_family": "clean_covered_outage",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "wxllvm1b14e6yia1nsfzhar4",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_customer_caused_003",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fqitzqauyu5s2aok6fc6l00p",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.5037037037037037,
+      "case_id": "synthetic_customer_caused_003",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "gs8m7fro0wf8oe3mer6p4188",
+      "example_id": 16,
+      "rollout_number": null,
+      "reward": 0.6074074074074074,
+      "case_id": "synthetic_customer_caused_003",
+      "generator_family": "customer_caused_failure",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "emdb5y47wlosqq51dc8gosbp",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "n5j98fw077zcwgrigdh397ep",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0.34074074074074073,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "n6v9q2dkxd95b3tqnbvtnbd3",
+      "example_id": 17,
+      "rollout_number": null,
+      "reward": 0,
+      "case_id": "synthetic_commercial_sensitivity_003",
+      "generator_family": "degraded_performance_with_commercial_sensitivity",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "l047lpglqjzdad4voz530jet",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_maintenance_exclusion_003",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "o2kzn5v6wa6bjtk8uky6gobc",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_maintenance_exclusion_003",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "taaoe2pnsq60jhzwro2g56fn",
+      "example_id": 18,
+      "rollout_number": null,
+      "reward": 0.47407407407407404,
+      "case_id": "synthetic_maintenance_exclusion_003",
+      "generator_family": "maintenance_exclusion",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "hiscck1cawd3zciy5x3bbr9t",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "u5ocd50kpdwwarf10847uhjk",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.34074074074074073,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "elgc0r2h2rd5884pj5dghm7z",
+      "example_id": 19,
+      "rollout_number": null,
+      "reward": 0.3703703703703704,
+      "case_id": "synthetic_metering_discrepancy_003",
+      "generator_family": "metering_discrepancy",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "aoiozms8zs3lno8pziqywbzu",
+      "example_id": 20,
+      "rollout_number": null,
+      "reward": 0.5407407407407407,
+      "case_id": "synthetic_pricing_mismatch_003",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "fc17qat64v7kpnxve4i88qpl",
+      "example_id": 20,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_pricing_mismatch_003",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    },
+    {
+      "sample_id": "frz4jbmo1t6asj38z3jsf39e",
+      "example_id": 20,
+      "rollout_number": null,
+      "reward": 0.4074074074074074,
+      "case_id": "synthetic_pricing_mismatch_003",
+      "generator_family": "pricing_config_mismatch",
+      "prompt_mode": "tools",
+      "authoring_style": "synthetic"
+    }
+  ]
+}

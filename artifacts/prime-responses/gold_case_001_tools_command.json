@@ -1,0 +1,33 @@
+{
+  "model_name": "heuristic-subprocess",
+  "model_output": {
+    "issue_type": "pricing_config_mismatch",
+    "root_cause": "billing_config_out_of_sync_with_crm",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_revops_review",
+    "needs_human_review": true,
+    "confidence": "high",
+    "customer_note": "We found a mismatch between your contracted plan and the current billing configuration, so we are routing this for RevOps review before confirming the final invoice amount.",
+    "internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review because CRM and billing configuration do not match while usage telemetry appears healthy."
+  },
+  "used_tools": [
+    "get_crm_record",
+    "get_billing_record",
+    "get_usage_record",
+    "get_incident_record",
+    "get_customer_note",
+    "get_policy_snippet",
+    "get_calculator_output"
+  ],
+  "adapter_metadata": {
+    "protocol_version": "v1",
+    "mode": "tools",
+    "heuristic": true,
+    "shim": "prime_protocol_shim",
+    "shim_mode": "local-heuristic",
+    "request_snapshot": null
+  }
+}

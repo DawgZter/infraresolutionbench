@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "commercial_sensitivity",
+      "repeat_minor_incidents",
+      "renewal_risk"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic degraded performance case where customer-visible pain stayed below SLA thresholds and account context is not strong enough to justify goodwill review.",
+    "generator_family": "degraded_performance_with_commercial_sensitivity",
+    "latent_facts": [
+      "This is not a clean SLA breach.",
+      "The account context does not justify goodwill review.",
+      "The case should be explained clearly without escalating to a discretionary credit path."
+    ],
+    "likely_failure_modes": [
+      "Model over-escalates into goodwill review because the customer is unhappy.",
+      "Model promises an SLA credit even though thresholds were not met."
+    ],
+    "commercial_context": {
+      "strategic_account": true,
+      "renewal_days": 10,
+      "prior_incidents_30d": 5
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_commercial_sensitivity_006",
+    "title": "Synthetic commercial sensitivity case 6",
+    "crm_record": {
+      "account_id": "acct_goodwill_006",
+      "account_name": "Harbor Defense AI",
+      "account_tier": "strategic",
+      "plan_name": "Committed-500",
+      "contracted_commitment_gpu_hours": 500,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "premium-covered-service",
+      "renewal_date": "2026-04-15",
+      "notes": [
+        "Renewal is scheduled within 10 days.",
+        "Prior reliability concerns surfaced 5 times in the last 30 days."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_goodwill_006",
+      "configured_plan_name": "Committed-500",
+      "configured_commitment_gpu_hours": 500,
+      "invoice_preview_usd": 39298,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Account is in an active renewal cycle."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 481,
+      "covered_service_minutes_unavailable": 14,
+      "telemetry_summary": "Training jobs started slowly during a short regional saturation window before performance normalized.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Queue latency spiked briefly but stayed below automatic commercial thresholds."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_bundle_syn_006",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 7,
+      "customer_visible": true,
+      "customer_impact_summary": "Jobs started slowly for 14 minutes before performance normalized.",
+      "engineering_summary": "Queue latency increased during a short saturation event, but duration stayed below automatic credit thresholds.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "Performance dipped again this month and it is affecting confidence as renewal approaches.",
+    "policy_snippet": "Service credits apply only to covered outages longer than 30 minutes. Short degradations below threshold should be explained but do not automatically trigger credits or goodwill review.",
+    "calculator_output": "Incident duration remains below the automatic service credit threshold.",
+    "visible_case_summary": "Synthetic commercially sensitive degradation case that stays below formal credit thresholds."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "capacity_shortfall",
+    "customer_impact": "degraded_performance",
+    "contractual_applicability": "no_credit_due",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "Sub-threshold degradation plus renewal sensitivity should trigger bounded internal review rather than a formal SLA breach outcome."
+    ],
+    "reference_customer_note": "We confirmed a short period of degraded performance, but it stayed below the contract’s service-credit threshold and does not qualify for a credit. We can share the incident summary and remediation details.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because degraded_performance stayed below threshold, account sensitivity is limited, and contractual outcome is no_credit_due."
+  }
+}

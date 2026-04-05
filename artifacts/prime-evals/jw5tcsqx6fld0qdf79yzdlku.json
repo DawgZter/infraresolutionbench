@@ -1,0 +1,425 @@
+{
+  "evaluation_id": "jw5tcsqx6fld0qdf79yzdlku",
+  "name": "infraresolutionbench-moonshotai/kimi-k2.5",
+  "status": "COMPLETED",
+  "eval_type": "environment",
+  "user_id": "cmnd9ulzr000esa78cu1i3zhk",
+  "team_id": null,
+  "environment_ids": [
+    "umkuknlsm6zovsikpx0n0pfz"
+  ],
+  "environment_names": [
+    "infraresolutionbench"
+  ],
+  "suite_id": null,
+  "run_id": "r5yydoth7vps1gv9dhh6cjjq",
+  "version_id": "k5r1hb6tfsq8t5t5pd3uivdg",
+  "is_hosted": true,
+  "sandbox_id": "zn7lw9jcd6udmm3cb2zjhxw9",
+  "inference_model": "moonshotai/kimi-k2.5",
+  "eval_config": {
+    "num_examples": 21,
+    "rollouts_per_example": 3,
+    "env_args": {
+      "case_source": "synthetic",
+      "prompt_mode": "tools",
+      "limit": "21"
+    },
+    "allow_sandbox_access": false,
+    "allow_instances_access": false,
+    "timeout_minutes": null,
+    "sampling_args": null,
+    "api_base_url": null,
+    "api_key_var": null,
+    "use_platform_billing": false
+  },
+  "error_message": null,
+  "logs": null,
+  "model_name": "moonshotai/kimi-k2.5",
+  "dataset": null,
+  "framework": "verifiers",
+  "task_type": null,
+  "description": "Hosted evaluation with moonshotai/kimi-k2.5",
+  "tags": [],
+  "total_samples": 63,
+  "avg_score": 0.4459729570840682,
+  "min_score": 0,
+  "max_score": 1,
+  "started_at": null,
+  "completed_at": "2026-04-04T22:09:22.718000Z",
+  "created_at": "2026-04-04T22:06:21.192000Z",
+  "updated_at": "2026-04-04T22:09:39.262000Z",
+  "metadata": {
+    "env": "infraresolutionbench",
+    "env_args": {
+      "case_source": "synthetic",
+      "prompt_mode": "tools",
+      "limit": "21"
+    },
+    "model": "moonshotai/kimi-k2.5",
+    "base_url": "https://api.pinference.ai/api/v1",
+    "num_examples": 21,
+    "rollouts_per_example": 3,
+    "sampling_args": {
+      "n": 1,
+      "extra_body": {},
+      "max_tokens": null
+    },
+    "time_ms": 128051.39875411987,
+    "pass_at_k": {
+      "1": 0.492063492063492,
+      "2": 0.73015873015873
+    },
+    "pass_all_k": {
+      "1": 0.492063492063492,
+      "2": 0.2539682539682539
+    },
+    "pass_threshold": 0.5,
+    "usage": {
+      "input_tokens": 3481.2380952380954,
+      "output_tokens": 1382.920634920635
+    },
+    "version_info": {
+      "vf_version": "0.1.11",
+      "vf_commit": null,
+      "env_version": "0.1.9",
+      "env_commit": null
+    },
+    "state_columns": [],
+    "tools": [
+      {
+        "name": "get_crm_record",
+        "description": "Return the CRM and account record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_crm_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_billing_record",
+        "description": "Return the billing and pricing record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_billing_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_usage_record",
+        "description": "Return the usage and telemetry summary for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_usage_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_incident_record",
+        "description": "Return the incident or engineering record for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_incident_record_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_customer_note",
+        "description": "Return the customer-authored note for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_customer_note_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_policy_snippet",
+        "description": "Return the relevant policy or SLA snippet for a case.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_policy_snippet_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      },
+      {
+        "name": "get_calculator_output",
+        "description": "Return the calculator or invoice helper output for a \ncase.",
+        "parameters": {
+          "properties": {
+            "case_id": {
+              "description": "The benchmark case identifier.",
+              "title": "Case Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id"
+          ],
+          "title": "get_calculator_output_args",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "strict": null
+      }
+    ]
+  },
+  "metrics": {
+    "reward": 0.44597295708406814,
+    "metrics": {
+      "_composite_reward": 0.44597295708406814,
+      "_exact_metric": 0.41093474426807763,
+      "_consistency_metric": 0.4507936507936508,
+      "_rubric_metric": 0.47619047619047616,
+      "_json_valid_metric": 0.49206349206349204,
+      "num_turns": 2,
+      "total_tool_calls": 7,
+      "get_crm_record_calls": 1,
+      "get_billing_record_calls": 1,
+      "get_usage_record_calls": 1,
+      "get_incident_record_calls": 1,
+      "get_customer_note_calls": 1,
+      "get_policy_snippet_calls": 1,
+      "get_calculator_output_calls": 1
+    },
+    "error": 0
+  },
+  "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/jw5tcsqx6fld0qdf79yzdlku",
+  "is_public": false,
+  "statistics": null,
+  "chartData": {
+    "histogramData": [
+      {
+        "range": "0.000-0.143",
+        "x": 0.07142857142857142,
+        "displayValue": 0.07142857142857142,
+        "count": 32,
+        "midpoint": 0.07142857142857142,
+        "binStart": 0,
+        "binEnd": 0.14285714285714285,
+        "percentage": 50.79365079365079
+      },
+      {
+        "range": "0.143-0.286",
+        "x": 0.21428571428571427,
+        "displayValue": 0.21428571428571427,
+        "count": 0,
+        "midpoint": 0.21428571428571427,
+        "binStart": 0.14285714285714285,
+        "binEnd": 0.2857142857142857,
+        "percentage": 0
+      },
+      {
+        "range": "0.286-0.429",
+        "x": 0.3571428571428571,
+        "displayValue": 0.3571428571428571,
+        "count": 0,
+        "midpoint": 0.3571428571428571,
+        "binStart": 0.2857142857142857,
+        "binEnd": 0.42857142857142855,
+        "percentage": 0
+      },
+      {
+        "range": "0.429-0.571",
+        "x": 0.5,
+        "displayValue": 0.5,
+        "count": 0,
+        "midpoint": 0.5,
+        "binStart": 0.42857142857142855,
+        "binEnd": 0.5714285714285714,
+        "percentage": 0
+      },
+      {
+        "range": "0.571-0.714",
+        "x": 0.6428571428571428,
+        "displayValue": 0.6428571428571428,
+        "count": 0,
+        "midpoint": 0.6428571428571428,
+        "binStart": 0.5714285714285714,
+        "binEnd": 0.7142857142857142,
+        "percentage": 0
+      },
+      {
+        "range": "0.714-0.857",
+        "x": 0.7857142857142856,
+        "displayValue": 0.7857142857142856,
+        "count": 4,
+        "midpoint": 0.7857142857142856,
+        "binStart": 0.7142857142857142,
+        "binEnd": 0.8571428571428571,
+        "percentage": 6.349206349206349
+      },
+      {
+        "range": "0.857-1.000",
+        "x": 0.9285714285714286,
+        "displayValue": 0.9285714285714286,
+        "count": 27,
+        "midpoint": 0.9285714285714286,
+        "binStart": 0.8571428571428571,
+        "binEnd": 1,
+        "percentage": 42.857142857142854
+      }
+    ],
+    "stats": {
+      "minReward": 0,
+      "maxReward": 1,
+      "avgReward": 0.4459729570840682,
+      "medianReward": 0,
+      "totalExamples": 63,
+      "totalRollouts": 63
+    },
+    "sortedRewards": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.7444444444444445,
+      0.7814814814814816,
+      0.7888888888888889,
+      0.8148148148148149,
+      0.8592592592592592,
+      0.8592592592592592,
+      0.8629629629629628,
+      0.8888888888888888,
+      0.8925925925925927,
+      0.8962962962962964,
+      0.8962962962962964,
+      0.8962962962962964,
+      0.9,
+      0.9259259259259259,
+      0.9259259259259259,
+      0.9259259259259259,
+      0.9259259259259259,
+      0.9296296296296296,
+      0.9296296296296296,
+      0.9296296296296296,
+      0.9296296296296296,
+      0.9296296296296296,
+      0.9333333333333332,
+      0.9333333333333332,
+      0.9333333333333332,
+      0.9333333333333332,
+      0.9629629629629629,
+      0.9666666666666667,
+      1,
+      1,
+      1
+    ]
+  },
+  "rubricInfo": {
+    "functions": [
+      "_composite_reward"
+    ]
+  },
+  "detailedMetrics": {
+    "detectedMetrics": [
+      "_composite_reward"
+    ],
+    "metricsStats": {
+      "_composite_reward": {
+        "mean": 0.4459729570840682,
+        "stdDev": 0.4550568358973359,
+        "count": 63,
+        "p5": 0,
+        "p25": 0,
+        "p50": 0,
+        "p75": 0.9259259259259259,
+        "p95": 0.9662962962962963
+      }
+    }
+  },
+  "rewardStats": null
+}

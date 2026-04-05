@@ -1,0 +1,11 @@
+{
+  "name": "@infraresolutionbench/scoring",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@infraresolutionbench/shared": "0.1.0"
+  }
+}

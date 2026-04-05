@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "covered_outage",
+      "flat_credit_policy",
+      "status_note_brevity"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic clean covered outage where a covered service exceeds the credit threshold and clearly qualifies for a contract remedy.",
+    "generator_family": "clean_covered_outage",
+    "latent_facts": [
+      "The incident is customer-visible and on a covered service.",
+      "The outage duration clears the threshold for a flat credit.",
+      "The case should not require extra review in v1."
+    ],
+    "likely_failure_modes": [
+      "Model under-calls credit eligibility despite clear policy coverage.",
+      "Model routes exclusively to engineering and misses the shared commercial response."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": 25,
+      "prior_incidents_30d": 2
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_clean_outage_006",
+    "title": "Synthetic clean covered outage 6",
+    "crm_record": {
+      "account_id": "acct_outage_006",
+      "account_name": "Silver Oak Labs",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-300",
+      "contracted_commitment_gpu_hours": 300,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "premium-covered-service",
+      "renewal_date": "2026-08-01",
+      "notes": [
+        "Premium SLA addendum includes flat credit for covered outages over 30 minutes."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_outage_006",
+      "configured_plan_name": "Committed-300",
+      "configured_commitment_gpu_hours": 300,
+      "invoice_preview_usd": 22764,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No pricing anomalies detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 287,
+      "covered_service_minutes_unavailable": 36,
+      "telemetry_summary": "Usage outside the outage window was normal.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": "inc_syn_006",
+      "status": "resolved",
+      "service": "batch-inference-api",
+      "duration_minutes": 36,
+      "customer_visible": true,
+      "customer_impact_summary": "Covered service unavailable for 36 minutes.",
+      "engineering_summary": "Engineering confirmed GPU node failure as the primary incident driver for the outage window.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "The covered service was unavailable long enough to disrupt our jobs. We need confirmation of the credit process.",
+    "policy_snippet": "Covered outages longer than 30 minutes on premium managed services receive a flat service credit.",
+    "calculator_output": "Covered outage duration: 36 minutes. Credit threshold met.",
+    "visible_case_summary": "Synthetic clean covered outage with explicit credit eligibility."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "gpu_node_failure",
+    "customer_impact": "outage",
+    "contractual_applicability": "credit_due",
+    "discrepancy_detected": false,
+    "recommended_owner": "shared_revops_engineering",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "This family is meant to be a clean positive-control outage case."
+    ],
+    "reference_customer_note": "We confirmed a covered outage longer than the contract threshold, so the flat service credit applies. We will share the incident summary and confirm the credit handling in the billing workflow.",
+    "reference_internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because the outage was covered, exceeded threshold, and qualifies for credit_due."
+  }
+}

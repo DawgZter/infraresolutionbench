@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["customer_claims_platform_failure"]
+  },
+  "hidden_state": {
+    "scenario_summary": "Customer attributes a job failure to the platform, but engineering evidence shows an invalid checkpoint format provided by the customer.",
+    "generator_family": "customer_caused_failure",
+    "latent_facts": [
+      "The failure occurred during model load, not cluster scheduling.",
+      "The contract excludes customer-caused failures from SLA remedies."
+    ],
+    "likely_failure_modes": [
+      "The model over-indexes on the customer complaint and marks it as platform outage.",
+      "The model misses the customer-caused exclusion."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": null
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_005",
+    "title": "Job failure traced to invalid checkpoint format",
+    "crm_record": {
+      "account_id": "acct_005",
+      "account_name": "Helix Models",
+      "account_tier": "standard",
+      "plan_name": "OnDemand",
+      "contracted_commitment_gpu_hours": null,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "standard-covered-service",
+      "renewal_date": null,
+      "notes": [
+        "Self-serve customer on standard terms."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_005",
+      "configured_plan_name": "OnDemand",
+      "configured_commitment_gpu_hours": null,
+      "invoice_preview_usd": 980,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": null,
+      "pricing_notes": [
+        "No billing anomalies present."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 14,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Cluster availability remained healthy while the job failed during checkpoint validation.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": null,
+      "status": "no_known_incident",
+      "service": "job-runtime",
+      "duration_minutes": null,
+      "customer_visible": false,
+      "customer_impact_summary": null,
+      "engineering_summary": "Job failed because the uploaded checkpoint format was invalid and could not be parsed by the runtime.",
+      "covered_by_sla": false,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "The platform failed our training run again and we think this should be treated as a service issue.",
+    "policy_snippet": "Failures caused by invalid customer inputs, artifacts, or configuration are excluded from SLA service credits.",
+    "calculator_output": null,
+    "visible_case_summary": "Customer claims platform failure, but engineering note points to invalid customer artifacts."
+  },
+  "ground_truth": {
+    "issue_type": "customer_caused_issue",
+    "root_cause": "customer_misconfiguration",
+    "customer_impact": "job_failure",
+    "contractual_applicability": "sla_excluded_customer_caused",
+    "discrepancy_detected": false,
+    "recommended_owner": "engineering_owner",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "The operational evidence clearly attributes the issue to customer input quality, not a platform incident."
+    ],
+    "reference_customer_note": "We reviewed the runtime logs and found the failure was caused by an invalid checkpoint format rather than a platform outage. Because the issue was customer-caused, it does not qualify for SLA credits, but we can share the validation details to help you rerun successfully.",
+    "reference_internal_note": "Owner: engineering_owner. Action: send_explanation_only because root cause is customer_misconfiguration and the contract excludes customer-caused failures."
+  }
+}

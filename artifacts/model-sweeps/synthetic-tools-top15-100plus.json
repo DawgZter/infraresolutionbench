@@ -1,0 +1,54 @@
+{
+  "source": "followup:Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-05T00:42:21.801Z",
+  "based_on_summary": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/model-sweeps/aa-2026-04-05-summary.json",
+  "target_case_source": "synthetic",
+  "target_prompt_mode": "tools",
+  "target_num_examples": 21,
+  "target_rollouts_per_example": 5,
+  "target_limit": 21,
+  "selected_prime_models": [
+    {
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max) | sweep_score=0.931 | json_valid=1.000 | eval_id=xjfyhbzhqv39yd2fcaqktydv"
+    },
+    {
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high) | sweep_score=0.922 | json_valid=1.000 | eval_id=hb585vdhdbg5gkd5d739tz4s"
+    },
+    {
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max) | sweep_score=0.922 | json_valid=1.000 | eval_id=dhbnwlha48i3tfx64muvpwwz"
+    },
+    {
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5 | sweep_score=0.921 | json_valid=1.000 | eval_id=wdd9idfxqos5qdzb32jnru5r"
+    },
+    {
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh) | sweep_score=0.920 | json_valid=1.000 | eval_id=hzzjdp8fy7fcy2xj6zn9i5ni"
+    },
+    {
+      "rank": 2,
+      "model": "openai/gpt-5.4",
+      "notes": "Artificial Analysis: GPT-5.4 (xhigh) | sweep_score=0.913 | json_valid=1.000 | eval_id=onkyl5t727w1olpzkj4mcdif"
+    },
+    {
+      "rank": 23,
+      "model": "openai/gpt-5",
+      "notes": "Artificial Analysis: GPT-5 (high) | sweep_score=0.902 | json_valid=1.000 | eval_id=uhh3t7f0kl9h0hv8lif86lkt"
+    },
+    {
+      "rank": 29,
+      "model": "openai/gpt-5.1-codex",
+      "notes": "Artificial Analysis: GPT-5.1 Codex (high) | sweep_score=0.902 | json_valid=1.000 | eval_id=oruc0op76752ipnuckec61w3"
+    }
+  ],
+  "selected_openrouter_models": []
+}

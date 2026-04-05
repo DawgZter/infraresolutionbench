@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infraresolutionbench"
+version = "0.1.12"
+description = "Prime verifiers environment for InfraResolutionBench"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "verifiers>=0.1.8",
+  "datasets>=2.19.0",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["infraresolutionbench*"]
+
+[tool.setuptools.package-data]
+infraresolutionbench = ["data/**/*.json"]
+
+[tool.verifiers]
+entrypoint = "infraresolutionbench:load_environment"
+
+[tool.verifiers.eval]
+num_examples = 10
+rollouts_per_example = 1

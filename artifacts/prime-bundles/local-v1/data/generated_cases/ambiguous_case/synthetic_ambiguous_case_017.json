@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "mixed_evidence",
+      "ambiguous_policy",
+      "billing_signal_noise"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic mixed-evidence case where service degradation symptoms and unexpected billing signals co-occur without enough evidence to commit to a single root cause.",
+    "generator_family": "ambiguous_case",
+    "latent_facts": [
+      "Operational and commercial signals are both present, but the evidence is incomplete.",
+      "The case should stay conservative and route for review."
+    ],
+    "likely_failure_modes": [
+      "Model overcommits to a confident root cause despite unresolved evidence.",
+      "Model promises a service credit or invoice correction before the case is confirmed."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": 25,
+      "prior_incidents_30d": 1
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_ambiguous_case_017",
+    "title": "Synthetic ambiguous mixed-evidence case 17",
+    "crm_record": {
+      "account_id": "acct_amb_017",
+      "account_name": "Atlas Reasoning",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-100",
+      "contracted_commitment_gpu_hours": 100,
+      "billing_owner": "revops@prime.example",
+      "sla_tier": "enterprise-standard",
+      "renewal_date": "2026-05-20",
+      "notes": [
+        "Customer has raised both operational and billing concerns in the same thread."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_amb_017",
+      "configured_plan_name": "Committed-100",
+      "configured_commitment_gpu_hours": 100,
+      "invoice_preview_usd": 8548,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 12,
+      "pricing_notes": [
+        "Invoice preview includes 12 burst GPU-hours above commitment.",
+        "No billing config mismatch detected.",
+        "Customer also asked for a fresh invoice PDF copy."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 112,
+      "covered_service_minutes_unavailable": 9,
+      "telemetry_summary": "Status page reported degraded performance while some jobs appeared stalled intermittently.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Queue depth elevated during the same period as the customer complaint."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_amb_syn_017",
+      "status": "identified",
+      "service": "managed-training-api",
+      "duration_minutes": 9,
+      "customer_visible": true,
+      "customer_impact_summary": "Some runs stalled and throughput dropped.",
+      "engineering_summary": "Possible capacity pressure was observed, but scheduler logs remain inconclusive.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "Our run stalled during degraded service and the invoice preview also shows overage we did not expect. Please explain what happened.",
+    "policy_snippet": "Commercial review should consider final incident classification, covered duration, and any confirmed billing discrepancy before applying remedies.",
+    "calculator_output": "Invoice preview reflects 12 burst GPU-hours. No explicit remedy is triggered from current calculator output.",
+    "visible_case_summary": "Synthetic mixed-evidence case spanning degraded runtime behavior and unexpected billing signals."
+  },
+  "ground_truth": {
+    "issue_type": "ambiguous_case",
+    "root_cause": "unknown_root_cause",
+    "customer_impact": "degraded_performance",
+    "contractual_applicability": "no_sla_breach",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_engineering",
+    "recommended_action": "hold_for_engineering_review",
+    "needs_human_review": true,
+    "confidence": "low",
+    "adjudication_notes": [
+      "Ambiguous cases should preserve uncertainty and avoid overclaiming a remedy."
+    ],
+    "reference_customer_note": "We found mixed evidence across the incident and billing records, so we are routing this for further review before giving you a final commercial answer. We will follow up once the incident classification and billing context are confirmed.",
+    "reference_internal_note": "Owner: shared_revops_engineering. Action: hold_for_engineering_review because the root cause remains unknown, confidence is low, and both service symptoms and billing surprise are present."
+  }
+}

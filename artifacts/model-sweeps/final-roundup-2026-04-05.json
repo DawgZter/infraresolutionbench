@@ -1,0 +1,1344 @@
+{
+  "source": "Tracked benchmark model universe after high-signal reruns and shortlist pruning",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-05T12:09:15Z",
+  "weights": {
+    "gold_1510": 0.6,
+    "synthetic_215": 0.4
+  },
+  "stable_ranked": [
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "rank_hint": 5,
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "lhnxht6zutacn9gmn8z3dtr8",
+        "score": 0.8306,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lhnxht6zutacn9gmn8z3dtr8"
+      },
+      "synthetic_eval": {
+        "id": "gvzkkf6xdn2dni69dpxiu3ce",
+        "score": 0.9222,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/gvzkkf6xdn2dni69dpxiu3ce"
+      },
+      "latest_gold": {
+        "id": "lhnxht6zutacn9gmn8z3dtr8",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8305777777777773,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lhnxht6zutacn9gmn8z3dtr8"
+      },
+      "latest_synthetic": {
+        "id": "gvzkkf6xdn2dni69dpxiu3ce",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.9221516754850092,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/gvzkkf6xdn2dni69dpxiu3ce"
+      },
+      "composite": 0.8672,
+      "status": "stable"
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "rank_hint": 1,
+      "notes": "Artificial Analysis: Gemini 3.1 Pro Preview",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "hjg735v6w80citz02vu2j0uq",
+        "score": 0.8774,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hjg735v6w80citz02vu2j0uq"
+      },
+      "synthetic_eval": {
+        "id": "p2x86tkm9yrcdv3zzaqypjy5",
+        "score": 0.8444,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/p2x86tkm9yrcdv3zzaqypjy5"
+      },
+      "latest_gold": {
+        "id": "hjg735v6w80citz02vu2j0uq",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8774074074074065,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hjg735v6w80citz02vu2j0uq"
+      },
+      "latest_synthetic": {
+        "id": "p2x86tkm9yrcdv3zzaqypjy5",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8443597883597881,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/p2x86tkm9yrcdv3zzaqypjy5"
+      },
+      "composite": 0.8642,
+      "status": "stable"
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "rank_hint": 4,
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "ve4vt8l72u4nwph4s2id1hm6",
+        "score": 0.849,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ve4vt8l72u4nwph4s2id1hm6"
+      },
+      "synthetic_eval": {
+        "id": "hpodco6d1pojfbfilymdso7o",
+        "score": 0.8524,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hpodco6d1pojfbfilymdso7o"
+      },
+      "latest_gold": {
+        "id": "ve4vt8l72u4nwph4s2id1hm6",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8489777777777776,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ve4vt8l72u4nwph4s2id1hm6"
+      },
+      "latest_synthetic": {
+        "id": "hpodco6d1pojfbfilymdso7o",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.852380952380952,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hpodco6d1pojfbfilymdso7o"
+      },
+      "composite": 0.8503,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "rank_hint": 3,
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "fo5tvt780x0o13z67t1w7r3u",
+        "score": 0.8493,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/fo5tvt780x0o13z67t1w7r3u"
+      },
+      "synthetic_eval": {
+        "id": "qv0jn96lvqp5anl37vm16b1q",
+        "score": 0.8388,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/qv0jn96lvqp5anl37vm16b1q"
+      },
+      "latest_gold": {
+        "id": "fo5tvt780x0o13z67t1w7r3u",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8493333333333326,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/fo5tvt780x0o13z67t1w7r3u"
+      },
+      "latest_synthetic": {
+        "id": "qv0jn96lvqp5anl37vm16b1q",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8388359788359786,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/qv0jn96lvqp5anl37vm16b1q"
+      },
+      "composite": 0.8451,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.1",
+      "rank_hint": 15,
+      "notes": "Artificial Analysis: GPT-5.1 (high)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "aqfy625vtti9j1n7gjwi1nyh",
+        "score": 0.8549,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/aqfy625vtti9j1n7gjwi1nyh"
+      },
+      "synthetic_eval": {
+        "id": "ej8r85mf3fmvb3ozaqwtahj5",
+        "score": 0.8188,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ej8r85mf3fmvb3ozaqwtahj5"
+      },
+      "latest_gold": {
+        "id": "aqfy625vtti9j1n7gjwi1nyh",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8549481481481481,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/aqfy625vtti9j1n7gjwi1nyh"
+      },
+      "latest_synthetic": {
+        "id": "ej8r85mf3fmvb3ozaqwtahj5",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8188148148148146,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ej8r85mf3fmvb3ozaqwtahj5"
+      },
+      "composite": 0.8405,
+      "status": "stable"
+    },
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "rank_hint": 8,
+      "notes": "Artificial Analysis: Claude Opus 4.5",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "itb251xxxzq1b3lm1riurpva",
+        "score": 0.8354,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/itb251xxxzq1b3lm1riurpva"
+      },
+      "synthetic_eval": {
+        "id": "ad1qsuqzm6ghdisck3lgfzxw",
+        "score": 0.8472,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ad1qsuqzm6ghdisck3lgfzxw"
+      },
+      "latest_gold": {
+        "id": "itb251xxxzq1b3lm1riurpva",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8354074074074069,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/itb251xxxzq1b3lm1riurpva"
+      },
+      "latest_synthetic": {
+        "id": "ad1qsuqzm6ghdisck3lgfzxw",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.847238095238095,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ad1qsuqzm6ghdisck3lgfzxw"
+      },
+      "composite": 0.8401,
+      "status": "stable"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.5",
+      "rank_hint": 31,
+      "notes": "Artificial Analysis: Claude 4.5 Sonnet",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "jflk6lhp3u2gjbpr5fnjpty3",
+        "score": 0.8379,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/jflk6lhp3u2gjbpr5fnjpty3"
+      },
+      "synthetic_eval": {
+        "id": "eu4nk13xvzbi1fzjgghrbb8s",
+        "score": 0.8376,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/eu4nk13xvzbi1fzjgghrbb8s"
+      },
+      "latest_gold": {
+        "id": "jflk6lhp3u2gjbpr5fnjpty3",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8379407407407403,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/jflk6lhp3u2gjbpr5fnjpty3"
+      },
+      "latest_synthetic": {
+        "id": "eu4nk13xvzbi1fzjgghrbb8s",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8376084656084652,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/eu4nk13xvzbi1fzjgghrbb8s"
+      },
+      "composite": 0.8378,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.2-codex",
+      "rank_hint": 11,
+      "notes": "Artificial Analysis: GPT-5.2 Codex (xhigh)",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "o4uzna5ttoyjvzb329xxcooj",
+        "score": 0.8301,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/o4uzna5ttoyjvzb329xxcooj"
+      },
+      "synthetic_eval": {
+        "id": "iznj03ezablre86nlabskp7b",
+        "score": 0.8433,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/iznj03ezablre86nlabskp7b"
+      },
+      "latest_gold": {
+        "id": "o4uzna5ttoyjvzb329xxcooj",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8301333333333325,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/o4uzna5ttoyjvzb329xxcooj"
+      },
+      "latest_synthetic": {
+        "id": "iznj03ezablre86nlabskp7b",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8432804232804232,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/iznj03ezablre86nlabskp7b"
+      },
+      "composite": 0.8354,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5",
+      "rank_hint": 23,
+      "notes": "Artificial Analysis: GPT-5 (high)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "x51wps06u62diug4c0hl3sdo",
+        "score": 0.834,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x51wps06u62diug4c0hl3sdo"
+      },
+      "synthetic_eval": {
+        "id": "twmou5io6itob257bd2ahn3x",
+        "score": 0.835,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/twmou5io6itob257bd2ahn3x"
+      },
+      "latest_gold": {
+        "id": "x51wps06u62diug4c0hl3sdo",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.83397037037037,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x51wps06u62diug4c0hl3sdo"
+      },
+      "latest_synthetic": {
+        "id": "twmou5io6itob257bd2ahn3x",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8349841269841266,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/twmou5io6itob257bd2ahn3x"
+      },
+      "composite": 0.8344,
+      "status": "stable"
+    },
+    {
+      "model": "z-ai/glm-5-turbo",
+      "rank_hint": 17,
+      "notes": "Artificial Analysis: GLM-5-Turbo",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "uvb2wwz01imup6ld8abmzd9w",
+        "score": 0.8393,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uvb2wwz01imup6ld8abmzd9w"
+      },
+      "synthetic_eval": {
+        "id": "nlf3gzqw2k53ylmskujf2xkc",
+        "score": 0.8266,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/nlf3gzqw2k53ylmskujf2xkc"
+      },
+      "latest_gold": {
+        "id": "uvb2wwz01imup6ld8abmzd9w",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8393185185185181,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uvb2wwz01imup6ld8abmzd9w"
+      },
+      "latest_synthetic": {
+        "id": "nlf3gzqw2k53ylmskujf2xkc",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8265608465608465,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/nlf3gzqw2k53ylmskujf2xkc"
+      },
+      "composite": 0.8342,
+      "status": "stable"
+    },
+    {
+      "model": "z-ai/glm-5",
+      "rank_hint": 7,
+      "notes": "Artificial Analysis: GLM-5",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "oj5tjiltdshl25mcgdihi74b",
+        "score": 0.8267,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/oj5tjiltdshl25mcgdihi74b"
+      },
+      "synthetic_eval": {
+        "id": "cig50luv8w6l4s1gq1et7jss",
+        "score": 0.8285,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/cig50luv8w6l4s1gq1et7jss"
+      },
+      "latest_gold": {
+        "id": "oj5tjiltdshl25mcgdihi74b",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8267111111111108,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/oj5tjiltdshl25mcgdihi74b"
+      },
+      "latest_synthetic": {
+        "id": "cig50luv8w6l4s1gq1et7jss",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8284867724867725,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/cig50luv8w6l4s1gq1et7jss"
+      },
+      "composite": 0.8274,
+      "status": "stable"
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "rank_hint": 21,
+      "notes": "Artificial Analysis: Qwen3.5 397B A17B",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "io87iro91xigsmm203qbdyrp",
+        "score": 0.8119,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/io87iro91xigsmm203qbdyrp"
+      },
+      "synthetic_eval": {
+        "id": "j9jkmr61sicmx2si3yxqdiio",
+        "score": 0.8426,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/j9jkmr61sicmx2si3yxqdiio"
+      },
+      "latest_gold": {
+        "id": "io87iro91xigsmm203qbdyrp",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8119407407407405,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/io87iro91xigsmm203qbdyrp"
+      },
+      "latest_synthetic": {
+        "id": "j9jkmr61sicmx2si3yxqdiio",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8425608465608461,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/j9jkmr61sicmx2si3yxqdiio"
+      },
+      "composite": 0.8242,
+      "status": "stable"
+    },
+    {
+      "model": "x-ai/grok-4",
+      "rank_hint": 41,
+      "notes": "Artificial Analysis: Grok 4",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "z6dsu727162k94u6yyh62ss5",
+        "score": 0.8037,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/z6dsu727162k94u6yyh62ss5"
+      },
+      "synthetic_eval": {
+        "id": "ehx15mq82w0hgvoblp6o2mba",
+        "score": 0.851,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ehx15mq82w0hgvoblp6o2mba"
+      },
+      "latest_gold": {
+        "id": "z6dsu727162k94u6yyh62ss5",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8037037037037036,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/z6dsu727162k94u6yyh62ss5"
+      },
+      "latest_synthetic": {
+        "id": "ehx15mq82w0hgvoblp6o2mba",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8510264550264548,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ehx15mq82w0hgvoblp6o2mba"
+      },
+      "composite": 0.8226,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "rank_hint": 14,
+      "notes": "Artificial Analysis: GPT-5.4 mini (xhigh)",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "bm3s18h21us1cxa106kufrd7",
+        "score": 0.8026,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/bm3s18h21us1cxa106kufrd7"
+      },
+      "synthetic_eval": {
+        "id": "vjcvxint9ce49a6dnuw0r3i5",
+        "score": 0.8462,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/vjcvxint9ce49a6dnuw0r3i5"
+      },
+      "latest_gold": {
+        "id": "bm3s18h21us1cxa106kufrd7",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8025777777777778,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/bm3s18h21us1cxa106kufrd7"
+      },
+      "latest_synthetic": {
+        "id": "vjcvxint9ce49a6dnuw0r3i5",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8461587301587301,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/vjcvxint9ce49a6dnuw0r3i5"
+      },
+      "composite": 0.82,
+      "status": "stable"
+    },
+    {
+      "model": "qwen/qwen3.5-27b",
+      "rank_hint": 35,
+      "notes": "Artificial Analysis: Qwen3.5 27B",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "b5hvdxbzzi29xurckhxrl5lk",
+        "score": 0.8011,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/b5hvdxbzzi29xurckhxrl5lk"
+      },
+      "synthetic_eval": {
+        "id": "r5f5nyfwnorbibd43fjusfcy",
+        "score": 0.8354,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/r5f5nyfwnorbibd43fjusfcy"
+      },
+      "latest_gold": {
+        "id": "b5hvdxbzzi29xurckhxrl5lk",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8010666666666665,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/b5hvdxbzzi29xurckhxrl5lk"
+      },
+      "latest_synthetic": {
+        "id": "r5f5nyfwnorbibd43fjusfcy",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.835365079365079,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/r5f5nyfwnorbibd43fjusfcy"
+      },
+      "composite": 0.8148,
+      "status": "stable"
+    },
+    {
+      "model": "qwen/qwen3.6-plus:free",
+      "rank_hint": 74,
+      "notes": "Manual shortlist add: Qwen 3.6 Plus",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "myb566zngiauozp20m6zslsx",
+        "score": 0.7998,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/myb566zngiauozp20m6zslsx"
+      },
+      "synthetic_eval": {
+        "id": "gnx9zktfuuykt1qc87uabmf8",
+        "score": 0.8317,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/gnx9zktfuuykt1qc87uabmf8"
+      },
+      "latest_gold": {
+        "id": "myb566zngiauozp20m6zslsx",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7998074074074071,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/myb566zngiauozp20m6zslsx"
+      },
+      "latest_synthetic": {
+        "id": "gnx9zktfuuykt1qc87uabmf8",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8317037037037035,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/gnx9zktfuuykt1qc87uabmf8"
+      },
+      "composite": 0.8126,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.4",
+      "rank_hint": 2,
+      "notes": "Artificial Analysis: GPT-5.4 (xhigh)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "m29p04dibj5u41aw11e8laak",
+        "score": 0.7849,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/m29p04dibj5u41aw11e8laak"
+      },
+      "synthetic_eval": {
+        "id": "g5rfs3uqyww80omlbcv34561",
+        "score": 0.8462,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/g5rfs3uqyww80omlbcv34561"
+      },
+      "latest_gold": {
+        "id": "m29p04dibj5u41aw11e8laak",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7848888888888887,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/m29p04dibj5u41aw11e8laak"
+      },
+      "latest_synthetic": {
+        "id": "g5rfs3uqyww80omlbcv34561",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8461798941798943,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/g5rfs3uqyww80omlbcv34561"
+      },
+      "composite": 0.8094,
+      "status": "stable"
+    },
+    {
+      "model": "moonshotai/kimi-k2.5",
+      "rank_hint": 16,
+      "notes": "Artificial Analysis: Kimi K2.5",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "murmi19b4z4alwnsiyj09hxa",
+        "score": 0.7845,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/murmi19b4z4alwnsiyj09hxa"
+      },
+      "synthetic_eval": {
+        "id": "ecmvf3jbhbge1vyfcfnstsqp",
+        "score": 0.8276,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ecmvf3jbhbge1vyfcfnstsqp"
+      },
+      "latest_gold": {
+        "id": "murmi19b4z4alwnsiyj09hxa",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7845185185185183,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/murmi19b4z4alwnsiyj09hxa"
+      },
+      "latest_synthetic": {
+        "id": "ecmvf3jbhbge1vyfcfnstsqp",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8275767195767192,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ecmvf3jbhbge1vyfcfnstsqp"
+      },
+      "composite": 0.8017,
+      "status": "stable"
+    },
+    {
+      "model": "google/gemini-3-flash-preview",
+      "rank_hint": 20,
+      "notes": "Artificial Analysis: Gemini 3 Flash",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "w9ljhveevdtdnj8hbcvsgke5",
+        "score": 0.7967,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/w9ljhveevdtdnj8hbcvsgke5"
+      },
+      "synthetic_eval": {
+        "id": "idv1uuosk2bzn4cb9a2q6x8t",
+        "score": 0.7946,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/idv1uuosk2bzn4cb9a2q6x8t"
+      },
+      "latest_gold": {
+        "id": "w9ljhveevdtdnj8hbcvsgke5",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7966518518518511,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/w9ljhveevdtdnj8hbcvsgke5"
+      },
+      "latest_synthetic": {
+        "id": "idv1uuosk2bzn4cb9a2q6x8t",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7946243386243385,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/idv1uuosk2bzn4cb9a2q6x8t"
+      },
+      "composite": 0.7958,
+      "status": "stable"
+    },
+    {
+      "model": "minimax/minimax-m2.7",
+      "rank_hint": 9,
+      "notes": "Artificial Analysis: MiniMax-M2.7",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "lbzjaoo1d36qga7eqbwzix96",
+        "score": 0.7746,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lbzjaoo1d36qga7eqbwzix96"
+      },
+      "synthetic_eval": {
+        "id": "fbm1ejpgpi9gmfiz9diu8xwd",
+        "score": 0.8016,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/fbm1ejpgpi9gmfiz9diu8xwd"
+      },
+      "latest_gold": {
+        "id": "lbzjaoo1d36qga7eqbwzix96",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.774562962962963,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lbzjaoo1d36qga7eqbwzix96"
+      },
+      "latest_synthetic": {
+        "id": "fbm1ejpgpi9gmfiz9diu8xwd",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8015873015873014,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/fbm1ejpgpi9gmfiz9diu8xwd"
+      },
+      "composite": 0.7854,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "rank_hint": 6,
+      "notes": "Artificial Analysis: GPT-5.2 (xhigh)",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "ef62okxd40u58qro2em1f8s6",
+        "score": 0.7903,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ef62okxd40u58qro2em1f8s6"
+      },
+      "synthetic_eval": {
+        "id": "xf57dpr4c2scbefpso6tig6m",
+        "score": 0.776,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/xf57dpr4c2scbefpso6tig6m"
+      },
+      "latest_gold": {
+        "id": "ef62okxd40u58qro2em1f8s6",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7902518518518514,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ef62okxd40u58qro2em1f8s6"
+      },
+      "latest_synthetic": {
+        "id": "xf57dpr4c2scbefpso6tig6m",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7760423280423274,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/xf57dpr4c2scbefpso6tig6m"
+      },
+      "composite": 0.7846,
+      "status": "stable"
+    },
+    {
+      "model": "xiaomi/mimo-v2-pro",
+      "rank_hint": 10,
+      "notes": "Artificial Analysis: MiMo-V2-Pro",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "ensypr5udtm9ipa3eq9jrqxv",
+        "score": 0.7734,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ensypr5udtm9ipa3eq9jrqxv"
+      },
+      "synthetic_eval": {
+        "id": "d5w4xbwa7mo03ypjyq91n6b0",
+        "score": 0.7975,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/d5w4xbwa7mo03ypjyq91n6b0"
+      },
+      "latest_gold": {
+        "id": "ensypr5udtm9ipa3eq9jrqxv",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7733777777777775,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ensypr5udtm9ipa3eq9jrqxv"
+      },
+      "latest_synthetic": {
+        "id": "d5w4xbwa7mo03ypjyq91n6b0",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7974814814814812,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/d5w4xbwa7mo03ypjyq91n6b0"
+      },
+      "composite": 0.783,
+      "status": "stable"
+    },
+    {
+      "model": "openai/gpt-5.4-nano",
+      "rank_hint": 26,
+      "notes": "Artificial Analysis: GPT-5.4 nano (xhigh)",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "l1mm52g21bhc0qhdz49f7jc1",
+        "score": 0.7576,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/l1mm52g21bhc0qhdz49f7jc1"
+      },
+      "synthetic_eval": {
+        "id": "u2tn6udpt2r1frr7x4wftplf",
+        "score": 0.7943,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/u2tn6udpt2r1frr7x4wftplf"
+      },
+      "latest_gold": {
+        "id": "l1mm52g21bhc0qhdz49f7jc1",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7575555555555555,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/l1mm52g21bhc0qhdz49f7jc1"
+      },
+      "latest_synthetic": {
+        "id": "u2tn6udpt2r1frr7x4wftplf",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.79426455026455,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/u2tn6udpt2r1frr7x4wftplf"
+      },
+      "composite": 0.7722,
+      "status": "stable"
+    },
+    {
+      "model": "minimax/minimax-m2",
+      "rank_hint": 69,
+      "notes": "Artificial Analysis: MiniMax-M2",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "x7dvtnseit5qqi9f972i2u9o",
+        "score": 0.7709,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x7dvtnseit5qqi9f972i2u9o"
+      },
+      "synthetic_eval": {
+        "id": "zmspi8pzzmys42k8rfcevqe0",
+        "score": 0.7731,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zmspi8pzzmys42k8rfcevqe0"
+      },
+      "latest_gold": {
+        "id": "x7dvtnseit5qqi9f972i2u9o",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7709481481481479,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x7dvtnseit5qqi9f972i2u9o"
+      },
+      "latest_synthetic": {
+        "id": "zmspi8pzzmys42k8rfcevqe0",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7731005291005288,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zmspi8pzzmys42k8rfcevqe0"
+      },
+      "composite": 0.7718,
+      "status": "stable"
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "rank_hint": 38,
+      "notes": "Artificial Analysis: MiniMax-M2.5",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "ib1tr1476wenswe6p2bv4iq1",
+        "score": 0.7639,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ib1tr1476wenswe6p2bv4iq1"
+      },
+      "synthetic_eval": {
+        "id": "wmv8xbathxzgxl11b2aq9c98",
+        "score": 0.7544,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/wmv8xbathxzgxl11b2aq9c98"
+      },
+      "latest_gold": {
+        "id": "ib1tr1476wenswe6p2bv4iq1",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7639259259259257,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ib1tr1476wenswe6p2bv4iq1"
+      },
+      "latest_synthetic": {
+        "id": "wmv8xbathxzgxl11b2aq9c98",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.75437037037037,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/wmv8xbathxzgxl11b2aq9c98"
+      },
+      "composite": 0.7601,
+      "status": "stable"
+    },
+    {
+      "model": "stepfun/step-3.5-flash",
+      "rank_hint": 71,
+      "notes": "Manual shortlist add: Step 3.5 Flash",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "zjunqo0zx3t6q4af3m91gz7k",
+        "score": 0.7636,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zjunqo0zx3t6q4af3m91gz7k"
+      },
+      "synthetic_eval": {
+        "id": "ynbk6d0xwv2g7wz7iz1kad74",
+        "score": 0.7447,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ynbk6d0xwv2g7wz7iz1kad74"
+      },
+      "latest_gold": {
+        "id": "zjunqo0zx3t6q4af3m91gz7k",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7636148148148145,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zjunqo0zx3t6q4af3m91gz7k"
+      },
+      "latest_synthetic": {
+        "id": "ynbk6d0xwv2g7wz7iz1kad74",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7446560846560846,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ynbk6d0xwv2g7wz7iz1kad74"
+      },
+      "composite": 0.756,
+      "status": "stable"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "rank_hint": 72,
+      "notes": "Manual shortlist add: Gemma 4 26B / Gemma 4 MoE variant",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "shf5h48k3u6exerjj20d19u3",
+        "score": 0.704,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/shf5h48k3u6exerjj20d19u3"
+      },
+      "synthetic_eval": {
+        "id": "p3t8csz8jq5x5eiypqliopxg",
+        "score": 0.7969,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/p3t8csz8jq5x5eiypqliopxg"
+      },
+      "latest_gold": {
+        "id": "shf5h48k3u6exerjj20d19u3",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7040148148148141,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/shf5h48k3u6exerjj20d19u3"
+      },
+      "latest_synthetic": {
+        "id": "p3t8csz8jq5x5eiypqliopxg",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7969312169312163,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/p3t8csz8jq5x5eiypqliopxg"
+      },
+      "composite": 0.7412,
+      "status": "stable"
+    },
+    {
+      "model": "arcee-ai/trinity-large-thinking",
+      "rank_hint": 75,
+      "notes": "Manual shortlist add: Arcee Trinity Large Thinking",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "e4hb70ro0a2i7zeidbgkgiq4",
+        "score": 0.7335,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/e4hb70ro0a2i7zeidbgkgiq4"
+      },
+      "synthetic_eval": {
+        "id": "tjib2ed8ayclwagorwbmu6oe",
+        "score": 0.7519,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/tjib2ed8ayclwagorwbmu6oe"
+      },
+      "latest_gold": {
+        "id": "e4hb70ro0a2i7zeidbgkgiq4",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7335259259259256,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/e4hb70ro0a2i7zeidbgkgiq4"
+      },
+      "latest_synthetic": {
+        "id": "tjib2ed8ayclwagorwbmu6oe",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7519365079365078,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/tjib2ed8ayclwagorwbmu6oe"
+      },
+      "composite": 0.7409,
+      "status": "stable"
+    },
+    {
+      "model": "qwen/qwen3.5-35b-a3b",
+      "rank_hint": 67,
+      "notes": "Artificial Analysis: Qwen3.5 35B A3B",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "uexriuixp947rooyhd1tztqs",
+        "score": 0.7743,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uexriuixp947rooyhd1tztqs"
+      },
+      "synthetic_eval": {
+        "id": "zu963ge2dnazkcmogjjato6z",
+        "score": 0.6807,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zu963ge2dnazkcmogjjato6z"
+      },
+      "latest_gold": {
+        "id": "uexriuixp947rooyhd1tztqs",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7742962962962959,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uexriuixp947rooyhd1tztqs"
+      },
+      "latest_synthetic": {
+        "id": "zu963ge2dnazkcmogjjato6z",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.6806984126984128,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zu963ge2dnazkcmogjjato6z"
+      },
+      "composite": 0.7369,
+      "status": "stable"
+    },
+    {
+      "model": "minimax/minimax-m2.1",
+      "rank_hint": 50,
+      "notes": "Artificial Analysis: MiniMax-M2.1",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "flpbragr7adf4nl4p4aikxhx",
+        "score": 0.6676,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/flpbragr7adf4nl4p4aikxhx"
+      },
+      "synthetic_eval": {
+        "id": "zygrchazu4n1ieae71osiiu0",
+        "score": 0.7602,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zygrchazu4n1ieae71osiiu0"
+      },
+      "latest_gold": {
+        "id": "flpbragr7adf4nl4p4aikxhx",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.6675703703703701,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/flpbragr7adf4nl4p4aikxhx"
+      },
+      "latest_synthetic": {
+        "id": "zygrchazu4n1ieae71osiiu0",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.7601693121693116,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zygrchazu4n1ieae71osiiu0"
+      },
+      "composite": 0.7046,
+      "status": "stable"
+    },
+    {
+      "model": "xiaomi/mimo-v2-omni",
+      "rank_hint": 28,
+      "notes": "Artificial Analysis: MiMo-V2-Omni",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "i6maw05nvoc3gn5rltoussti",
+        "score": 0.7327,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/i6maw05nvoc3gn5rltoussti"
+      },
+      "synthetic_eval": {
+        "id": "v9gez9xkawglaxegb0teihi0",
+        "score": 0.6524,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v9gez9xkawglaxegb0teihi0"
+      },
+      "latest_gold": {
+        "id": "i6maw05nvoc3gn5rltoussti",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7326518518518514,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/i6maw05nvoc3gn5rltoussti"
+      },
+      "latest_synthetic": {
+        "id": "v9gez9xkawglaxegb0teihi0",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.6524021164021163,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v9gez9xkawglaxegb0teihi0"
+      },
+      "composite": 0.7006,
+      "status": "stable"
+    },
+    {
+      "model": "xiaomi/mimo-v2-flash",
+      "rank_hint": 42,
+      "notes": "Artificial Analysis: MiMo-V2-Flash (Feb 2026)",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "k2hgf3qt5e47pd3qu6zyk3f9",
+        "score": 0.6412,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/k2hgf3qt5e47pd3qu6zyk3f9"
+      },
+      "synthetic_eval": {
+        "id": "aza06h89gswo0mvvun3kkpp9",
+        "score": 0.66,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/aza06h89gswo0mvvun3kkpp9"
+      },
+      "latest_gold": {
+        "id": "k2hgf3qt5e47pd3qu6zyk3f9",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.6411703703703701,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/k2hgf3qt5e47pd3qu6zyk3f9"
+      },
+      "latest_synthetic": {
+        "id": "aza06h89gswo0mvvun3kkpp9",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.6599999999999998,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/aza06h89gswo0mvvun3kkpp9"
+      },
+      "composite": 0.6487,
+      "status": "stable"
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "rank_hint": 39,
+      "notes": "Artificial Analysis: DeepSeek V3.2",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "x7wwswtynbzw5suysdb6wigk",
+        "score": 0.5874,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x7wwswtynbzw5suysdb6wigk"
+      },
+      "synthetic_eval": {
+        "id": "y59rnlw3ambdwt6z3wf04db5",
+        "score": 0.6801,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/y59rnlw3ambdwt6z3wf04db5"
+      },
+      "latest_gold": {
+        "id": "x7wwswtynbzw5suysdb6wigk",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.5873925925925922,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/x7wwswtynbzw5suysdb6wigk"
+      },
+      "latest_synthetic": {
+        "id": "y59rnlw3ambdwt6z3wf04db5",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.6801481481481477,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/y59rnlw3ambdwt6z3wf04db5"
+      },
+      "composite": 0.6245,
+      "status": "stable"
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "rank_hint": 53,
+      "notes": "Artificial Analysis: Gemma 4 31B",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "v6sl48f7xmptqy1o9wdf2ott",
+        "score": 0.6195,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v6sl48f7xmptqy1o9wdf2ott"
+      },
+      "synthetic_eval": {
+        "id": "ok2ysk73r33fatzshl3wwz5g",
+        "score": 0.6061,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ok2ysk73r33fatzshl3wwz5g"
+      },
+      "latest_gold": {
+        "id": "v6sl48f7xmptqy1o9wdf2ott",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.6194814814814813,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v6sl48f7xmptqy1o9wdf2ott"
+      },
+      "latest_synthetic": {
+        "id": "ok2ysk73r33fatzshl3wwz5g",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.606137566137566,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ok2ysk73r33fatzshl3wwz5g"
+      },
+      "composite": 0.6141,
+      "status": "stable"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "rank_hint": 73,
+      "notes": "Manual shortlist add: NVIDIA Nemotron 3 Super",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "kfab0eoegy5m23hz81szls7s",
+        "score": 0.4599,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/kfab0eoegy5m23hz81szls7s"
+      },
+      "synthetic_eval": {
+        "id": "ztt2a1h7uc4r8a5nj9biqhto",
+        "score": 0.5033,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ztt2a1h7uc4r8a5nj9biqhto"
+      },
+      "latest_gold": {
+        "id": "kfab0eoegy5m23hz81szls7s",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.45992592592592585,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/kfab0eoegy5m23hz81szls7s"
+      },
+      "latest_synthetic": {
+        "id": "ztt2a1h7uc4r8a5nj9biqhto",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.5033227513227514,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ztt2a1h7uc4r8a5nj9biqhto"
+      },
+      "composite": 0.4773,
+      "status": "stable"
+    }
+  ],
+  "unstable_or_provisional": [
+    {
+      "model": "x-ai/grok-4.20",
+      "rank_hint": 12,
+      "notes": "Artificial Analysis: Grok 4.20 Beta 0309",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "b37mxyhieooooj87bbh4ud9n",
+        "score": 0,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/b37mxyhieooooj87bbh4ud9n"
+      },
+      "synthetic_eval": {
+        "id": "zz0oog1a8rgpi6ilbfzeyqfs",
+        "score": 0.8527,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zz0oog1a8rgpi6ilbfzeyqfs"
+      },
+      "latest_gold": {
+        "id": "b37mxyhieooooj87bbh4ud9n",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/b37mxyhieooooj87bbh4ud9n"
+      },
+      "latest_synthetic": {
+        "id": "vkfno7sjdxxuxgip6yrcn2q8",
+        "status": "RUNNING",
+        "samples": 0,
+        "score": null,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/vkfno7sjdxxuxgip6yrcn2q8"
+      },
+      "composite": 0.3411,
+      "status": "unstable",
+      "reason": "Completed pair includes a zero-score slice that appears to be provider or tool-loop failure. Synthetic 21x5 rerun is in progress."
+    },
+    {
+      "model": "qwen/qwen3-max-thinking",
+      "rank_hint": 49,
+      "notes": "Artificial Analysis: Qwen3 Max Thinking",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "zasjjusmsuh50eerjhp9fgvw",
+        "score": 0,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zasjjusmsuh50eerjhp9fgvw"
+      },
+      "synthetic_eval": {
+        "id": "awym3p6nzb2sptgm57rgklfz",
+        "score": 0.8287,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/awym3p6nzb2sptgm57rgklfz"
+      },
+      "latest_gold": {
+        "id": "zasjjusmsuh50eerjhp9fgvw",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zasjjusmsuh50eerjhp9fgvw"
+      },
+      "latest_synthetic": {
+        "id": "awym3p6nzb2sptgm57rgklfz",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8286560846560841,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/awym3p6nzb2sptgm57rgklfz"
+      },
+      "composite": 0.3315,
+      "status": "unstable",
+      "reason": "Completed pair includes a zero-score slice that appears to be provider or tool-loop failure."
+    },
+    {
+      "model": "prime-intellect/intellect-3",
+      "rank_hint": 20,
+      "notes": "Prime Intellect flagship model",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": {
+        "id": "lmb2bjp3gbrempnw475fa7fu",
+        "score": 0.724,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lmb2bjp3gbrempnw475fa7fu"
+      },
+      "latest_gold": {
+        "id": "owidn9a7og8jjm8c5rkbrqw7",
+        "status": "RUNNING",
+        "samples": 150,
+        "score": null,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/owidn9a7og8jjm8c5rkbrqw7"
+      },
+      "latest_synthetic": {
+        "id": "lmb2bjp3gbrempnw475fa7fu",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.724,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lmb2bjp3gbrempnw475fa7fu"
+      },
+      "composite": 0.724,
+      "status": "partial",
+      "reason": "Gold eval still running, showing synthetic only"
+    },
+    {
+      "model": "PrimeIntellect/INTELLECT-3.1",
+      "rank_hint": 30,
+      "notes": "Prime Intellect INTELLECT-3.1",
+      "source_list": "prime",
+      "gold_eval": {
+        "id": "intellect31-adapter-gold-tools-15x10-2026-04-06",
+        "score": 0.7648,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/u6ol0ak4p1xxevjgqn8z4o24"
+      },
+      "synthetic_eval": {
+        "id": "intellect31-adapter-synthetic-tools-21x5-2026-04-06",
+        "score": 0.8066031746031749,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/vgc4w9ki2dbxgvvrvk4mdmeh"
+      },
+      "latest_gold": {
+        "id": "intellect31-adapter-gold-tools-15x10-2026-04-06",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.7648,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/u6ol0ak4p1xxevjgqn8z4o24"
+      },
+      "latest_synthetic": {
+        "id": "intellect31-adapter-synthetic-tools-21x5-2026-04-06",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8066031746031749,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/vgc4w9ki2dbxgvvrvk4mdmeh"
+      },
+      "composite": 0.7815,
+      "status": "stable"
+    }
+  ],
+  "incomplete_or_blocked": [
+    {
+      "model": "google/gemini-3-pro-preview",
+      "rank_hint": 13,
+      "notes": "Artificial Analysis: Gemini 3 Pro Preview (high)",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": null,
+      "latest_gold": null,
+      "latest_synthetic": null,
+      "status": "not_run",
+      "reason": "No clean high-signal coverage in imported set."
+    },
+    {
+      "model": "openai/gpt-5-codex",
+      "rank_hint": 25,
+      "notes": "Artificial Analysis: GPT-5 Codex (high)",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": null,
+      "latest_gold": null,
+      "latest_synthetic": null,
+      "status": "not_run",
+      "reason": "No clean high-signal coverage in imported set."
+    },
+    {
+      "model": "openai/gpt-5.1-codex",
+      "rank_hint": 29,
+      "notes": "Artificial Analysis: GPT-5.1 Codex (high)",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": {
+        "id": "v0gaq4ouwft4aqh822b1yv3u",
+        "score": 0.9007,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v0gaq4ouwft4aqh822b1yv3u"
+      },
+      "latest_gold": null,
+      "latest_synthetic": {
+        "id": "v0gaq4ouwft4aqh822b1yv3u",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.900740740740741,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/v0gaq4ouwft4aqh822b1yv3u"
+      },
+      "status": "partial",
+      "reason": "Only one high-signal slice is complete or latest run is failed/stalled."
+    },
+    {
+      "model": "anthropic/claude-opus-4.1",
+      "rank_hint": 37,
+      "notes": "Artificial Analysis: Claude 4.1 Opus",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": null,
+      "latest_gold": null,
+      "latest_synthetic": null,
+      "status": "not_run",
+      "reason": "No clean high-signal coverage in imported set."
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "rank_hint": 44,
+      "notes": "Artificial Analysis: GPT-5 mini (high)",
+      "source_list": "prime",
+      "gold_eval": null,
+      "synthetic_eval": null,
+      "latest_gold": null,
+      "latest_synthetic": null,
+      "status": "not_run",
+      "reason": "No clean high-signal coverage in imported set."
+    },
+    {
+      "model": "glm-5.1",
+      "rank_hint": null,
+      "notes": "Manual add: Z.AI GLM 5.1",
+      "source_list": "manual",
+      "gold_eval": null,
+      "synthetic_eval": null,
+      "latest_gold": null,
+      "latest_synthetic": null,
+      "status": "blocked",
+      "reason": "General API denied access to glm-5.1 (403), coding endpoint was unsuitable for benchmark load."
+    }
+  ]
+}

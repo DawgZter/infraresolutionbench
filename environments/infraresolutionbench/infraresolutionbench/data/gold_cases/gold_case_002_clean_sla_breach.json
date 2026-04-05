@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["covered_outage", "flat_credit_policy"]
+  },
+  "hidden_state": {
+    "scenario_summary": "A covered service had a customer-visible outage lasting 50 minutes, which exceeds the flat-credit threshold in the contract.",
+    "generator_family": "clean_covered_outage",
+    "latent_facts": [
+      "The outage occurred on a covered managed service.",
+      "The contract explicitly grants a credit for outages over 30 minutes.",
+      "Usage records remain otherwise normal."
+    ],
+    "likely_failure_modes": [
+      "The model ignores the policy snippet and returns no credit.",
+      "The model over-rotates on engineering routing instead of the combined commercial response."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": 1
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_002",
+    "title": "Covered outage exceeds service-credit threshold",
+    "crm_record": {
+      "account_id": "acct_002",
+      "account_name": "Aurora AI",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-300",
+      "contracted_commitment_gpu_hours": 300,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "premium-covered-service",
+      "renewal_date": "2026-09-01",
+      "notes": [
+        "Premium SLA addendum signed.",
+        "Flat service credit applies to covered outages over 30 minutes."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_002",
+      "configured_plan_name": "Committed-300",
+      "configured_commitment_gpu_hours": 300,
+      "invoice_preview_usd": 24200,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No pricing anomalies detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 287,
+      "covered_service_minutes_unavailable": 50,
+      "telemetry_summary": "Usage levels were normal outside the outage window.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": {
+      "incident_id": "inc_2026_0312",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 50,
+      "customer_visible": true,
+      "customer_impact_summary": "Managed training jobs were unavailable for 50 minutes.",
+      "engineering_summary": "Regional capacity shortfall caused a 50-minute outage before workload was rebalanced.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "We had a complete outage on the covered training endpoint for almost an hour. Please confirm what applies commercially.",
+    "policy_snippet": "Covered outages longer than 30 minutes on the managed training service receive a flat service credit.",
+    "calculator_output": "Covered outage duration: 50 minutes. Flat credit policy threshold met.",
+    "visible_case_summary": "Clean covered outage where the contractual remedy is explicit."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "capacity_shortfall",
+    "customer_impact": "outage",
+    "contractual_applicability": "credit_due",
+    "discrepancy_detected": false,
+    "recommended_owner": "shared_revops_engineering",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "This is a clean incident review with a covered outage above the policy threshold.",
+      "The case is not ambiguous and does not require extra human triage in v1."
+    ],
+    "reference_customer_note": "We confirmed a covered 50-minute outage on the managed training service, which qualifies for the contract’s flat service credit. We will communicate the credit application and incident summary.",
+    "reference_internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because incident evidence is clean, root cause is capacity_shortfall, and contractual outcome is credit_due."
+  }
+}

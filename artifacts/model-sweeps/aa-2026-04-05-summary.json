@@ -1,0 +1,206 @@
+{
+  "source": "Artificial Analysis LLM Leaderboard general-performance snapshot plus live Prime and OpenRouter model availability",
+  "captured_at": "2026-04-05",
+  "summarized_at": "2026-04-04T22:17:37.308Z",
+  "selection": "prime",
+  "case_source": "synthetic",
+  "prompt_mode": "tools",
+  "completed_rankings": [
+    {
+      "provider": "prime",
+      "rank": 4,
+      "model": "anthropic/claude-opus-4.6",
+      "notes": "Artificial Analysis: Claude Opus 4.6 (max)",
+      "status": "COMPLETED",
+      "avg_score": 0.9305702527924752,
+      "evaluation_id": "xjfyhbzhqv39yd2fcaqktydv",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/xjfyhbzhqv39yd2fcaqktydv",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 15,
+      "model": "openai/gpt-5.1",
+      "notes": "Artificial Analysis: GPT-5.1 (high)",
+      "status": "COMPLETED",
+      "avg_score": 0.9216343327454435,
+      "evaluation_id": "hb585vdhdbg5gkd5d739tz4s",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hb585vdhdbg5gkd5d739tz4s",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 5,
+      "model": "anthropic/claude-sonnet-4.6",
+      "notes": "Artificial Analysis: Claude Sonnet 4.6 (max)",
+      "status": "COMPLETED",
+      "avg_score": 0.921575543797766,
+      "evaluation_id": "dhbnwlha48i3tfx64muvpwwz",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/dhbnwlha48i3tfx64muvpwwz",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 8,
+      "model": "anthropic/claude-opus-4.5",
+      "notes": "Artificial Analysis: Claude Opus 4.5",
+      "status": "COMPLETED",
+      "avg_score": 0.9210464432686656,
+      "evaluation_id": "wdd9idfxqos5qdzb32jnru5r",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/wdd9idfxqos5qdzb32jnru5r",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 3,
+      "model": "openai/gpt-5.3-codex",
+      "notes": "Artificial Analysis: GPT-5.3 Codex (xhigh)",
+      "status": "COMPLETED",
+      "avg_score": 0.9204585537918875,
+      "evaluation_id": "hzzjdp8fy7fcy2xj6zn9i5ni",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/hzzjdp8fy7fcy2xj6zn9i5ni",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 2,
+      "model": "openai/gpt-5.4",
+      "notes": "Artificial Analysis: GPT-5.4 (xhigh)",
+      "status": "COMPLETED",
+      "avg_score": 0.9133450911228693,
+      "evaluation_id": "onkyl5t727w1olpzkj4mcdif",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/onkyl5t727w1olpzkj4mcdif",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 1,
+      "model": "google/gemini-3.1-pro-preview",
+      "notes": "Artificial Analysis: Gemini 3.1 Pro Preview",
+      "status": "COMPLETED",
+      "avg_score": 0.9098177542621991,
+      "evaluation_id": "m3embysugwvoah7rbcs0x63g",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/m3embysugwvoah7rbcs0x63g",
+      "json_valid_metric": 0.9841269841269841,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 23,
+      "model": "openai/gpt-5",
+      "notes": "Artificial Analysis: GPT-5 (high)",
+      "status": "COMPLETED",
+      "avg_score": 0.9024691358024693,
+      "evaluation_id": "uhh3t7f0kl9h0hv8lif86lkt",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/uhh3t7f0kl9h0hv8lif86lkt",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 29,
+      "model": "openai/gpt-5.1-codex",
+      "notes": "Artificial Analysis: GPT-5.1 Codex (high)",
+      "status": "COMPLETED",
+      "avg_score": 0.9023515579071135,
+      "evaluation_id": "oruc0op76752ipnuckec61w3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/oruc0op76752ipnuckec61w3",
+      "json_valid_metric": 1,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 25,
+      "model": "openai/gpt-5-codex",
+      "notes": "Artificial Analysis: GPT-5 Codex (high)",
+      "status": "COMPLETED",
+      "avg_score": 0.8817754262198713,
+      "evaluation_id": "xlq4nlwlqv4fjw4xi006cf2e",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/xlq4nlwlqv4fjw4xi006cf2e",
+      "json_valid_metric": 0.9841269841269841,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 6,
+      "model": "openai/gpt-5.2",
+      "notes": "Artificial Analysis: GPT-5.2 (xhigh)",
+      "status": "COMPLETED",
+      "avg_score": 0.8767195767195768,
+      "evaluation_id": "e9566gytn9otyrrd0gzcu6v1",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/e9566gytn9otyrrd0gzcu6v1",
+      "json_valid_metric": 0.9841269841269841,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 20,
+      "model": "google/gemini-3-flash-preview",
+      "notes": "Artificial Analysis: Gemini 3 Flash",
+      "status": "COMPLETED",
+      "avg_score": 0.830864197530864,
+      "evaluation_id": "ir8kga0968ta0804u4ufdydn",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/ir8kga0968ta0804u4ufdydn",
+      "json_valid_metric": 0.8888888888888888,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 7,
+      "model": "z-ai/glm-5",
+      "notes": "Artificial Analysis: GLM-5",
+      "status": "COMPLETED",
+      "avg_score": 0.7641975308641975,
+      "evaluation_id": "qo0blvrrikxftb3zwxbrwbzu",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/qo0blvrrikxftb3zwxbrwbzu",
+      "json_valid_metric": 0.8253968253968254,
+      "anomaly": null
+    },
+    {
+      "provider": "prime",
+      "rank": 16,
+      "model": "moonshotai/kimi-k2.5",
+      "notes": "Artificial Analysis: Kimi K2.5",
+      "status": "COMPLETED",
+      "avg_score": 0.4459729570840682,
+      "evaluation_id": "jw5tcsqx6fld0qdf79yzdlku",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/jw5tcsqx6fld0qdf79yzdlku",
+      "json_valid_metric": 0.49206349206349204,
+      "anomaly": null
+    }
+  ],
+  "pending_or_missing": [
+    {
+      "provider": "prime",
+      "rank": 13,
+      "model": "google/gemini-3-pro-preview",
+      "notes": "Artificial Analysis: Gemini 3 Pro Preview (high)",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "lfr0ue479wu6oj4pru3f84k3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lfr0ue479wu6oj4pru3f84k3",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    }
+  ],
+  "anomalies": [
+    {
+      "provider": "prime",
+      "rank": 13,
+      "model": "google/gemini-3-pro-preview",
+      "notes": "Artificial Analysis: Gemini 3 Pro Preview (high)",
+      "status": "FAILED",
+      "avg_score": null,
+      "evaluation_id": "lfr0ue479wu6oj4pru3f84k3",
+      "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/lfr0ue479wu6oj4pru3f84k3",
+      "json_valid_metric": null,
+      "anomaly": "failed"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "source": "artifacts/model-sweeps/final-roundup-2026-04-05.json",
+  "generated_at": "2026-04-06",
+  "weights": {
+    "gold_exact": 0.6,
+    "synthetic_exact": 0.4
+  },
+  "rows": [
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "gold_exact": 0.8429629629629629,
+      "synthetic_exact": 0.8010582010582011,
+      "exact_only_score": 0.8262010582010583,
+      "composite_score": 0.8642,
+      "delta_vs_composite": -0.0379989417989417,
+      "gold_eval_id": "hjg735v6w80citz02vu2j0uq",
+      "synthetic_eval_id": "p2x86tkm9yrcdv3zzaqypjy5"
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "gold_exact": 0.8044444444444445,
+      "synthetic_exact": 0.8095238095238095,
+      "exact_only_score": 0.8064761904761906,
+      "composite_score": 0.8503,
+      "delta_vs_composite": -0.043823809523809376,
+      "gold_eval_id": "ve4vt8l72u4nwph4s2id1hm6",
+      "synthetic_eval_id": "hpodco6d1pojfbfilymdso7o"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "gold_exact": 0.7777777777777778,
+      "synthetic_exact": 0.8455026455026454,
+      "exact_only_score": 0.8048677248677248,
+      "composite_score": 0.8672,
+      "delta_vs_composite": -0.06233227513227513,
+      "gold_eval_id": "lhnxht6zutacn9gmn8z3dtr8",
+      "synthetic_eval_id": "gvzkkf6xdn2dni69dpxiu3ce"
+    },
+    {
+      "model": "openai/gpt-5.1",
+      "gold_exact": 0.8192592592592592,
+      "synthetic_exact": 0.7735449735449734,
+      "exact_only_score": 0.8009735449735449,
+      "composite_score": 0.8405,
+      "delta_vs_composite": -0.03952645502645513,
+      "gold_eval_id": "aqfy625vtti9j1n7gjwi1nyh",
+      "synthetic_eval_id": "ej8r85mf3fmvb3ozaqwtahj5"
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "gold_exact": 0.8066666666666666,
+      "synthetic_exact": 0.7915343915343915,
+      "exact_only_score": 0.8006137566137566,
+      "composite_score": 0.8451,
+      "delta_vs_composite": -0.04448624338624341,
+      "gold_eval_id": "fo5tvt780x0o13z67t1w7r3u",
+      "synthetic_eval_id": "qv0jn96lvqp5anl37vm16b1q"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.5",
+      "gold_exact": 0.7962962962962963,
+      "synthetic_exact": 0.7862433862433863,
+      "exact_only_score": 0.7922751322751322,
+      "composite_score": 0.8378,
+      "delta_vs_composite": -0.045524867724867746,
+      "gold_eval_id": "jflk6lhp3u2gjbpr5fnjpty3",
+      "synthetic_eval_id": "eu4nk13xvzbi1fzjgghrbb8s"
+    },
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "gold_exact": 0.782962962962963,
+      "synthetic_exact": 0.8,
+      "exact_only_score": 0.7897777777777778,
+      "composite_score": 0.8401,
+      "delta_vs_composite": -0.05032222222222216,
+      "gold_eval_id": "itb251xxxzq1b3lm1riurpva",
+      "synthetic_eval_id": "ad1qsuqzm6ghdisck3lgfzxw"
+    },
+    {
+      "model": "openai/gpt-5.2-codex",
+      "gold_exact": 0.78,
+      "synthetic_exact": 0.7978835978835979,
+      "exact_only_score": 0.7871534391534392,
+      "composite_score": 0.8354,
+      "delta_vs_composite": -0.04824656084656087,
+      "gold_eval_id": "o4uzna5ttoyjvzb329xxcooj",
+      "synthetic_eval_id": "iznj03ezablre86nlabskp7b"
+    },
+    {
+      "model": "z-ai/glm-5-turbo",
+      "gold_exact": 0.794074074074074,
+      "synthetic_exact": 0.7767195767195767,
+      "exact_only_score": 0.7871322751322751,
+      "composite_score": 0.8342,
+      "delta_vs_composite": -0.047067724867724925,
+      "gold_eval_id": "uvb2wwz01imup6ld8abmzd9w",
+      "synthetic_eval_id": "nlf3gzqw2k53ylmskujf2xkc"
+    },
+    {
+      "model": "openai/gpt-5",
+      "gold_exact": 0.7814814814814814,
+      "synthetic_exact": 0.7936507936507936,
+      "exact_only_score": 0.7863492063492064,
+      "composite_score": 0.8344,
+      "delta_vs_composite": -0.04805079365079368,
+      "gold_eval_id": "x51wps06u62diug4c0hl3sdo",
+      "synthetic_eval_id": "twmou5io6itob257bd2ahn3x"
+    },
+    {
+      "model": "x-ai/grok-4",
+      "gold_exact": 0.7681481481481481,
+      "synthetic_exact": 0.8105820105820106,
+      "exact_only_score": 0.7851216931216931,
+      "composite_score": 0.8226,
+      "delta_vs_composite": -0.03747830687830689,
+      "gold_eval_id": "z6dsu727162k94u6yyh62ss5",
+      "synthetic_eval_id": "ehx15mq82w0hgvoblp6o2mba"
+    },
+    {
+      "model": "z-ai/glm-5",
+      "gold_exact": 0.7777777777777778,
+      "synthetic_exact": 0.7851851851851852,
+      "exact_only_score": 0.7807407407407407,
+      "composite_score": 0.8274,
+      "delta_vs_composite": -0.04665925925925929,
+      "gold_eval_id": "oj5tjiltdshl25mcgdihi74b",
+      "synthetic_eval_id": "cig50luv8w6l4s1gq1et7jss"
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "gold_exact": 0.7562962962962962,
+      "synthetic_exact": 0.7957671957671958,
+      "exact_only_score": 0.772084656084656,
+      "composite_score": 0.8242,
+      "delta_vs_composite": -0.052115343915344,
+      "gold_eval_id": "io87iro91xigsmm203qbdyrp",
+      "synthetic_eval_id": "j9jkmr61sicmx2si3yxqdiio"
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "gold_exact": 0.7377777777777778,
+      "synthetic_exact": 0.8063492063492064,
+      "exact_only_score": 0.7652063492063492,
+      "composite_score": 0.82,
+      "delta_vs_composite": -0.05479365079365073,
+      "gold_eval_id": "bm3s18h21us1cxa106kufrd7",
+      "synthetic_eval_id": "vjcvxint9ce49a6dnuw0r3i5"
+    },
+    {
+      "model": "qwen/qwen3.5-27b",
+      "gold_exact": 0.74,
+      "synthetic_exact": 0.7936507936507936,
+      "exact_only_score": 0.7614603174603174,
+      "composite_score": 0.8148,
+      "delta_vs_composite": -0.053339682539682576,
+      "gold_eval_id": "b5hvdxbzzi29xurckhxrl5lk",
+      "synthetic_eval_id": "r5f5nyfwnorbibd43fjusfcy"
+    },
+    {
+      "model": "qwen/qwen3.6-plus:free",
+      "gold_exact": 0.7429629629629629,
+      "synthetic_exact": 0.7862433862433863,
+      "exact_only_score": 0.7602751322751323,
+      "composite_score": 0.8126,
+      "delta_vs_composite": -0.05232486772486766,
+      "gold_eval_id": "myb566zngiauozp20m6zslsx",
+      "synthetic_eval_id": "gnx9zktfuuykt1qc87uabmf8"
+    },
+    {
+      "model": "openai/gpt-5.4",
+      "gold_exact": 0.7155555555555555,
+      "synthetic_exact": 0.8052910052910053,
+      "exact_only_score": 0.7514497354497354,
+      "composite_score": 0.8094,
+      "delta_vs_composite": -0.05795026455026464,
+      "gold_eval_id": "m29p04dibj5u41aw11e8laak",
+      "synthetic_eval_id": "g5rfs3uqyww80omlbcv34561"
+    },
+    {
+      "model": "moonshotai/kimi-k2.5",
+      "gold_exact": 0.7207407407407408,
+      "synthetic_exact": 0.783068783068783,
+      "exact_only_score": 0.7456719576719577,
+      "composite_score": 0.8017,
+      "delta_vs_composite": -0.05602804232804226,
+      "gold_eval_id": "murmi19b4z4alwnsiyj09hxa",
+      "synthetic_eval_id": "ecmvf3jbhbge1vyfcfnstsqp"
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "gold_exact": 0.7474074074074074,
+      "synthetic_exact": 0.7312169312169312,
+      "exact_only_score": 0.740931216931217,
+      "composite_score": 0.7846,
+      "delta_vs_composite": -0.04366878306878297,
+      "gold_eval_id": "ef62okxd40u58qro2em1f8s6",
+      "synthetic_eval_id": "xf57dpr4c2scbefpso6tig6m"
+    },
+    {
+      "model": "google/gemini-3-flash-preview",
+      "gold_exact": 0.7340740740740741,
+      "synthetic_exact": 0.7449735449735451,
+      "exact_only_score": 0.7384338624338624,
+      "composite_score": 0.7958,
+      "delta_vs_composite": -0.05736613756613751,
+      "gold_eval_id": "w9ljhveevdtdnj8hbcvsgke5",
+      "synthetic_eval_id": "idv1uuosk2bzn4cb9a2q6x8t"
+    },
+    {
+      "model": "xiaomi/mimo-v2-pro",
+      "gold_exact": 0.7244444444444443,
+      "synthetic_exact": 0.7449735449735448,
+      "exact_only_score": 0.7326560846560846,
+      "composite_score": 0.783,
+      "delta_vs_composite": -0.05034391534391547,
+      "gold_eval_id": "ensypr5udtm9ipa3eq9jrqxv",
+      "synthetic_eval_id": "d5w4xbwa7mo03ypjyq91n6b0"
+    },
+    {
+      "model": "minimax/minimax-m2.7",
+      "gold_exact": 0.7051851851851851,
+      "synthetic_exact": 0.7492063492063492,
+      "exact_only_score": 0.7227936507936508,
+      "composite_score": 0.7854,
+      "delta_vs_composite": -0.06260634920634922,
+      "gold_eval_id": "lbzjaoo1d36qga7eqbwzix96",
+      "synthetic_eval_id": "fbm1ejpgpi9gmfiz9diu8xwd"
+    },
+    {
+      "model": "minimax/minimax-m2",
+      "gold_exact": 0.7125925925925926,
+      "synthetic_exact": 0.7259259259259259,
+      "exact_only_score": 0.7179259259259259,
+      "composite_score": 0.7718,
+      "delta_vs_composite": -0.053874074074074185,
+      "gold_eval_id": "x7dvtnseit5qqi9f972i2u9o",
+      "synthetic_eval_id": "zmspi8pzzmys42k8rfcevqe0"
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "gold_exact": 0.7037037037037037,
+      "synthetic_exact": 0.71005291005291,
+      "exact_only_score": 0.7062433862433862,
+      "composite_score": 0.7601,
+      "delta_vs_composite": -0.05385661375661377,
+      "gold_eval_id": "ib1tr1476wenswe6p2bv4iq1",
+      "synthetic_eval_id": "wmv8xbathxzgxl11b2aq9c98"
+    },
+    {
+      "model": "stepfun/step-3.5-flash",
+      "gold_exact": 0.7125925925925926,
+      "synthetic_exact": 0.6910052910052911,
+      "exact_only_score": 0.7039576719576719,
+      "composite_score": 0.756,
+      "delta_vs_composite": -0.05204232804232811,
+      "gold_eval_id": "zjunqo0zx3t6q4af3m91gz7k",
+      "synthetic_eval_id": "ynbk6d0xwv2g7wz7iz1kad74"
+    },
+    {
+      "model": "openai/gpt-5.4-nano",
+      "gold_exact": 0.6755555555555556,
+      "synthetic_exact": 0.7343915343915344,
+      "exact_only_score": 0.6990899470899471,
+      "composite_score": 0.7722,
+      "delta_vs_composite": -0.0731100529100529,
+      "gold_eval_id": "l1mm52g21bhc0qhdz49f7jc1",
+      "synthetic_eval_id": "u2tn6udpt2r1frr7x4wftplf"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "gold_exact": 0.6459259259259259,
+      "synthetic_exact": 0.7534391534391535,
+      "exact_only_score": 0.688931216931217,
+      "composite_score": 0.7412,
+      "delta_vs_composite": -0.05226878306878302,
+      "gold_eval_id": "shf5h48k3u6exerjj20d19u3",
+      "synthetic_eval_id": "p3t8csz8jq5x5eiypqliopxg"
+    },
+    {
+      "model": "arcee-ai/trinity-large-thinking",
+      "gold_exact": 0.6703703703703704,
+      "synthetic_exact": 0.6984126984126984,
+      "exact_only_score": 0.6815873015873015,
+      "composite_score": 0.7409,
+      "delta_vs_composite": -0.059312698412698484,
+      "gold_eval_id": "e4hb70ro0a2i7zeidbgkgiq4",
+      "synthetic_eval_id": "tjib2ed8ayclwagorwbmu6oe"
+    },
+    {
+      "model": "qwen/qwen3.5-35b-a3b",
+      "gold_exact": 0.7051851851851851,
+      "synthetic_exact": 0.6412698412698412,
+      "exact_only_score": 0.6796190476190476,
+      "composite_score": 0.7369,
+      "delta_vs_composite": -0.05728095238095243,
+      "gold_eval_id": "uexriuixp947rooyhd1tztqs",
+      "synthetic_eval_id": "zu963ge2dnazkcmogjjato6z"
+    },
+    {
+      "model": "xiaomi/mimo-v2-omni",
+      "gold_exact": 0.674074074074074,
+      "synthetic_exact": 0.6084656084656085,
+      "exact_only_score": 0.6478306878306879,
+      "composite_score": 0.7006,
+      "delta_vs_composite": -0.05276931216931213,
+      "gold_eval_id": "i6maw05nvoc3gn5rltoussti",
+      "synthetic_eval_id": "v9gez9xkawglaxegb0teihi0"
+    },
+    {
+      "model": "minimax/minimax-m2.1",
+      "gold_exact": 0.5948148148148148,
+      "synthetic_exact": 0.7058201058201059,
+      "exact_only_score": 0.6392169312169312,
+      "composite_score": 0.7046,
+      "delta_vs_composite": -0.06538306878306877,
+      "gold_eval_id": "flpbragr7adf4nl4p4aikxhx",
+      "synthetic_eval_id": "zygrchazu4n1ieae71osiiu0"
+    },
+    {
+      "model": "xiaomi/mimo-v2-flash",
+      "gold_exact": 0.5748148148148149,
+      "synthetic_exact": 0.6190476190476191,
+      "exact_only_score": 0.5925079365079365,
+      "composite_score": 0.6487,
+      "delta_vs_composite": -0.056192063492063515,
+      "gold_eval_id": "k2hgf3qt5e47pd3qu6zyk3f9",
+      "synthetic_eval_id": "aza06h89gswo0mvvun3kkpp9"
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "gold_exact": 0.5437037037037037,
+      "synthetic_exact": 0.6402116402116401,
+      "exact_only_score": 0.5823068783068783,
+      "composite_score": 0.6245,
+      "delta_vs_composite": -0.04219312169312173,
+      "gold_eval_id": "x7wwswtynbzw5suysdb6wigk",
+      "synthetic_eval_id": "y59rnlw3ambdwt6z3wf04db5"
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "gold_exact": 0.5792592592592593,
+      "synthetic_exact": 0.5693121693121693,
+      "exact_only_score": 0.5752804232804233,
+      "composite_score": 0.6141,
+      "delta_vs_composite": -0.0388195767195767,
+      "gold_eval_id": "v6sl48f7xmptqy1o9wdf2ott",
+      "synthetic_eval_id": "ok2ysk73r33fatzshl3wwz5g"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "gold_exact": 0.37703703703703706,
+      "synthetic_exact": 0.4338624338624339,
+      "exact_only_score": 0.39976719576719577,
+      "composite_score": 0.4773,
+      "delta_vs_composite": -0.07753280423280423,
+      "gold_eval_id": "kfab0eoegy5m23hz81szls7s",
+      "synthetic_eval_id": "ztt2a1h7uc4r8a5nj9biqhto"
+    }
+  ]
+}

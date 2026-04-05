@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "synthetic",
+    "created_at": "2026-04-05",
+    "adversarial_tags": [
+      "cross_system_disagreement",
+      "wording_variation",
+      "missing_noncritical_field"
+    ]
+  },
+  "hidden_state": {
+    "scenario_summary": "Synthetic pricing config mismatch where CRM commitment and billing commitment disagree without an operational incident.",
+    "generator_family": "pricing_config_mismatch",
+    "latent_facts": [
+      "CRM remains the signed commercial source of truth.",
+      "Billing configuration drifted after a manual update.",
+      "Usage telemetry is healthy and not the cause of the dispute."
+    ],
+    "likely_failure_modes": [
+      "Model trusts billing over CRM and misses the discrepancy.",
+      "Model misclassifies the case as metering discrepancy because the customer mentions invoice mismatch."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": 1
+    }
+  },
+  "case_packet": {
+    "case_id": "synthetic_pricing_mismatch_009",
+    "title": "Synthetic pricing mismatch 9",
+    "crm_record": {
+      "account_id": "acct_syn_009",
+      "account_name": "Summit Protein AI",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-120",
+      "contracted_commitment_gpu_hours": 120,
+      "billing_owner": null,
+      "sla_tier": "enterprise-standard",
+      "renewal_date": null,
+      "notes": [
+        "Signed order form lists Committed-120.",
+        "No signed amendment appears after the current order form."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_syn_009",
+      "configured_plan_name": "Committed-140",
+      "configured_commitment_gpu_hours": 140,
+      "invoice_preview_usd": 10454,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "Billing plan currently set to Committed-140.",
+        "Billing configuration was last edited during a manual plan update."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 129,
+      "covered_service_minutes_unavailable": 0,
+      "telemetry_summary": "Usage telemetry is internally consistent and shows no service instability.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": []
+    },
+    "incident_record": null,
+    "customer_note": "Our invoice preview for Summit Protein AI looks off and we cannot tell which committed plan it is using.",
+    "policy_snippet": "If CRM contract terms and billing configuration differ, route the case to RevOps for commercial review before final invoicing.",
+    "calculator_output": "Invoice preview currently uses Committed-140.",
+    "visible_case_summary": "Synthetic commercial dispute with a plan mismatch between CRM and billing and no service incident."
+  },
+  "ground_truth": {
+    "issue_type": "pricing_config_mismatch",
+    "root_cause": "billing_config_out_of_sync_with_crm",
+    "customer_impact": "invoice_confusion",
+    "contractual_applicability": "not_an_sla_case",
+    "discrepancy_detected": true,
+    "recommended_owner": "shared_revops_finance",
+    "recommended_action": "hold_for_revops_review",
+    "needs_human_review": true,
+    "confidence": "medium",
+    "adjudication_notes": [
+      "Ground truth is set programmatically from template logic.",
+      "Noise injectors only vary wording and non-critical fields."
+    ],
+    "reference_customer_note": "We found a mismatch between your contracted commitment and the current billing configuration, so we are routing this for commercial review before confirming the final invoice.",
+    "reference_internal_note": "Owner: shared_revops_finance. Action: hold_for_revops_review because CRM and billing commitment levels disagree while usage telemetry is healthy."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "gold_cases_directory": "/Users/karimyahia/Documents/test/wii2/primeintellect/packages/data/gold_cases",
+  "generated_cases_directory": "/Users/karimyahia/Documents/test/wii2/primeintellect/packages/data/generated_cases",
+  "run_summaries_directory": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/local-runs/summaries",
+  "prime_requests_directory": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/prime-requests",
+  "prime_responses_directory": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/prime-responses"
+}

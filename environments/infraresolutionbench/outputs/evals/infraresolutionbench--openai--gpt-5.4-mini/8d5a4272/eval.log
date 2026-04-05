@@ -1,0 +1,9 @@
+2026-04-05 13:34:47 - verifiers.workers.server.env_server.ZMQEnvServer - INFO - Initializing ZMQEnvServer to serve infraresolutionbench (env_args={'case_source': 'gold', 'prompt_mode': 'tools', 'limit': '1'}, extra_env_kwargs={})
+2026-04-05 13:34:47 - verifiers.workers.server.env_server.ZMQEnvServer - INFO - Loading environment infraresolutionbench with env_args={'case_source': 'gold', 'prompt_mode': 'tools', 'limit': '1'}
+2026-04-05 13:34:47 - verifiers.utils.env_utils - INFO - Loading environment: infraresolutionbench
+2026-04-05 13:34:47 - verifiers.utils.env_utils - INFO - Using provided args: limit=1, case_source=gold, prompt_mode=tools
+2026-04-05 13:34:47 - verifiers.utils.env_utils - INFO - Using default args: generator_family=None
+2026-04-05 13:34:47 - verifiers.utils.env_utils - INFO - Successfully loaded environment 'infraresolutionbench'
+2026-04-05 13:34:47 - verifiers.workers.server.env_server.ZMQEnvServer - INFO - ZMQEnvServer started on tcp://127.0.0.1:57779
+2026-04-05 13:34:47 - verifiers.workers.server.env_server.ZMQEnvServer - INFO - Health check responder started on tcp://127.0.0.1:57780
+2026-04-05 13:34:54 - verifiers.workers.server.env_server.ZMQEnvServer - INFO - Environment server shut down

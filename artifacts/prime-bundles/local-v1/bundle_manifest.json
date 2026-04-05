@@ -1,0 +1,35 @@
+{
+  "bundle_name": "InfraResolutionBench-prime-bundle",
+  "generated_at": "2026-04-04T20:02:09.427Z",
+  "benchmark_name": "InfraResolutionBench",
+  "benchmark_version": "v1-local",
+  "output_dir": "/Users/karimyahia/Documents/test/wii2/primeintellect/artifacts/prime-bundles/local-v1",
+  "counts": {
+    "gold_cases": 10,
+    "synthetic_cases": 140,
+    "synthetic_families": 7,
+    "local_run_summaries": 1,
+    "protocol_requests": 1,
+    "protocol_responses": 1
+  },
+  "included_files": [
+    "README.md",
+    "bundle_manifest.json",
+    "environment_contract.json",
+    "dataset_manifest.json",
+    "sources.json",
+    "docs/benchmark-design.md",
+    "docs/taxonomy.md",
+    "docs/case-writing-guide.md",
+    "docs/adapter-protocol.md",
+    "docs/prime-integration.md"
+  ],
+  "included_directories": [
+    "data/gold_cases",
+    "data/generated_cases",
+    "artifacts/local-runs/summaries",
+    "artifacts/prime-requests",
+    "artifacts/prime-responses",
+    "docs"
+  ]
+}

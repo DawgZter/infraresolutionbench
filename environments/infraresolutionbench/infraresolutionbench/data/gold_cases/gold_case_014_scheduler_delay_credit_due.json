@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "benchmark_version": "v1",
+    "authoring_style": "handwritten",
+    "created_at": "2026-04-05",
+    "adversarial_tags": ["covered_delay", "scheduler_failure", "flat_credit_policy"]
+  },
+  "hidden_state": {
+    "scenario_summary": "A scheduler control-plane failure delayed job starts for more than the covered threshold, and the policy explicitly grants a flat credit for that condition.",
+    "generator_family": "clean_covered_outage",
+    "latent_facts": [
+      "The affected service is covered by contract.",
+      "The scheduler failure delayed job starts for longer than the credit threshold.",
+      "The case should resolve cleanly without extra human review."
+    ],
+    "likely_failure_modes": [
+      "The model assumes a delay cannot qualify for credit because it is not a full outage.",
+      "The model routes to manual review despite explicit calculator and policy support."
+    ],
+    "commercial_context": {
+      "strategic_account": false,
+      "renewal_days": null,
+      "prior_incidents_30d": 0
+    }
+  },
+  "case_packet": {
+    "case_id": "gold_case_014",
+    "title": "Scheduler failure delays starts beyond covered threshold",
+    "crm_record": {
+      "account_id": "acct_014",
+      "account_name": "Quill Compute",
+      "account_tier": "enterprise",
+      "plan_name": "Committed-300",
+      "contracted_commitment_gpu_hours": 300,
+      "billing_owner": "finance@prime.example",
+      "sla_tier": "premium-covered-service",
+      "renewal_date": "2026-08-15",
+      "notes": [
+        "Premium addendum includes flat credit for covered control-plane delays over 30 minutes."
+      ]
+    },
+    "billing_record": {
+      "billing_account_id": "bill_014",
+      "configured_plan_name": "Committed-300",
+      "configured_commitment_gpu_hours": 300,
+      "invoice_preview_usd": 24010,
+      "credits_applied_usd": 0,
+      "burst_usage_gpu_hours": 0,
+      "pricing_notes": [
+        "No pricing anomaly detected."
+      ]
+    },
+    "usage_record": {
+      "window_start": "2026-03-01",
+      "window_end": "2026-03-31",
+      "total_gpu_hours": 291,
+      "covered_service_minutes_unavailable": 37,
+      "telemetry_summary": "Job execution capacity remained available, but new starts were delayed for 37 minutes by control-plane scheduler failures.",
+      "meter_ingestion_status": "healthy",
+      "anomalies": [
+        "Scheduler backlog prevented new job starts while existing jobs continued."
+      ]
+    },
+    "incident_record": {
+      "incident_id": "inc_2026_0316_sched",
+      "status": "resolved",
+      "service": "managed-training-api",
+      "duration_minutes": 37,
+      "customer_visible": true,
+      "customer_impact_summary": "New training jobs could not start for 37 minutes.",
+      "engineering_summary": "A scheduler failure in the control plane blocked new job admissions until the scheduler quorum was restored.",
+      "covered_by_sla": true,
+      "scheduled_maintenance": false
+    },
+    "customer_note": "Our jobs did not start for over half an hour even though existing jobs kept running. Please confirm what applies commercially.",
+    "policy_snippet": "Covered control-plane delays longer than 30 minutes on the managed training service receive the same flat service credit as covered outages.",
+    "calculator_output": "Covered control-plane delay duration: 37 minutes. Flat credit threshold met.",
+    "visible_case_summary": "Clean scheduler failure with explicit credit support despite delay rather than full outage."
+  },
+  "ground_truth": {
+    "issue_type": "incident_impact_review",
+    "root_cause": "scheduler_failure",
+    "customer_impact": "delayed_job_start",
+    "contractual_applicability": "credit_due",
+    "discrepancy_detected": false,
+    "recommended_owner": "shared_revops_engineering",
+    "recommended_action": "send_explanation_only",
+    "needs_human_review": false,
+    "confidence": "high",
+    "adjudication_notes": [
+      "This is a clean covered incident where delayed starts are contractually covered once they cross the threshold."
+    ],
+    "reference_customer_note": "We confirmed a covered 37-minute control-plane delay on the managed training service, which qualifies for the contract’s flat service credit. We will communicate the credit application and the scheduler incident summary.",
+    "reference_internal_note": "Owner: shared_revops_engineering. Action: send_explanation_only because incident evidence is clean, root cause is scheduler_failure, customer impact is delayed_job_start, and contractual outcome is credit_due."
+  }
+}

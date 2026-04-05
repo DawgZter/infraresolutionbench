@@ -1,0 +1,33 @@
+{
+  "source": "third retry subset after second retry mostly recovered",
+  "captured_at": "2026-04-05",
+  "generated_at": "2026-04-05T00:00:00.000Z",
+  "target_case_source": "mixed",
+  "target_prompt_mode": "tools",
+  "selected_prime_runs": [
+    {
+      "case_source": "gold",
+      "num_examples": 15,
+      "rollouts_per_example": 10,
+      "limit": 15,
+      "model": "arcee-ai/Trinity-Mini",
+      "eval_name": "gold-tools-arcee-ai_Trinity-Mini"
+    },
+    {
+      "case_source": "synthetic",
+      "num_examples": 21,
+      "rollouts_per_example": 5,
+      "limit": 21,
+      "model": "arcee-ai/Trinity-Mini",
+      "eval_name": "synthetic-tools-arcee-ai_Trinity-Mini"
+    },
+    {
+      "case_source": "synthetic",
+      "num_examples": 21,
+      "rollouts_per_example": 5,
+      "limit": 21,
+      "model": "google/gemini-3-pro-preview",
+      "eval_name": "synthetic-tools-google_gemini-3-pro-preview"
+    }
+  ]
+}

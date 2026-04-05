@@ -1,0 +1,61 @@
+{
+  "benchmark_name": "InfraResolutionBench",
+  "benchmark_version": "v1-local",
+  "system_prompt": "You are an AI copilot for AI infrastructure commercial operations.\n\nYou will receive records from multiple internal systems:\n- CRM/account record\n- billing/pricing record\n- usage summary\n- incident/engineering notes\n- customer note\n- policy snippet if relevant\n\nYour task:\n1. identify the likely issue type\n2. determine root cause and customer impact\n3. determine contractual applicability\n4. detect whether systems disagree\n5. recommend an owner and bounded next action\n6. decide whether human review is required\n7. draft a customer note\n8. draft an internal ops note\n\nImportant:\n- do not assume facts not present\n- if evidence is conflicting, reflect that in confidence and review recommendation\n- do not recompute billing formulas unless calculator output is explicitly missing\n- return valid JSON only",
+  "output_schema_keys": [
+    "issue_type",
+    "root_cause",
+    "customer_impact",
+    "contractual_applicability",
+    "discrepancy_detected",
+    "recommended_owner",
+    "recommended_action",
+    "needs_human_review",
+    "confidence",
+    "customer_note",
+    "internal_note"
+  ],
+  "output_schema_reminder": "Return a single JSON object with exactly these keys:\n- issue_type\n- root_cause\n- customer_impact\n- contractual_applicability\n- discrepancy_detected\n- recommended_owner\n- recommended_action\n- needs_human_review\n- confidence\n- customer_note\n- internal_note",
+  "prompt_modes": [
+    "packet",
+    "tools"
+  ],
+  "protocol_version": "v1",
+  "tool_definitions": [
+    {
+      "name": "get_crm_record",
+      "description": "Returns the CRM and account record for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_billing_record",
+      "description": "Returns the billing and pricing record for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_usage_record",
+      "description": "Returns the usage and telemetry summary for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_incident_record",
+      "description": "Returns the incident or engineering record for the case, if present.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_customer_note",
+      "description": "Returns the customer-authored note or complaint for the case.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_policy_snippet",
+      "description": "Returns the relevant policy or SLA snippet for the case, if present.",
+      "inputExample": "case_id=\"gold_case_001\""
+    },
+    {
+      "name": "get_calculator_output",
+      "description": "Returns calculator or invoice helper output when the case includes it.",
+      "inputExample": "case_id=\"gold_case_001\""
+    }
+  ]
+}

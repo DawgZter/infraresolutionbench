@@ -1,0 +1,13 @@
+{
+  "issue_type": "metering_discrepancy",
+  "root_cause": "usage_metering_error",
+  "customer_impact": "usage_visibility_gap",
+  "contractual_applicability": "invoice_adjustment_due",
+  "discrepancy_detected": true,
+  "recommended_owner": "finance_owner",
+  "recommended_action": "hold_for_finance_review",
+  "needs_human_review": true,
+  "confidence": "medium",
+  "customer_note": "We found a lag in the usage meter pipeline, so the dashboard and invoice preview do not line up yet. We are reviewing the billing impact and will follow up after finance review.",
+  "internal_note": "Owner: finance_owner. Action: hold_for_finance_review because the meter pipeline is lagging and the invoice may need an adjustment."
+}
