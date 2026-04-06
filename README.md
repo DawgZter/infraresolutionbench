@@ -1,4 +1,4 @@
-# InfraResolutionBench
+# InfraResolution Bench
 
 A [Prime Lab](https://docs.primeintel.ai/) environment and benchmark for evaluating AI agents on commercial operations tasks in AI infrastructure — the kind of work that sits between contracts, compute usage, incidents, billing, and customer communication.
 
