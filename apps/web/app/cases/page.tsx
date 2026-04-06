@@ -44,9 +44,9 @@ export default async function CasesPage({ searchParams }: CasesPageProps) {
   const goldCases = cases;
 
   return (
-    <div className="flex gap-6 min-h-[calc(100vh-120px)]">
+    <div className="flex flex-col md:flex-row gap-6 min-h-0 md:min-h-[calc(100vh-120px)]">
       {/* Sidebar */}
-      <aside className="w-64 flex-shrink-0 border-r border-[var(--color-border)] pr-4 overflow-y-auto">
+      <aside className="w-full md:w-64 flex-shrink-0 border-b md:border-b-0 md:border-r border-[var(--color-border)] pb-4 md:pb-0 md:pr-4 overflow-y-auto max-h-48 md:max-h-none">
         <p className="sidebar-group-label">Gold Cases</p>
         {goldCases.map((c) => {
           const isActive =

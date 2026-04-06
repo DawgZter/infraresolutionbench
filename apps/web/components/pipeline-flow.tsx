@@ -69,7 +69,8 @@ export function PipelineFlow() {
 
   return (
     <div>
-      <div className="flex items-center gap-0">
+      {/* Desktop: horizontal flow */}
+      <div className="hidden md:flex items-center gap-0">
         {steps.map((step, i) => (
           <div
             key={step.label}
@@ -105,8 +106,8 @@ export function PipelineFlow() {
           </div>
         ))}
       </div>
-      {/* Tooltip area with fixed height to prevent layout shift */}
-      <div className="h-20 mt-3 relative">
+      {/* Desktop tooltip */}
+      <div className="hidden md:block h-20 mt-3 relative">
         {steps.map((step, i) => (
           <div
             key={step.label}
@@ -122,6 +123,34 @@ export function PipelineFlow() {
               </span>{" "}
               &middot; {step.detail}
             </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile: vertical flow */}
+      <div className="md:hidden space-y-2">
+        {steps.map((step, i) => (
+          <div key={step.label}>
+            <div
+              className={`font-mono text-xs font-semibold px-3 py-2.5 rounded-lg transition-all duration-200 ${
+                step.highlighted
+                  ? "border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] text-[var(--color-accent)]"
+                  : "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)]"
+              }`}
+              onClick={() => setActiveIndex(i)}
+            >
+              <span>{step.label}</span>
+              {activeIndex === i && (
+                <p className="font-normal text-[var(--color-text-secondary)] mt-1.5 leading-relaxed">
+                  {step.detail}
+                </p>
+              )}
+            </div>
+            {i < steps.length - 1 && (
+              <div className="text-[var(--color-text-tertiary)] text-xs text-center py-0.5">
+                &#8595;
+              </div>
+            )}
           </div>
         ))}
       </div>

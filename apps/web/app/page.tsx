@@ -111,18 +111,18 @@ export default async function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="grid grid-cols-[1fr_1.4fr_1fr_1fr] mb-16">
+      <section className="grid grid-cols-2 md:grid-cols-[1fr_1.4fr_1fr_1fr] gap-6 md:gap-0 mb-16">
         <div>
           <p className="stat-value">
             {data.goldCaseCount + data.syntheticCaseCount}
           </p>
           <p className="stat-label">Total Cases</p>
         </div>
-        <div className="-ml-4">
+        <div>
           <p className="stat-value">{topScore}</p>
           <p className="stat-label">Top Score ({leaderName})</p>
         </div>
-        <div className="ml-2">
+        <div>
           <p className="stat-value">
             {data.hostedLeaderboardRows.filter(
               (r: (typeof data.hostedLeaderboardRows)[number]) => r.overallScore !== null,

@@ -452,9 +452,9 @@ export function LeaderboardView({ rows }: { rows: LeaderboardRow[] }) {
 
       {/* Full table */}
       <section>
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
           <h3>All models</h3>
-          <div className="toggle-group">
+          <div className="toggle-group flex-wrap">
             {(["score", "cost", "gold", "synthetic", "model"] as SortKey[]).map((key) => (
               <button
                 key={key}
