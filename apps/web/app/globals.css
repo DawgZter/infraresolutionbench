@@ -427,6 +427,43 @@ hr {
   padding: 1rem 0.75rem 0.35rem;
 }
 
+/* Footer */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+
+.site-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.site-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.site-footer-link:hover {
+  color: var(--color-accent);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .shell {

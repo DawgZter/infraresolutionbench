@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { SiteFooter } from "../components/site-footer";
 import { SiteNav } from "../components/site-nav";
 import "./globals.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="shell">
           <SiteNav />
           <main>{children}</main>
+          <SiteFooter />
         </div>
       </body>
     </html>
