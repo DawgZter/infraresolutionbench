@@ -188,6 +188,10 @@ npm run inspect:case -- --case-id gold_case_001 --mode tools
 # Run the frontend
 npm run dev:web
 
+# Optional: enable GA4 city-level analytics in the web app
+# Set NEXT_PUBLIC_GA_MEASUREMENT_ID in your environment or Vercel project
+# Example: G-XXXXXXXXXX
+
 # Audit benchmark diversity
 npm run audit:benchmark
 ```
