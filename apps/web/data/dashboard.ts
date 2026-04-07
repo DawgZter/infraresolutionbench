@@ -733,7 +733,7 @@ async function loadRequestedHostedModels(): Promise<string[]> {
     }
   }
 
-  requested.add("glm-5.1");
+  requested.add("z-ai/glm-5.1");
 
   return Array.from(requested).sort((left, right) => left.localeCompare(right));
 }
@@ -839,7 +839,7 @@ const MODEL_COST_ESTIMATES: Record<string, number> = {
   "qwen/qwen3-max-thinking": 3.30,
   "z-ai/glm-5": 0.79,
   "z-ai/glm-5-turbo": 0.32,
-  "glm-5.1": 0.50,
+  "z-ai/glm-5.1": 3.37,
   "x-ai/grok-4": 7.20,
   "x-ai/grok-4.20": 3.60,
   "moonshotai/kimi-k2.5": 0.64,

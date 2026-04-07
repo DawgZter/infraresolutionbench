@@ -552,6 +552,38 @@
       "status": "stable"
     },
     {
+      "model": "z-ai/glm-5.1",
+      "rank_hint": null,
+      "notes": "Hosted OpenRouter rerun on 2026-04-08; estimated full-suite run cost $3.37",
+      "source_list": "openrouter",
+      "gold_eval": {
+        "id": "zrmqpca46vzhujw6kycpdwia",
+        "score": 0.8025,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zrmqpca46vzhujw6kycpdwia"
+      },
+      "synthetic_eval": {
+        "id": "i43hciav8fuyi1di3ds1oty4",
+        "score": 0.8148,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/i43hciav8fuyi1di3ds1oty4"
+      },
+      "latest_gold": {
+        "id": "zrmqpca46vzhujw6kycpdwia",
+        "status": "COMPLETED",
+        "samples": 150,
+        "score": 0.8024592592592592,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/zrmqpca46vzhujw6kycpdwia"
+      },
+      "latest_synthetic": {
+        "id": "i43hciav8fuyi1di3ds1oty4",
+        "status": "COMPLETED",
+        "samples": 105,
+        "score": 0.8147936507936508,
+        "viewer_url": "https://app.primeintellect.ai/dashboard/evaluations/i43hciav8fuyi1di3ds1oty4"
+      },
+      "composite": 0.8075,
+      "status": "stable"
+    },
+    {
       "model": "moonshotai/kimi-k2.5",
       "rank_hint": 16,
       "notes": "Artificial Analysis: Kimi K2.5",
@@ -1327,35 +1359,6 @@
       "latest_synthetic": null,
       "status": "not_run",
       "reason": "No clean high-signal coverage in imported set."
-    },
-    {
-      "model": "glm-5.1",
-      "rank_hint": null,
-      "notes": "Local Z.AI GLM 5.1 coding endpoint high-signal snapshot",
-      "source_list": "z-ai",
-      "gold_eval": {
-        "id": "glm51-zai-gold-tools-15x10-2026-04-06",
-        "score": 0.7891787439613526,
-        "viewer_url": ""
-      },
-      "synthetic_eval": null,
-      "latest_gold": {
-        "id": "glm51-zai-gold-tools-15x10-2026-04-06",
-        "status": "PARTIAL",
-        "samples": 115,
-        "score": 0.7891787439613526,
-        "viewer_url": ""
-      },
-      "latest_synthetic": {
-        "id": "glm51-zai-synthetic-tools-21x5-2026-04-06",
-        "status": "RUNNING",
-        "samples": 0,
-        "score": null,
-        "viewer_url": ""
-      },
-      "composite": 0.7891787439613526,
-      "status": "partial",
-      "reason": "Current snapshot reflects the gold high-signal slice only. Score is depressed by 35 failed generations out of 150 target rollouts, almost entirely malformed or missing JSON from the model output. Per eval policy, reruns only rescued API or timeout failures and did not repair bad generations. Synthetic high-signal is still running."
     }
   ]
 }
