@@ -61,6 +61,10 @@ function shortModel(name: string): string {
   return parts[parts.length - 1] ?? name;
 }
 
+function isHostedEvalId(evalId: string): boolean {
+  return /^[a-z0-9]{20,}$/.test(evalId);
+}
+
 const PROVIDER_COLORS: Record<string, string> = {
   anthropic: "#C96442",
   openai: "#8B8FA3",
@@ -561,14 +565,18 @@ export function LeaderboardView({ rows }: { rows: LeaderboardRow[] }) {
                                 <span className="text-[var(--color-text-tertiary)]">Gold Eval</span>
                                 <p className="text-[var(--color-text)] mt-0.5 break-all">
                                   {row.goldEvalId ? (
-                                    <a
-                                      href={`https://app.primeintellect.ai/dashboard/evaluations/${row.goldEvalId}`}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="font-mono"
-                                    >
-                                      {row.goldEvalId}
-                                    </a>
+                                    isHostedEvalId(row.goldEvalId) ? (
+                                      <a
+                                        href={`https://app.primeintellect.ai/dashboard/evaluations/${row.goldEvalId}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="font-mono"
+                                      >
+                                        {row.goldEvalId}
+                                      </a>
+                                    ) : (
+                                      <span className="font-mono">{row.goldEvalId}</span>
+                                    )
                                   ) : "-"}
                                 </p>
                               </div>
@@ -576,6 +584,7 @@ export function LeaderboardView({ rows }: { rows: LeaderboardRow[] }) {
                                 <span className="text-[var(--color-text-tertiary)]">Synthetic Eval</span>
                                 <p className="text-[var(--color-text)] mt-0.5 break-all">
                                   {row.syntheticEvalId ? (
+                                    isHostedEvalId(row.syntheticEvalId) ? (
                                     <a
                                       href={`https://app.primeintellect.ai/dashboard/evaluations/${row.syntheticEvalId}`}
                                       target="_blank"
@@ -584,6 +593,9 @@ export function LeaderboardView({ rows }: { rows: LeaderboardRow[] }) {
                                     >
                                       {row.syntheticEvalId}
                                     </a>
+                                    ) : (
+                                      <span className="font-mono">{row.syntheticEvalId}</span>
+                                    )
                                   ) : "-"}
                                 </p>
                               </div>

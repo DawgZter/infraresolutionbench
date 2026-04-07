@@ -1,8 +1,7 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import {
-  loadAllCases,
   loadGeneratedCases,
   loadGoldCases,
 } from "@infraresolutionbench/data";
@@ -22,6 +21,10 @@ type CliArgs = {
   generatorFamily: string | null;
   outputName: string;
   modelName: string | null;
+  resume: boolean;
+  retryFailed: boolean;
+  retryPolicy: "all" | "api-only";
+  delayMs: number;
 };
 
 type DatasetSummary = {
@@ -52,8 +55,18 @@ type DatasetSummary = {
   }>;
 };
 
+type StoredEvaluation = {
+  overall: {
+    exactAccuracy: number;
+    consistencyPassRate: number;
+    rubricPassRate: number;
+    compositeScore: number;
+  };
+};
+
 function parseArgs(argv: string[]): CliArgs {
   const args = new Map<string, string>();
+  const flags = new Set<string>();
 
   for (let index = 0; index < argv.length; index += 1) {
     const token = argv[index];
@@ -61,12 +74,13 @@ function parseArgs(argv: string[]): CliArgs {
       continue;
     }
 
-    const value = argv[index + 1];
-    if (!value || value.startsWith("--")) {
-      throw new Error(`Missing value for ${token}.`);
+    const next = argv[index + 1];
+    if (!next || next.startsWith("--")) {
+      flags.add(token);
+      continue;
     }
 
-    args.set(token, value);
+    args.set(token, next);
     index += 1;
   }
 
@@ -78,6 +92,8 @@ function parseArgs(argv: string[]): CliArgs {
   const generatorFamily = args.get("--generator-family") ?? null;
   const outputName = args.get("--output-name") ?? "adapter-dataset-run";
   const modelName = args.get("--model-name") ?? null;
+  const retryPolicy = (args.get("--retry-policy") ?? "all") as "all" | "api-only";
+  const delayMs = Number(args.get("--delay-ms") ?? "0");
 
   if (!command) {
     throw new Error(
@@ -93,6 +109,14 @@ function parseArgs(argv: string[]): CliArgs {
     throw new Error(`Unsupported prompt mode: ${mode}`);
   }
 
+  if (retryPolicy !== "all" && retryPolicy !== "api-only") {
+    throw new Error(`Unsupported retry policy: ${retryPolicy}`);
+  }
+
+  if (!Number.isFinite(delayMs) || delayMs < 0) {
+    throw new Error(`Unsupported delay: ${args.get("--delay-ms") ?? String(delayMs)}`);
+  }
+
   return {
     command,
     caseSource,
@@ -102,6 +126,10 @@ function parseArgs(argv: string[]): CliArgs {
     generatorFamily,
     outputName,
     modelName,
+    resume: flags.has("--resume"),
+    retryFailed: flags.has("--retry-failed"),
+    retryPolicy,
+    delayMs,
   };
 }
 
@@ -113,6 +141,95 @@ function average(values: number[]): number {
 
 function sanitizeForFilename(value: string): string {
   return value.replaceAll("/", "_");
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function isApiRetryableFailure(message: string): boolean {
+  return /fetch failed|timeout|timed out|aborted|aborterror|econnreset|enotfound|socket hang up|429|408|409|50\d|prime inference request failed/i.test(
+    message,
+  );
+}
+
+type SampleKey = `${string}::${number}`;
+
+type ExistingRunState = {
+  successMap: Map<SampleKey, StoredEvaluation>;
+  failureMap: Map<SampleKey, DatasetSummary["failures"][number]>;
+};
+
+function buildSampleKey(caseId: string, rollout: number): SampleKey {
+  return `${caseId}::${rollout}`;
+}
+
+function parseSampleFile(fileName: string): { caseId: string; rollout: number; isFailure: boolean } | null {
+  const match = fileName.match(/_(.+)_r(\d+)(\.error\.txt|\.json)$/);
+  if (!match) {
+    return null;
+  }
+
+  const [, caseId, rolloutRaw, suffix] = match;
+  if (!caseId || !rolloutRaw || !suffix) {
+    return null;
+  }
+
+  return {
+    caseId,
+    rollout: Number(rolloutRaw),
+    isFailure: suffix === ".error.txt",
+  };
+}
+
+async function loadExistingRunState(outputDir: string): Promise<ExistingRunState> {
+  const successMap = new Map<SampleKey, StoredEvaluation>();
+  const failureMap = new Map<SampleKey, DatasetSummary["failures"][number]>();
+  const entries = await readdir(outputDir, { withFileTypes: true }).catch(() => []);
+
+  for (const entry of entries) {
+    if (!entry.isFile() || entry.name === "summary.json") {
+      continue;
+    }
+
+    const parsed = parseSampleFile(entry.name);
+    if (!parsed) {
+      continue;
+    }
+
+    const key = buildSampleKey(parsed.caseId, parsed.rollout);
+    const filePath = path.join(outputDir, entry.name);
+
+    if (parsed.isFailure) {
+      const error = await readFile(filePath, "utf8");
+      failureMap.set(key, {
+        case_id: parsed.caseId,
+        rollout: parsed.rollout,
+        error,
+      });
+      continue;
+    }
+
+    try {
+      const raw = await readFile(filePath, "utf8");
+      const artifact = JSON.parse(raw) as { evaluation?: StoredEvaluation };
+      if (!artifact.evaluation) {
+        throw new Error("Missing evaluation block");
+      }
+      successMap.set(key, artifact.evaluation);
+      failureMap.delete(key);
+    } catch {
+      failureMap.set(key, {
+        case_id: parsed.caseId,
+        rollout: parsed.rollout,
+        error: `Could not parse existing artifact: ${entry.name}`,
+      });
+    }
+  }
+
+  return { successMap, failureMap };
 }
 
 function interleaveGeneratedCases(cases: GoldCase[]): GoldCase[] {
@@ -196,11 +313,33 @@ async function main(): Promise<void> {
   );
   await mkdir(outputDir, { recursive: true });
 
-  const evaluations = [];
   const failures: DatasetSummary["failures"] = [];
+  const existing = args.resume ? await loadExistingRunState(outputDir) : null;
 
   for (const goldCase of selectedCases) {
     for (let rollout = 1; rollout <= args.rolloutsPerExample; rollout += 1) {
+      const sampleKey = buildSampleKey(goldCase.case_packet.case_id, rollout);
+      const existingSuccess = existing?.successMap.get(sampleKey);
+      const existingFailure = existing?.failureMap.get(sampleKey);
+
+      if (args.resume && existingSuccess) {
+        continue;
+      }
+
+      if (args.resume && existingFailure && !args.retryFailed) {
+        continue;
+      }
+
+      if (
+        args.resume &&
+        existingFailure &&
+        args.retryFailed &&
+        args.retryPolicy === "api-only" &&
+        !isApiRetryableFailure(existingFailure.error)
+      ) {
+        continue;
+      }
+
       try {
         const { artifact } = await executeWithAdapter({
           goldCase,
@@ -213,7 +352,11 @@ async function main(): Promise<void> {
           `${sanitizeForFilename(artifact.model_name)}_${goldCase.case_packet.case_id}_r${rollout}.json`,
         );
         await writeFile(artifactPath, JSON.stringify(artifact, null, 2), "utf8");
-        evaluations.push(artifact.evaluation);
+        const failurePath = path.join(
+          outputDir,
+          `${sanitizeForFilename(args.modelName ?? "command-adapter")}_${goldCase.case_packet.case_id}_r${rollout}.error.txt`,
+        );
+        await rm(failurePath, { force: true }).catch(() => undefined);
       } catch (error) {
         const message = error instanceof Error ? error.stack ?? error.message : String(error);
         failures.push({
@@ -228,10 +371,17 @@ async function main(): Promise<void> {
         );
         await writeFile(failurePath, message, "utf8");
       }
+
+      if (args.delayMs > 0) {
+        await sleep(args.delayMs);
+      }
     }
   }
 
-  const failedCaseIds = [...new Set(failures.map((item) => item.case_id))];
+  const finalState = await loadExistingRunState(outputDir);
+  const failedCaseIds = [...new Set([...finalState.failureMap.values()].map((item) => item.case_id))];
+  const evaluations = [...finalState.successMap.values()];
+  const allFailures = [...finalState.failureMap.values()];
 
   const summary: DatasetSummary = {
     generated_at: new Date().toISOString(),
@@ -242,9 +392,9 @@ async function main(): Promise<void> {
     prompt_mode: args.mode,
     limit: args.limit,
     rollouts_per_example: args.rolloutsPerExample,
-    evaluated_samples: evaluations.length,
+    evaluated_samples: finalState.successMap.size,
     evaluated_cases: selectedCases.length,
-    failed_samples: failures.length,
+    failed_samples: allFailures.length,
     failed_cases: failedCaseIds.length,
     metrics: {
       exact_accuracy: average(evaluations.map((item) => item.overall.exactAccuracy)),
@@ -254,7 +404,7 @@ async function main(): Promise<void> {
     },
     case_ids: selectedCases.map((goldCase) => goldCase.case_packet.case_id),
     failed_case_ids: failedCaseIds,
-    failures,
+    failures: allFailures,
   };
 
   const summaryPath = path.join(outputDir, "summary.json");

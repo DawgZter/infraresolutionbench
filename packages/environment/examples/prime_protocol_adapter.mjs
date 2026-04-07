@@ -228,16 +228,127 @@ function extractFirstJsonObject(raw) {
   throw new Error("Unterminated JSON object in model response.");
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function resolveApiKey(config) {
+  const keyVarName = env.PRIME_API_KEY_VAR;
+  if (keyVarName) {
+    const keyFromNamedEnv = env[keyVarName];
+    if (keyFromNamedEnv) {
+      return {
+        apiKey: keyFromNamedEnv,
+        apiKeyVar: keyVarName,
+      };
+    }
+  }
+
+  if (env.PRIME_API_KEY) {
+    return {
+      apiKey: env.PRIME_API_KEY,
+      apiKeyVar: "PRIME_API_KEY",
+    };
+  }
+
+  return {
+    apiKey: config.api_key,
+    apiKeyVar: "config.api_key",
+  };
+}
+
+function resolveRequestUrl(inferenceUrl) {
+  const trimmed = inferenceUrl.replace(/\/$/, "");
+  return trimmed.endsWith("/chat/completions") ? trimmed : `${trimmed}/chat/completions`;
+}
+
+function parseRetryAfterMs(response) {
+  const retryAfter = response.headers.get("retry-after");
+  if (!retryAfter) {
+    return null;
+  }
+
+  const asSeconds = Number(retryAfter);
+  if (Number.isFinite(asSeconds)) {
+    return Math.max(0, asSeconds * 1000);
+  }
+
+  const asDate = Date.parse(retryAfter);
+  if (Number.isFinite(asDate)) {
+    return Math.max(0, asDate - Date.now());
+  }
+
+  return null;
+}
+
+async function readErrorBody(response) {
+  try {
+    return await response.text();
+  } catch {
+    return "<unable to read response body>";
+  }
+}
+
+function isRetryableStatus(status) {
+  return status === 408 || status === 409 || status === 429 || status >= 500;
+}
+
+function isRetryableError(error) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return /fetch failed|timeout|timed out|aborted|aborterror|econnreset|enotfound|socket hang up/i.test(
+    error.message,
+  );
+}
+
+function formatAttemptError(prefix, attempt, maxAttempts, detail) {
+  return `${prefix} (attempt ${attempt}/${maxAttempts}): ${detail}`;
+}
+
+function validateModelOutput(modelOutput) {
+  if (!modelOutput || typeof modelOutput !== "object" || Array.isArray(modelOutput)) {
+    throw new Error("Invalid model output: expected a JSON object.");
+  }
+
+  for (const key of OUTPUT_SCHEMA.required) {
+    if (!(key in modelOutput)) {
+      throw new Error(`Invalid model output: missing required field "${key}".`);
+    }
+  }
+
+  for (const [key, definition] of Object.entries(OUTPUT_SCHEMA.properties)) {
+    const value = modelOutput[key];
+    if (definition.type === "boolean" && typeof value !== "boolean") {
+      throw new Error(`Invalid model output: field "${key}" must be boolean.`);
+    }
+    if (definition.type === "string" && typeof value !== "string") {
+      throw new Error(`Invalid model output: field "${key}" must be string.`);
+    }
+    if (definition.type === "string" && Array.isArray(definition.enum) && !definition.enum.includes(value)) {
+      throw new Error(`Invalid model output: field "${key}" must be one of ${definition.enum.join(", ")}.`);
+    }
+  }
+}
+
 async function callPrime(request) {
   const config = await loadPrimeConfig();
-  const apiKey = env.PRIME_API_KEY ?? config.api_key;
+  const { apiKey, apiKeyVar } = resolveApiKey(config);
   const inferenceUrl = env.PRIME_INFERENCE_URL ?? config.inference_url;
   const model = env.PRIME_MODEL;
   const temperature = env.PRIME_TEMPERATURE ?? "0";
   const maxTokens = env.PRIME_MAX_TOKENS ?? "1400";
+  const maxAttempts = Math.max(1, Number(env.PRIME_MAX_ATTEMPTS ?? "4"));
+  const retryBaseMs = Math.max(250, Number(env.PRIME_RETRY_BASE_MS ?? "1500"));
+  const requestTimeoutMs = Math.max(1000, Number(env.PRIME_REQUEST_TIMEOUT_MS ?? "120000"));
 
   if (!apiKey) {
-    throw new Error("Prime API key is required.");
+    throw new Error(
+      "Prime API key is required. Set PRIME_API_KEY, or set PRIME_API_KEY_VAR to an environment variable such as ZAI_API_KEY.",
+    );
   }
 
   if (!inferenceUrl) {
@@ -248,48 +359,93 @@ async function callPrime(request) {
     throw new Error("PRIME_MODEL is required.");
   }
 
-  const response = await fetch(`${inferenceUrl.replace(/\/$/, "")}/chat/completions`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      messages: buildMessages(request),
-      temperature: Number(temperature),
-      max_tokens: Number(maxTokens),
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "infraresolutionbench_model_output",
-          strict: true,
-          schema: OUTPUT_SCHEMA,
-        },
+  const requestUrl = resolveRequestUrl(inferenceUrl);
+  const payload = {
+    model,
+    messages: buildMessages(request),
+    temperature: Number(temperature),
+    max_tokens: Number(maxTokens),
+    response_format: {
+      type: "json_schema",
+      json_schema: {
+        name: "infraresolutionbench_model_output",
+        strict: true,
+        schema: OUTPUT_SCHEMA,
       },
-    }),
-  });
+    },
+  };
 
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new Error(`Prime inference request failed (${response.status}): ${errorBody}`);
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), requestTimeoutMs);
+      const response = await fetch(requestUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      }).finally(() => {
+        clearTimeout(timeout);
+      });
+
+      if (!response.ok) {
+        const errorBody = await readErrorBody(response);
+
+        if (isRetryableStatus(response.status) && attempt < maxAttempts) {
+          const retryAfterMs = parseRetryAfterMs(response);
+          const delayMs = retryAfterMs ?? retryBaseMs * 2 ** (attempt - 1);
+          await sleep(delayMs);
+          continue;
+        }
+
+        throw new Error(
+          formatAttemptError(
+            "Prime inference request failed",
+            attempt,
+            maxAttempts,
+            `${response.status}: ${errorBody}`,
+          ),
+        );
+      }
+
+      const parsed = await response.json();
+      const choice = parsed?.choices?.[0];
+      const text = extractTextContent(choice?.message?.content ?? "");
+      const jsonText = extractFirstJsonObject(text);
+      const modelOutput = JSON.parse(jsonText);
+      validateModelOutput(modelOutput);
+
+      return {
+        parsedResponse: parsed,
+        modelOutput,
+        requestUrl,
+        apiKeyVar,
+      };
+    } catch (error) {
+      lastError = error;
+
+      if (!isRetryableError(error) || attempt >= maxAttempts) {
+        break;
+      }
+
+      await sleep(retryBaseMs * 2 ** (attempt - 1));
+    }
   }
 
-  const parsed = await response.json();
-  const choice = parsed?.choices?.[0];
-  const text = extractTextContent(choice?.message?.content ?? "");
-  const jsonText = extractFirstJsonObject(text);
-
-  return {
-    parsedResponse: parsed,
-    modelOutput: JSON.parse(jsonText),
-  };
+  throw lastError instanceof Error
+    ? lastError
+    : new Error(`Prime inference request failed after ${maxAttempts} attempts.`);
 }
 
 try {
   const raw = await readStdin();
   const request = JSON.parse(raw);
-  const { parsedResponse, modelOutput } = await callPrime(request);
+  const { parsedResponse, modelOutput, requestUrl, apiKeyVar } = await callPrime(request);
 
   stdout.write(
     JSON.stringify({
@@ -300,6 +456,8 @@ try {
         mode: request.mode,
         response_id: parsedResponse?.id ?? null,
         usage: parsedResponse?.usage ?? null,
+        request_url: requestUrl,
+        api_key_source: apiKeyVar,
       },
     }),
   );
