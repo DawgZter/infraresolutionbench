@@ -23,7 +23,8 @@ export const metadata = {
     "Deterministic benchmark for AI agents on commercial infrastructure operations.",
 };
 
-const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const googleAnalyticsId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-CX50P15ZHG";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
