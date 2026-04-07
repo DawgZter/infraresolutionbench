@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main>{children}</main>
           <SiteFooter />
         </div>
+        <Analytics />
       </body>
     </html>
   );

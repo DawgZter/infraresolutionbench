@@ -13,6 +13,7 @@
     "@infraresolutionbench/environment": "0.1.0",
     "@infraresolutionbench/shared": "0.1.0",
     "@tailwindcss/postcss": "^4.2.2",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.38.0",
     "next": "^15.0.0",
     "react": "^19.0.0",
